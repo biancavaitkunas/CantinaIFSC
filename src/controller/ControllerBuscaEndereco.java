@@ -21,7 +21,7 @@ public class ControllerBuscaEndereco implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this.telaBuscaEndereco.getjBCarregar()){
-            controller.ControllerCadastroBairro.codigo =  (int) this.telaBuscaEndereco.
+            controller.ControllerCadastroEndereco.codigo =  (int) this.telaBuscaEndereco.
                                                             getjTDados().
                                                             getValueAt(this.telaBuscaEndereco.getjTDados().getSelectedRow(), 0);
             
@@ -38,5 +38,6 @@ public class ControllerBuscaEndereco implements ActionListener{
             this.telaBuscaEndereco.dispose();
         }
     }
+    
     
 }

@@ -34,7 +34,6 @@ public class ControllerBuscaBairro implements ActionListener {
             //Criando/Carregando uma instancia da classe singleton de dados
             DAO.ClasseDados.getInstance();
             
-            //Criar um objeto do tipo TableModel
             DefaultTableModel tabela =  (DefaultTableModel) this.telaBuscaBairro.getjTDados().getModel();
             for (Bairro bairroAtual : DAO.ClasseDados.listaBairro) {
                 tabela.addRow(new Object[]{bairroAtual.getId(), 

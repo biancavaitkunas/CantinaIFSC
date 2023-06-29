@@ -23,6 +23,10 @@ public class ControllerBuscaFuncionario implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this.telaBuscaFuncionario.getjBCarregar()){
             
+            controller.ControllerCadastroFornecedor.codigo =  (int) this.telaBuscaFuncionario.
+                                                            getjTDados().
+                                                            getValueAt(this.telaBuscaFuncionario.getjTDados().getSelectedRow(), 0);
+            
         }else if (e.getSource() == this.telaBuscaFuncionario.getjBFiltrar()){
             //Criando/carregando uma instancia da classe singleton de dados
             DAO.ClasseDados.getInstance();

@@ -22,6 +22,9 @@ public class ControllerBuscaCarteirinha implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this.telabuscaCarteirinha.getjBCarregar()){
+            controller.ControllerCadastroCarteirinha.codigo =  (int) this.telabuscaCarteirinha.
+                                                            getjTDados().
+                                                            getValueAt(this.telabuscaCarteirinha.getjTDados().getSelectedRow(), 0);
             
         }else if (e.getSource() == this.telabuscaCarteirinha.getjBFiltrar()){
             //Criando/carregando uma instancia da classe singleton de dados
@@ -35,7 +38,7 @@ public class ControllerBuscaCarteirinha implements ActionListener{
             }
             
         }else if (e.getSource() == this.telabuscaCarteirinha.getjBSair()){
-            
+            this.telabuscaCarteirinha.dispose();
         }
     }
     

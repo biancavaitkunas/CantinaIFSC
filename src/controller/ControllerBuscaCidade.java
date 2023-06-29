@@ -24,16 +24,14 @@ public class ControllerBuscaCidade implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == this.telaBuscaCidade.getjBCarregar()){
             
-         controller.ControllerCadastroBairro.codigo =  (int) this.telaBuscaCidade.
+         controller.ControllerCadastroCidade.codigo =  (int) this.telaBuscaCidade.
                                                             getjTDados().
                                                             getValueAt(this.telaBuscaCidade.getjTDados().getSelectedRow(), 0);
             
          this.telaBuscaCidade.dispose();
         }else if (e.getSource() == this.telaBuscaCidade.getjBFiltrar()){
-            //Criando/Carregando uma instancia da classe singleton de dados
             DAO.ClasseDados.getInstance();
             
-            //Criar um objeto do tipo TableModel
             DefaultTableModel tabela =  (DefaultTableModel) this.telaBuscaCidade.getjTDados().getModel();
             for (Cidade cidadeAtual : DAO.ClasseDados.listaCidade) {
                 tabela.addRow(new Object[]{cidadeAtual.getId(), cidadeAtual.getDescricao(), cidadeAtual.getUf()});

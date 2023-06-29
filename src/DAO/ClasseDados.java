@@ -94,9 +94,9 @@ public class ClasseDados {
         listaCarteirinha.add(carteirinha1);
         listaCarteirinha.add(carteirinha2);
         listaCarteirinha.add(carteirinha3);
-        Fornecedor fornecedor1 = new Fornecedor (1, "Fornecedor 1", "4587411", "455896", "123456");
-        Fornecedor fornecedor2 = new Fornecedor (2, "Fornecedor 1", "7445811", "558946", "123456");
-        Fornecedor fornecedor3 = new Fornecedor (3, "Fornecedor 1", "4574181", "894556", "123456");
+        Fornecedor fornecedor1 = new Fornecedor (1, "Fornecedor 1", "4587411", "455896", "123456", "48 1234-5678");
+        Fornecedor fornecedor2 = new Fornecedor (2, "Fornecedor 1", "7445811", "558946", "123456", "48 1234-5678");
+        Fornecedor fornecedor3 = new Fornecedor (3, "Fornecedor 1", "4574181", "894556", "123456", "48 1234-5678");
         listaFornecedor.add(fornecedor1);
         listaFornecedor.add(fornecedor2);
         listaFornecedor.add(fornecedor3);

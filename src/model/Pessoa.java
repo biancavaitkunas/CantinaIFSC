@@ -29,6 +29,12 @@ public abstract class Pessoa {   //abstract impede que a classe seja instanciada
         this.id = id;
         this.nome = nome;
     }
+    
+    public Pessoa(int id, String nome, String fone1) {
+        this.id = id;
+        this.nome = nome;
+        this.fone1 = fone1;
+    }
 
     public int getId() {
         return id;

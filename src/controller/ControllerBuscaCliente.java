@@ -22,6 +22,9 @@ public class ControllerBuscaCliente implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this.telaBuscaCliente.getjBCarregar()){
+           controller.ControllerCadastroCliente.codigo =  (int) this.telaBuscaCliente.
+                                                            getjTDados().
+                                                            getValueAt(this.telaBuscaCliente.getjTDados().getSelectedRow(), 0);
             
         }else if (e.getSource() == this.telaBuscaCliente.getjBFiltrar()){
             //Criando/carregando uma instancia da classe singleton de dados
@@ -35,7 +38,7 @@ public class ControllerBuscaCliente implements ActionListener{
             }
             
         }else if (e.getSource() == this.telaBuscaCliente.getjBSair()){
-            
+            this.telaBuscaCliente.dispose();
         }
     }
     

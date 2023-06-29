@@ -2,9 +2,7 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JOptionPane;
 import model.Bairro;
-import model.Endereco;
 import view.TelaBuscaBairro;
 import view.TelaCadastroBairro;
 
@@ -48,13 +46,9 @@ public class ControllerCadastroBairro implements ActionListener {
             
             if(this.telaCadastroBairro.getjTFID().getText().equalsIgnoreCase("")){
                DAO.ClasseDados.listaBairro.add(bairro);
-               JOptionPane.showMessageDialog(null, bairro.getId());
             }else {
-                DAO.ClasseDados.listaBairro.remove(bairro);
-                bairro.setDescricao(this.telaCadastroBairro.getjTFDescricao().getText());
-                DAO.ClasseDados.listaBairro.add(bairro);
+                
             }
-            JOptionPane.showMessageDialog(null, bairro.getId());
 
             utilities.Utilities.ativaDesativa(true, this.telaCadastroBairro.getjPRodape());
             utilities.Utilities.limpaComponentes(false, this.telaCadastroBairro.getjPCorpo());

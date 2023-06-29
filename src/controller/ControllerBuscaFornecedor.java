@@ -21,6 +21,9 @@ public class ControllerBuscaFornecedor implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this.telaBuscaFornecedor.getjBCarregar()){
+            controller.ControllerCadastroFornecedor.codigo =  (int) this.telaBuscaFornecedor.
+                                                            getjTDados().
+                                                            getValueAt(this.telaBuscaFornecedor.getjTDados().getSelectedRow(), 0);
             
         }else if (e.getSource() == this.telaBuscaFornecedor.getjBFiltrar()){
             //Criando/carregando uma instancia da classe singleton de dados
@@ -30,11 +33,12 @@ public class ControllerBuscaFornecedor implements ActionListener{
             DefaultTableModel tabela = (DefaultTableModel) this.telaBuscaFornecedor.getjTDados().getModel();
             
             for (Fornecedor fornecedorAtual : DAO.ClasseDados.listaFornecedor) {
-                tabela.addRow(new Object[]{fornecedorAtual.getId(), fornecedorAtual.getNome(), fornecedorAtual.getCnpj(), fornecedorAtual.getRazaoSocial(), fornecedorAtual.getInscricaoEstadual()});
+                tabela.addRow(new Object[]{fornecedorAtual.getId(), fornecedorAtual.getNome(), fornecedorAtual.getCnpj(), fornecedorAtual.getRazaoSocial(), 
+                    fornecedorAtual.getInscricaoEstadual(), fornecedorAtual.getFone1()});
             }
             
         }else if (e.getSource() == this.telaBuscaFornecedor.getjBSair()){
-            
+            this.telaBuscaFornecedor.dispose();
         }
     }
     
