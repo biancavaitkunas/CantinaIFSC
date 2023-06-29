@@ -145,14 +145,15 @@ public class TelaBuscaCliente extends javax.swing.JDialog {
         jPTitulo.setLayout(jPTituloLayout);
         jPTituloLayout.setHorizontalGroup(
             jPTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPTituloLayout.createSequentialGroup()
+            .addGroup(jPTituloLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPTituloLayout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel2))
-                    .addComponent(jLTitulo))
-                .addGap(254, 254, 254))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPTituloLayout.createSequentialGroup()
+                        .addComponent(jLTitulo)
+                        .addGap(313, 313, 313))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPTituloLayout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(324, 324, 324))))
         );
         jPTituloLayout.setVerticalGroup(
             jPTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -171,7 +172,7 @@ public class TelaBuscaCliente extends javax.swing.JDialog {
 
             },
             new String [] {
-                "ID", "Nome", "Matrícula", "CPF", "Carteirinha"
+                "ID", "Nome", "RG", "CPF", "Data Nascimento", "Matrícula"
             }
         ));
         jScrollPane2.setViewportView(jTDados);
@@ -182,7 +183,7 @@ public class TelaBuscaCliente extends javax.swing.JDialog {
             jCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jCorpoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 727, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jCorpoLayout.setVerticalGroup(
@@ -252,7 +253,7 @@ public class TelaBuscaCliente extends javax.swing.JDialog {
             jPFiltroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPFiltroLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jFFFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, 537, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jFFFiltro)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jBFiltrar, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())

@@ -24,24 +24,24 @@ public class ControllerVenda implements ActionListener {
         this.telaCadastroVenda.getjBCancelar().addActionListener(this);
         this.telaCadastroVenda.getjBGravar().addActionListener(this);
         
-        utilities.utilities.ativaDesativa(true, this.telaCadastroVenda.getjPRodape());
-        utilities.utilities.limpaComponentes(false, this.telaCadastroVenda.getjPCorpo());
+        utilities.Utilities.ativaDesativa(true, this.telaCadastroVenda.getjPRodape());
+        utilities.Utilities.limpaComponentes(false, this.telaCadastroVenda.getjPCorpo());
         
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this.telaCadastroVenda.getjBNovo()){
-            utilities.utilities.ativaDesativa(false, this.telaCadastroVenda.getjPRodape());
-            utilities.utilities.limpaComponentes(true, this.telaCadastroVenda.getjPCorpo());
+            utilities.Utilities.ativaDesativa(false, this.telaCadastroVenda.getjPRodape());
+            utilities.Utilities.limpaComponentes(true, this.telaCadastroVenda.getjPCorpo());
             
         }else if (e.getSource() == this.telaCadastroVenda.getjBCancelar()){
-            utilities.utilities.ativaDesativa(true, this.telaCadastroVenda.getjPRodape());
-            utilities.utilities.limpaComponentes(false, this.telaCadastroVenda.getjPCorpo());
+            utilities.Utilities.ativaDesativa(true, this.telaCadastroVenda.getjPRodape());
+            utilities.Utilities.limpaComponentes(false, this.telaCadastroVenda.getjPCorpo());
             
         } else if (e.getSource() == this.telaCadastroVenda.getjBGravar()){
-            utilities.utilities.ativaDesativa(true, this.telaCadastroVenda.getjPRodape());
-            utilities.utilities.limpaComponentes(false, this.telaCadastroVenda.getjPCorpo());
+            utilities.Utilities.ativaDesativa(true, this.telaCadastroVenda.getjPRodape());
+            utilities.Utilities.limpaComponentes(false, this.telaCadastroVenda.getjPCorpo());
             
         } else if (e.getSource() == this.telaCadastroVenda.getjBBuscar()){
             TelaBuscaVenda telaBuscaVenda = new TelaBuscaVenda (null, true);

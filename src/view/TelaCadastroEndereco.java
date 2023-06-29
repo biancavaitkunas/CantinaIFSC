@@ -33,12 +33,8 @@ public class TelaCadastroEndereco extends javax.swing.JDialog {
         return jBSair;
     }
 
-    public JFormattedTextField getjFTFCEP() {
-        return jFTFCEP;
-    }
-
     public JTextField getjTFBairro() {
-        return jTFBairro;
+        return jTFLogradouro;
     }
 
     public JTextField getjTFCidade() {
@@ -76,6 +72,74 @@ public class TelaCadastroEndereco extends javax.swing.JDialog {
     public void setjTFLogradouro(JTextField jTFLogradouro) {
         this.jTFLogradouro = jTFLogradouro;
     }
+
+    public void setjTFCEP(JFormattedTextField jFTFCEP) {
+        this.jTFCEP = jFTFCEP;
+    }
+
+    public void setjTFBairro(JTextField jTFBairro) {
+        this.jTFLogradouro = jTFBairro;
+    }
+
+    public void setjTFCidade(JTextField jTFCidade) {
+        this.jTFCidade = jTFCidade;
+    }
+
+    public ButtonGroup getButtonGroup1() {
+        return buttonGroup1;
+    }
+
+    public JComboBox<String> getjCBUF() {
+        return jCBUF;
+    }
+
+    public JLabel getjLBairro() {
+        return jLBairro;
+    }
+
+    public JLabel getjLCEP() {
+        return jLCEP;
+    }
+
+    public JLabel getjLCidade() {
+        return jLCidade;
+    }
+
+    public JLabel getjLEndereco() {
+        return jLEndereco;
+    }
+
+    public JLabel getjLID() {
+        return jLID;
+    }
+
+    public JLabel getjLLogradouro() {
+        return jLLogradouro;
+    }
+
+    public JLabel getjLStatus() {
+        return jLStatus;
+    }
+
+    public JLabel getjLTitulo() {
+        return jLTitulo;
+    }
+
+    public JLabel getjLUF() {
+        return jLUF;
+    }
+
+    public JPanel getjPTitulo() {
+        return jPTitulo;
+    }
+
+    public JRadioButton getjRBAtivo() {
+        return jRBAtivo;
+    }
+
+    public JRadioButton getjRBInativo() {
+        return jRBInativo;
+    }
     
     
 
@@ -87,7 +151,7 @@ public class TelaCadastroEndereco extends javax.swing.JDialog {
         this.jBNovo = jBNovo;
         this.jBSair = jBSair;
         this.jCBUF = jCBUF;
-        this.jFTFCEP = jFTFCEP;
+        this.jTFCEP = jFTFCEP;
         this.jLBairro = jLBairro;
         this.jLCEP = jLCEP;
         this.jLCidade = jLCidade;
@@ -102,10 +166,18 @@ public class TelaCadastroEndereco extends javax.swing.JDialog {
         this.jPTitulo = jPTitulo;
         this.jRBAtivo = jRBAtivo;
         this.jRBInativo = jRBInativo;
-        this.jTFBairro = jTFBairro;
+        this.jTFLogradouro = jTFBairro;
         this.jTFCidade = jTFCidade;
         this.jTFID = jTFID;
         this.jTFLogradouro = jTFLogradouro;
+    }
+
+    public JTextField getjTFBairro1() {
+        return jTFBairro1;
+    }
+
+    public JTextField getjTFCEP() {
+        return jTFCEP;
     }
     
     
@@ -122,18 +194,18 @@ public class TelaCadastroEndereco extends javax.swing.JDialog {
         jLID = new javax.swing.JLabel();
         jTFID = new javax.swing.JTextField();
         jLCEP = new javax.swing.JLabel();
-        jTFCidade = new javax.swing.JTextField();
         jLLogradouro = new javax.swing.JLabel();
         jLStatus = new javax.swing.JLabel();
-        jTFLogradouro = new javax.swing.JTextField();
         jLCidade = new javax.swing.JLabel();
         jLBairro = new javax.swing.JLabel();
-        jTFBairro = new javax.swing.JTextField();
+        jTFLogradouro = new javax.swing.JTextField();
         jLUF = new javax.swing.JLabel();
         jCBUF = new javax.swing.JComboBox<>();
         jRBAtivo = new javax.swing.JRadioButton();
         jRBInativo = new javax.swing.JRadioButton();
-        jFTFCEP = new javax.swing.JFormattedTextField();
+        jTFCidade = new javax.swing.JTextField();
+        jTFBairro1 = new javax.swing.JTextField();
+        jTFCEP = new javax.swing.JTextField();
         jPRodape = new javax.swing.JPanel();
         jBNovo = new javax.swing.JButton();
         jBCancelar = new javax.swing.JButton();
@@ -197,20 +269,11 @@ public class TelaCadastroEndereco extends javax.swing.JDialog {
         jLCEP.setFont(new java.awt.Font("PMingLiU-ExtB", 1, 14)); // NOI18N
         jLCEP.setText("CEP");
 
-        jTFCidade.setForeground(new java.awt.Color(255, 255, 255));
-
         jLLogradouro.setFont(new java.awt.Font("PMingLiU-ExtB", 1, 14)); // NOI18N
         jLLogradouro.setText("Logradouro");
 
         jLStatus.setFont(new java.awt.Font("PMingLiU-ExtB", 1, 14)); // NOI18N
         jLStatus.setText("Status");
-
-        jTFLogradouro.setForeground(new java.awt.Color(255, 255, 255));
-        jTFLogradouro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTFLogradouroActionPerformed(evt);
-            }
-        });
 
         jLCidade.setFont(new java.awt.Font("PMingLiU-ExtB", 1, 14)); // NOI18N
         jLCidade.setText("Cidade");
@@ -218,9 +281,9 @@ public class TelaCadastroEndereco extends javax.swing.JDialog {
         jLBairro.setFont(new java.awt.Font("PMingLiU-ExtB", 1, 14)); // NOI18N
         jLBairro.setText("Bairro");
 
-        jTFBairro.addActionListener(new java.awt.event.ActionListener() {
+        jTFLogradouro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTFBairroActionPerformed(evt);
+                jTFLogradouroActionPerformed(evt);
             }
         });
 
@@ -241,11 +304,23 @@ public class TelaCadastroEndereco extends javax.swing.JDialog {
             }
         });
 
-        try {
-            jFTFCEP.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####-###")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
+        jTFCidade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTFCidadeActionPerformed(evt);
+            }
+        });
+
+        jTFBairro1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTFBairro1ActionPerformed(evt);
+            }
+        });
+
+        jTFCEP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTFCEPActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPCorpoLayout = new javax.swing.GroupLayout(jPCorpo);
         jPCorpo.setLayout(jPCorpoLayout);
@@ -256,38 +331,36 @@ public class TelaCadastroEndereco extends javax.swing.JDialog {
                 .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPCorpoLayout.createSequentialGroup()
                         .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLCidade)
                             .addComponent(jLLogradouro, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTFCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTFLogradouro, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(24, 24, 24)
                         .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPCorpoLayout.createSequentialGroup()
-                                .addGap(26, 26, 26)
-                                .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTFBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPCorpoLayout.createSequentialGroup()
-                                .addGap(110, 110, 110)
-                                .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPCorpoLayout.createSequentialGroup()
-                                        .addComponent(jRBAtivo, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jRBInativo, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jLStatus)))))
+                                .addComponent(jRBAtivo, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jRBInativo, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLStatus)))
                     .addGroup(jPCorpoLayout.createSequentialGroup()
                         .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLID, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPCorpoLayout.createSequentialGroup()
-                                .addComponent(jTFID, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(58, 58, 58)
-                                .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLCEP, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jFTFCEP, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(30, 30, 30)
+                            .addComponent(jTFID, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(42, 42, 42)
+                        .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLCEP, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTFCEP, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(36, 36, 36)
                         .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLUF, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jCBUF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jTFLogradouro, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(102, Short.MAX_VALUE))
+                    .addGroup(jPCorpoLayout.createSequentialGroup()
+                        .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLCidade)
+                            .addComponent(jTFCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(58, 58, 58)
+                        .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTFBairro1, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(83, Short.MAX_VALUE))
         );
         jPCorpoLayout.setVerticalGroup(
             jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -301,7 +374,7 @@ public class TelaCadastroEndereco extends javax.swing.JDialog {
                 .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTFID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jCBUF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jFTFCEP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTFCEP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLCidade)
@@ -309,16 +382,16 @@ public class TelaCadastroEndereco extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTFCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTFBairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTFBairro1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
                 .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLLogradouro)
                     .addComponent(jLStatus))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTFLogradouro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jRBAtivo)
-                    .addComponent(jRBInativo))
+                    .addComponent(jRBInativo)
+                    .addComponent(jTFLogradouro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(56, Short.MAX_VALUE))
         );
 
@@ -421,10 +494,6 @@ public class TelaCadastroEndereco extends javax.swing.JDialog {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTFLogradouroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFLogradouroActionPerformed
-
-    }//GEN-LAST:event_jTFLogradouroActionPerformed
-
     private void jBNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBNovoActionPerformed
 
     }//GEN-LAST:event_jBNovoActionPerformed
@@ -441,9 +510,9 @@ public class TelaCadastroEndereco extends javax.swing.JDialog {
     
     }//GEN-LAST:event_jTFIDActionPerformed
 
-    private void jTFBairroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFBairroActionPerformed
+    private void jTFLogradouroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFLogradouroActionPerformed
 
-    }//GEN-LAST:event_jTFBairroActionPerformed
+    }//GEN-LAST:event_jTFLogradouroActionPerformed
 
     private void jRBInativoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRBInativoActionPerformed
     }//GEN-LAST:event_jRBInativoActionPerformed
@@ -454,6 +523,18 @@ public class TelaCadastroEndereco extends javax.swing.JDialog {
 
     private void jBGravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBGravarActionPerformed
     }//GEN-LAST:event_jBGravarActionPerformed
+
+    private void jTFCidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFCidadeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTFCidadeActionPerformed
+
+    private void jTFBairro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFBairro1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTFBairro1ActionPerformed
+
+    private void jTFCEPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFCEPActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTFCEPActionPerformed
 
     
     public static void main(String args[]) {
@@ -503,7 +584,6 @@ public class TelaCadastroEndereco extends javax.swing.JDialog {
     private javax.swing.JButton jBNovo;
     private javax.swing.JButton jBSair;
     private javax.swing.JComboBox<String> jCBUF;
-    private javax.swing.JFormattedTextField jFTFCEP;
     private javax.swing.JLabel jLBairro;
     private javax.swing.JLabel jLCEP;
     private javax.swing.JLabel jLCidade;
@@ -518,7 +598,8 @@ public class TelaCadastroEndereco extends javax.swing.JDialog {
     private javax.swing.JPanel jPTitulo;
     private javax.swing.JRadioButton jRBAtivo;
     private javax.swing.JRadioButton jRBInativo;
-    private javax.swing.JTextField jTFBairro;
+    private javax.swing.JTextField jTFBairro1;
+    private javax.swing.JTextField jTFCEP;
     private javax.swing.JTextField jTFCidade;
     private javax.swing.JTextField jTFID;
     private javax.swing.JTextField jTFLogradouro;

@@ -12,6 +12,7 @@ public class ControllerBuscaFornecedor implements ActionListener{
     TelaBuscaFornecedor telaBuscaFornecedor;
     
     public ControllerBuscaFornecedor (TelaBuscaFornecedor telaBuscaFornecedor){
+        this.telaBuscaFornecedor = telaBuscaFornecedor;
         this.telaBuscaFornecedor.getjBFiltrar().addActionListener(this);
         this.telaBuscaFornecedor.getjBCarregar().addActionListener(this);
         this.telaBuscaFornecedor.getjBSair().addActionListener(this);
@@ -29,7 +30,7 @@ public class ControllerBuscaFornecedor implements ActionListener{
             DefaultTableModel tabela = (DefaultTableModel) this.telaBuscaFornecedor.getjTDados().getModel();
             
             for (Fornecedor fornecedorAtual : DAO.ClasseDados.listaFornecedor) {
-                tabela.addRow(new Object[]{fornecedorAtual.getId(), fornecedorAtual.getCnpj(), fornecedorAtual.getRazaoSocial(), fornecedorAtual.getInscricaoEstadual()});
+                tabela.addRow(new Object[]{fornecedorAtual.getId(), fornecedorAtual.getNome(), fornecedorAtual.getCnpj(), fornecedorAtual.getRazaoSocial(), fornecedorAtual.getInscricaoEstadual()});
             }
             
         }else if (e.getSource() == this.telaBuscaFornecedor.getjBSair()){

@@ -18,6 +18,13 @@ public class Carteirinha {
         this.dataCancelamento = dataCancelamento;
         this.cliente = cliente;
     }
+    
+    public Carteirinha(int id, String codigoBarra, String dataGeracao) {
+        this.id = id;
+        this.codigoBarra = codigoBarra;
+        this.dataGeracao = dataGeracao;
+        
+    }
 
     public int getId() {
         return id;

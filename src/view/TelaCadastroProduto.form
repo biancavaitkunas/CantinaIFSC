@@ -159,8 +159,8 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jTFNome" alignment="0" min="-2" pref="378" max="-2" attributes="0"/>
-                              <Component id="jLNumero" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jTFDescricao" alignment="0" min="-2" pref="378" max="-2" attributes="0"/>
+                              <Component id="jLDescricao" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="38" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -192,12 +192,12 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLNumero" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLDescricao" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLID" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jTFNome" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTFDescricao" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jTFID" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="39" max="32767" attributes="0"/>
@@ -235,12 +235,12 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTFCodigoBarraActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLNumero">
+        <Component class="javax.swing.JLabel" name="jLDescricao">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="PMingLiU-ExtB" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Nome"/>
+            <Property name="text" type="java.lang.String" value="Descri&#xe7;&#xe3;o"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLCodigoBarra">
@@ -259,9 +259,9 @@
             <Property name="text" type="java.lang.String" value="Status"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTFNome">
+        <Component class="javax.swing.JTextField" name="jTFDescricao">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTFNomeActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTFDescricaoActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="jTFID">

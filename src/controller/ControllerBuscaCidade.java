@@ -3,6 +3,7 @@ package controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.table.DefaultTableModel;
+import model.Bairro;
 import model.Cidade;
 import view.TelaBuscaCidade;
 
@@ -21,26 +22,26 @@ public class ControllerBuscaCidade implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == this.telaBuscaCidade.getjBFiltrar()){
+        if(e.getSource() == this.telaBuscaCidade.getjBCarregar()){
+            
+         controller.ControllerCadastroBairro.codigo =  (int) this.telaBuscaCidade.
+                                                            getjTDados().
+                                                            getValueAt(this.telaBuscaCidade.getjTDados().getSelectedRow(), 0);
+            
+         this.telaBuscaCidade.dispose();
+        }else if (e.getSource() == this.telaBuscaCidade.getjBFiltrar()){
+            //Criando/Carregando uma instancia da classe singleton de dados
             DAO.ClasseDados.getInstance();
             
-            DefaultTableModel tabela = (DefaultTableModel) this.telaBuscaCidade.getjTDados().getModel();
+            //Criar um objeto do tipo TableModel
+            DefaultTableModel tabela =  (DefaultTableModel) this.telaBuscaCidade.getjTDados().getModel();
             for (Cidade cidadeAtual : DAO.ClasseDados.listaCidade) {
                 tabela.addRow(new Object[]{cidadeAtual.getId(), cidadeAtual.getDescricao(), cidadeAtual.getUf()});
             }
-        }else if (e.getSource() == this.telaBuscaCidade.getjBSair()){
             
-            
-            
-            
-        }else if (e.getSource() == this.telaBuscaCidade.getjBCarregar()){
-            controller.ControllerCadastroBairro.codigo = (int) this.telaBuscaCidade.getjTDados().getValueAt
-            (this.telaBuscaCidade.getjTDados().getSelectedRow(), 0);
-            
+        }else if(e.getSource() == this.telaBuscaCidade.getjBSair()){
             this.telaBuscaCidade.dispose();
         }
-        
-       
             
     }
     

@@ -24,6 +24,11 @@ public abstract class Pessoa {   //abstract impede que a classe seja instanciada
         this.complementoEndereco = complementoEndereco;
         this.endereco = endereco;
     }
+    
+    public Pessoa(int id, String nome) {
+        this.id = id;
+        this.nome = nome;
+    }
 
     public int getId() {
         return id;

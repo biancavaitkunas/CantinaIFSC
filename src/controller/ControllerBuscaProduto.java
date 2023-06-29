@@ -3,7 +3,6 @@ package controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.table.DefaultTableModel;
-import model.Bairro;
 import model.Produto;
 import view.TelaBuscaProduto;
 
@@ -13,6 +12,8 @@ public class ControllerBuscaProduto implements ActionListener{
     TelaBuscaProduto telaBuscaProduto;
     
     public ControllerBuscaProduto (TelaBuscaProduto telaBuscaProduto){
+        
+        this.telaBuscaProduto = telaBuscaProduto;
         this.telaBuscaProduto.getjBFiltrar().addActionListener(this);
         this.telaBuscaProduto.getjBCarregar().addActionListener(this);
         this.telaBuscaProduto.getjBSair().addActionListener(this);
@@ -29,7 +30,7 @@ public class ControllerBuscaProduto implements ActionListener{
             //Criar objeto de tipo TableModel
             DefaultTableModel tabela = (DefaultTableModel) this.telaBuscaProduto.getjTDados().getModel();
             
-            for (Produto produtoAtual : DAO.ClasseDados.listaProdutos) {
+            for (Produto produtoAtual : DAO.ClasseDados.listaProduto) {
                 tabela.addRow(new Object[]{produtoAtual.getId(), produtoAtual.getDescricao(), produtoAtual.getCodigoBarra()});
             }
             

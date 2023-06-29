@@ -4,8 +4,12 @@
  */
 package view;
 
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -42,6 +46,68 @@ public class TelaCadastroCarteirinha extends javax.swing.JDialog {
     public JButton getjBSair() {
         return jBSair;
     }
+
+    public ButtonGroup getButtonGroup1() {
+        return buttonGroup1;
+    }
+
+    public JLabel getjLCodigoBarras() {
+        return jLCodigoBarras;
+    }
+
+    public JLabel getjLDataCancelamento() {
+        return jLDataCancelamento;
+    }
+
+    public JLabel getjLDataGeracao() {
+        return jLDataGeracao;
+    }
+
+    public JLabel getjLID() {
+        return jLID;
+    }
+
+    public JLabel getjLMatricula() {
+        return jLMatricula;
+    }
+
+    public JLabel getjLNome() {
+        return jLNome;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public JMenu getjMenu1() {
+        return jMenu1;
+    }
+
+    public JMenu getjMenu2() {
+        return jMenu2;
+    }
+
+    public JMenuBar getjMenuBar1() {
+        return jMenuBar1;
+    }
+
+    public JPanel getjPTitulo() {
+        return jPTitulo;
+    }
+
+    public JTextField getjTFMatricula() {
+        return jTFMatricula;
+    }
+
+    public JTextField getjTFNome() {
+        return jTFNome;
+    }
+    
+    
 
     public JFormattedTextField getjFTFDataCancelamento() {
         return jFTFDataCancelamento;

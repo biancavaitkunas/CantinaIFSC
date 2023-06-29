@@ -21,12 +21,13 @@ public class ControllerBuscaEndereco implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this.telaBuscaEndereco.getjBCarregar()){
+            controller.ControllerCadastroBairro.codigo =  (int) this.telaBuscaEndereco.
+                                                            getjTDados().
+                                                            getValueAt(this.telaBuscaEndereco.getjTDados().getSelectedRow(), 0);
             
         }else if (e.getSource() == this.telaBuscaEndereco.getjBFiltrar()){
-            //Criando/carregando uma instancia da classe singleton de dados
             DAO.ClasseDados.getInstance();
             
-            //Criar objeto de tipo TableModel
             DefaultTableModel tabela = (DefaultTableModel) this.telaBuscaEndereco.getjTDados().getModel();
             
             for (Endereco enderecoAtual : DAO.ClasseDados.listaEndereco) {
@@ -34,7 +35,7 @@ public class ControllerBuscaEndereco implements ActionListener{
             }
             
         }else if (e.getSource() == this.telaBuscaEndereco.getjBSair()){
-            
+            this.telaBuscaEndereco.dispose();
         }
     }
     

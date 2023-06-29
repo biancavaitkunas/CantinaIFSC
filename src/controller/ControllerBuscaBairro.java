@@ -1,4 +1,3 @@
-
 package controller;
 
 import java.awt.event.ActionEvent;
@@ -10,37 +9,40 @@ import view.TelaBuscaBairro;
 
 public class ControllerBuscaBairro implements ActionListener {
 
-    TelaBuscaBairro telabuscaBairro;
+    TelaBuscaBairro telaBuscaBairro;
 
     public ControllerBuscaBairro(TelaBuscaBairro telabuscaBairro) {
 
-        this.telabuscaBairro = telabuscaBairro;
+        this.telaBuscaBairro = telabuscaBairro;
 
-        this.telabuscaBairro.getjBFiltrar().addActionListener(this);
-        this.telabuscaBairro.getjBCarregar().addActionListener(this);
-        this.telabuscaBairro.getjBSair().addActionListener(this);
+        this.telaBuscaBairro.getjBFiltrar().addActionListener(this);
+        this.telaBuscaBairro.getjBCarregar().addActionListener(this);
+        this.telaBuscaBairro.getjBSair().addActionListener(this);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        if (e.getSource() == this.telabuscaBairro.getjBFiltrar()) {
-            //Criando/carregando uma instancia da classe singleton de dados
+        if(e.getSource() == this.telaBuscaBairro.getjBCarregar()){
+            
+         controller.ControllerCadastroBairro.codigo =  (int) this.telaBuscaBairro.
+                                                            getjTDados().
+                                                            getValueAt(this.telaBuscaBairro.getjTDados().getSelectedRow(), 0);
+            
+         this.telaBuscaBairro.dispose();
+        }else if (e.getSource() == this.telaBuscaBairro.getjBFiltrar()){
+            //Criando/Carregando uma instancia da classe singleton de dados
             DAO.ClasseDados.getInstance();
-
-            //Criar objeto de tipo TableModel
-            DefaultTableModel tabela = (DefaultTableModel) this.telabuscaBairro.getjTDados().getModel();
-
+            
+            //Criar um objeto do tipo TableModel
+            DefaultTableModel tabela =  (DefaultTableModel) this.telaBuscaBairro.getjTDados().getModel();
             for (Bairro bairroAtual : DAO.ClasseDados.listaBairro) {
-                tabela.addRow(new Object[]{bairroAtual.getId(), bairroAtual.getDescricao()});
+                tabela.addRow(new Object[]{bairroAtual.getId(), 
+                                           bairroAtual.getDescricao()});
             }
-        }else if(e.getSource() == this.telabuscaBairro.getjBSair()){
             
-        }else if(e.getSource() == this.telabuscaBairro.getjBCarregar()){
-            controller.ControllerCadastroBairro.codigo = (int) this.telabuscaBairro.getjTDados().getValueAt
-            (this.telabuscaBairro.getjTDados().getSelectedRow(), 0);
-            
-            this.telabuscaBairro.dispose();
+        }else if(e.getSource() == this.telaBuscaBairro.getjBSair()){
+            this.telaBuscaBairro.dispose();
         }
     }
 

@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
- */
 package view;
 
 import javax.swing.ButtonGroup;
@@ -13,15 +9,8 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
-/**
- *
- * @author bianc
- */
 public class TelaCadastroFornecedor extends javax.swing.JDialog {
 
-    /**
-     * Creates new form TelaCadastroEndereco
-     */
     public TelaCadastroFornecedor(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -63,6 +52,152 @@ public class TelaCadastroFornecedor extends javax.swing.JDialog {
         this.jPCorpo = jPCorpo;
         this.jPRodape = jPRodape;
     }
+
+    public ButtonGroup getButtonGroup1() {
+        return buttonGroup1;
+    }
+
+    public JLabel getjLBairro() {
+        return jLBairro;
+    }
+
+    public JLabel getjLCEP() {
+        return jLCEP;
+    }
+
+    public JLabel getjLCNPJ() {
+        return jLCNPJ;
+    }
+
+    public JLabel getjLCidade() {
+        return jLCidade;
+    }
+
+    public JLabel getjLComplemento() {
+        return jLComplemento;
+    }
+
+    public JLabel getjLEmail() {
+        return jLEmail;
+    }
+
+    public JLabel getjLID() {
+        return jLID;
+    }
+
+    public JLabel getjLInscricaoEstadual() {
+        return jLInscricaoEstadual;
+    }
+
+    public JLabel getjLLogradouro() {
+        return jLLogradouro;
+    }
+
+    public JLabel getjLNome() {
+        return jLNome;
+    }
+
+    public JLabel getjLRazaoSocial() {
+        return jLRazaoSocial;
+    }
+
+    public JLabel getjLStatus() {
+        return jLStatus;
+    }
+
+    public JLabel getjLTelefone1() {
+        return jLTelefone1;
+    }
+
+    public JLabel getjLTelefone2() {
+        return jLTelefone2;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public JMenu getjMenu1() {
+        return jMenu1;
+    }
+
+    public JMenu getjMenu2() {
+        return jMenu2;
+    }
+
+    public JMenuBar getjMenuBar1() {
+        return jMenuBar1;
+    }
+
+    public JPanel getjPTitulo() {
+        return jPTitulo;
+    }
+
+    public JRadioButton getjRBAtivo() {
+        return jRBAtivo;
+    }
+
+    public JRadioButton getjRBInativo() {
+        return jRBInativo;
+    }
+
+    public JTextField getjTFBairro() {
+        return jTFBairro;
+    }
+
+    public JTextField getjTFCNPJ() {
+        return jTFCNPJ;
+    }
+
+    public JTextField getjTFCidade() {
+        return jTFCidade;
+    }
+
+    public JTextField getjTFComplemento() {
+        return jTFComplemento;
+    }
+
+    public JTextField getjTFEmail() {
+        return jTFEmail;
+    }
+
+    public JTextField getjTFID() {
+        return jTFID;
+    }
+
+    public JTextField getjTFInscricaoEstadual() {
+        return jTFInscricaoEstadual;
+    }
+
+    public JTextField getjTFLogradouro() {
+        return jTFLogradouro;
+    }
+
+    public JTextField getjTFNome() {
+        return jTFNome;
+    }
+
+    public JTextField getjTFRazaoSocial() {
+        return jTFRazaoSocial;
+    }
+
+    public JTextField getjTFTelefone1() {
+        return jTFTelefone1;
+    }
+
+    public JTextField getjTFTelefone2() {
+        return jTFTelefone2;
+    }
+
+    public JTextField getjTextField7() {
+        return jTextField7;
+    }
+    
+    
 
     public TelaCadastroFornecedor(ButtonGroup buttonGroup1, JButton jBBuscar, JButton jBCancelar, JButton jBGravar, JButton jBNovo, JButton jBSair, JLabel jLBairro, JLabel jLCEP, JLabel jLCNPJ, JLabel jLCidade, JLabel jLComplemento, JLabel jLEmail, JLabel jLID, JLabel jLInscricaoEstadual, JLabel jLLogradouro, JLabel jLNome, JLabel jLRazaoSocial, JLabel jLStatus, JLabel jLTelefone1, JLabel jLTelefone2, JLabel jLabel1, JLabel jLabel2, JMenu jMenu1, JMenu jMenu2, JMenuBar jMenuBar1, JPanel jPCorpo, JPanel jPRodape, JPanel jPTitulo, JRadioButton jRBAtivo, JRadioButton jRBInativo, JTextField jTFBairro, JTextField jTFCNPJ, JTextField jTFCidade, JTextField jTFComplemento, JTextField jTFEmail, JTextField jTFID, JTextField jTFInscricaoEstadual, JTextField jTFLogradouro, JTextField jTFNome, JTextField jTFRazaoSocial, JTextField jTFTelefone1, JTextField jTFTelefone2, JTextField jTextField7) {
         this.buttonGroup1 = buttonGroup1;
@@ -132,7 +267,6 @@ public class TelaCadastroFornecedor extends javax.swing.JDialog {
         jTFEmail = new javax.swing.JTextField();
         jLCNPJ = new javax.swing.JLabel();
         jTFTelefone1 = new javax.swing.JTextField();
-        jTFInscricaoEstadual = new javax.swing.JTextField();
         jLInscricaoEstadual = new javax.swing.JLabel();
         jTFTelefone2 = new javax.swing.JTextField();
         jLNome = new javax.swing.JLabel();
@@ -158,6 +292,7 @@ public class TelaCadastroFornecedor extends javax.swing.JDialog {
         jTFComplemento = new javax.swing.JTextField();
         jRBAtivo = new javax.swing.JRadioButton();
         jRBInativo = new javax.swing.JRadioButton();
+        jTFInscricaoEstadual = new javax.swing.JTextField();
         jPRodape = new javax.swing.JPanel();
         jBNovo = new javax.swing.JButton();
         jBCancelar = new javax.swing.JButton();
@@ -223,8 +358,6 @@ public class TelaCadastroFornecedor extends javax.swing.JDialog {
                 jTFTelefone1ActionPerformed(evt);
             }
         });
-
-        jTFInscricaoEstadual.setForeground(new java.awt.Color(255, 255, 255));
 
         jLInscricaoEstadual.setFont(new java.awt.Font("PMingLiU-ExtB", 1, 14)); // NOI18N
         jLInscricaoEstadual.setText("Inscrição Estadual");
@@ -336,6 +469,12 @@ public class TelaCadastroFornecedor extends javax.swing.JDialog {
             }
         });
 
+        jTFInscricaoEstadual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTFInscricaoEstadualActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPCorpoLayout = new javax.swing.GroupLayout(jPCorpo);
         jPCorpo.setLayout(jPCorpoLayout);
         jPCorpoLayout.setHorizontalGroup(
@@ -365,10 +504,10 @@ public class TelaCadastroFornecedor extends javax.swing.JDialog {
                                 .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(jPCorpoLayout.createSequentialGroup()
                         .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTFInscricaoEstadual, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLID, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLInscricaoEstadual))
-                        .addGap(18, 18, 18)
+                            .addComponent(jLInscricaoEstadual)
+                            .addComponent(jTFInscricaoEstadual, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPCorpoLayout.createSequentialGroup()
                                 .addComponent(jTFTelefone1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -434,9 +573,10 @@ public class TelaCadastroFornecedor extends javax.swing.JDialog {
                     .addComponent(jLCNPJ))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTFTelefone1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTFInscricaoEstadual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTFTelefone1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTFInscricaoEstadual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jTFTelefone2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jTFCNPJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
@@ -639,6 +779,10 @@ public class TelaCadastroFornecedor extends javax.swing.JDialog {
     private void jTFTelefone1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFTelefone1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTFTelefone1ActionPerformed
+
+    private void jTFInscricaoEstadualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFInscricaoEstadualActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTFInscricaoEstadualActionPerformed
 
     /**
      * @param args the command line arguments

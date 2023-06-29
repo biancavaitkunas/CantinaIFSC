@@ -7,7 +7,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-public class utilities {
+public class Utilities {
 
     public static void ativaDesativa(boolean ativa, JPanel painel) {
 

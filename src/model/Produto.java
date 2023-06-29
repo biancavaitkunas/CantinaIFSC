@@ -16,6 +16,12 @@ public class Produto {
         this.codigoBarra = codigoBarra;
         this.status = status;
     }
+    
+    public Produto(int id, String descricao, String codigoBarra) {
+        this.id = id;
+        this.descricao = descricao;
+        this.codigoBarra = codigoBarra;
+    }
 
     public int getId() {
         return id;

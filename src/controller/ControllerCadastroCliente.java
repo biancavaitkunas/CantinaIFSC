@@ -2,12 +2,14 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import model.Cliente;
 import view.TelaCadastroCliente;
 
 import view.TelaBuscaCliente;
 public class ControllerCadastroCliente implements ActionListener{
     
     TelaCadastroCliente  telaCadastroCliente;
+    public static int codigo;
     
     public ControllerCadastroCliente (TelaCadastroCliente  telaCadastroCliente){
         
@@ -19,25 +21,57 @@ public class ControllerCadastroCliente implements ActionListener{
         this.telaCadastroCliente.getjBCancelar().addActionListener(this);
         this.telaCadastroCliente.getjBGravar().addActionListener(this);
         
-        utilities.utilities.ativaDesativa(true, this.telaCadastroCliente.getjPRodape());
-        utilities.utilities.limpaComponentes(false, this.telaCadastroCliente.getjPCorpo());
+        utilities.Utilities.ativaDesativa(true, this.telaCadastroCliente.getjPRodape());
+        utilities.Utilities.limpaComponentes(false, this.telaCadastroCliente.getjPCorpo());
 }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this.telaCadastroCliente.getjBNovo()){
-            utilities.utilities.ativaDesativa(true, this.telaCadastroCliente.getjPRodape());
-            utilities.utilities.limpaComponentes(false, this.telaCadastroCliente.getjPCorpo());
+            utilities.Utilities.ativaDesativa(false, this.telaCadastroCliente.getjPRodape());
+            utilities.Utilities.limpaComponentes(true, this.telaCadastroCliente.getjPCorpo());
+            this.telaCadastroCliente.getjTFID().setEnabled(false);
+            
         }else if (e.getSource() == this.telaCadastroCliente.getjBCancelar()){
-            utilities.utilities.ativaDesativa(false, this.telaCadastroCliente.getjPRodape());
-            utilities.utilities.limpaComponentes(true, this.telaCadastroCliente.getjPCorpo());
+            utilities.Utilities.ativaDesativa(true, this.telaCadastroCliente.getjPRodape());
+            utilities.Utilities.limpaComponentes(false, this.telaCadastroCliente.getjPCorpo());
+            
         } else if (e.getSource() == this.telaCadastroCliente.getjBGravar()){
-            utilities.utilities.ativaDesativa(false, this.telaCadastroCliente.getjPRodape());
-            utilities.utilities.limpaComponentes(true, this.telaCadastroCliente.getjPCorpo());
+            
+            Cliente cliente = new Cliente();
+            cliente.setId(DAO.ClasseDados.listaCidade.size() +1);
+            cliente.setNome(this.telaCadastroCliente.getjTFNome().getText());
+            cliente.setCpf(this.telaCadastroCliente.getjTFCPF().getText());
+            cliente.setMatricula(this.telaCadastroCliente.getjTFMatricula().getText());
+
+            if (this.telaCadastroCliente.getjTFID().getText().equalsIgnoreCase("")){
+            DAO.ClasseDados.listaCliente.add(cliente);
+            }else{
+            //inserir codigo para alterar na lista
+            }
+            utilities.Utilities.ativaDesativa(true, this.telaCadastroCliente.getjPRodape());
+            utilities.Utilities.limpaComponentes(false, this.telaCadastroCliente.getjPCorpo());
+            
         } else if (e.getSource() == this.telaCadastroCliente.getjBBuscar()){
+            codigo = 0;
             TelaBuscaCliente telaBuscaCliente = new TelaBuscaCliente (null, true);
-            //Inserir o controller da busca d bairros
+            ControllerBuscaCliente controllerBuscaCliente = new ControllerBuscaCliente(telaBuscaCliente);
             telaBuscaCliente.setVisible(true);
+            
+            if (codigo != 0){
+            Cliente  cliente = new Cliente();
+            cliente = DAO.ClasseDados.listaCliente.get(codigo-1);
+            utilities.Utilities.ativaDesativa(true, this.telaCadastroCliente.getjPRodape());
+            utilities.Utilities.limpaComponentes(false, this.telaCadastroCliente.getjPCorpo());
+            
+            this.telaCadastroCliente.getjTFID().setText(cliente.getId() + " ");
+            this.telaCadastroCliente.getjTFNome().setText(cliente.getNome());
+            this.telaCadastroCliente.getjTFCPF().setText(cliente.getCpf());
+            this.telaCadastroCliente.getjTFMatricula().setText(cliente.getMatricula());
+            this.telaCadastroCliente.getjTFID().setEnabled(false);
+            }
+
+            
         } else if (e.getSource() == this.telaCadastroCliente.getjBSair()){
             this.telaCadastroCliente.dispose();
         }

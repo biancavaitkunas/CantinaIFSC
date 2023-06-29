@@ -1,5 +1,6 @@
 package controller;
 
+import static DAO.ClasseDados.listaCliente;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.table.DefaultTableModel;
@@ -9,30 +10,31 @@ import view.TelaBuscaCliente;
 
 public class ControllerBuscaCliente implements ActionListener{
     
-    TelaBuscaCliente telabuscaCliente;
+    TelaBuscaCliente telaBuscaCliente;
     
     public ControllerBuscaCliente (TelaBuscaCliente telabuscaCliente){
-        this.telabuscaCliente.getjBFiltrar().addActionListener(this);
-        this.telabuscaCliente.getjBCarregar().addActionListener(this);
-        this.telabuscaCliente.getjBSair().addActionListener(this);
+        this.telaBuscaCliente = telabuscaCliente;
+        this.telaBuscaCliente.getjBFiltrar().addActionListener(this);
+        this.telaBuscaCliente.getjBCarregar().addActionListener(this);
+        this.telaBuscaCliente.getjBSair().addActionListener(this);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == this.telabuscaCliente.getjBCarregar()){
+        if (e.getSource() == this.telaBuscaCliente.getjBCarregar()){
             
-        }else if (e.getSource() == this.telabuscaCliente.getjBFiltrar()){
+        }else if (e.getSource() == this.telaBuscaCliente.getjBFiltrar()){
             //Criando/carregando uma instancia da classe singleton de dados
             DAO.ClasseDados.getInstance();
             
             //Criar objeto de tipo TableModel
-            DefaultTableModel tabela = (DefaultTableModel) this.telabuscaCliente.getjTDados().getModel();
+            DefaultTableModel tabela = (DefaultTableModel) this.telaBuscaCliente.getjTDados().getModel();
             
-            for (Cliente clienteAtual : DAO.ClasseDados.clientes) {
-                tabela.addRow(new Object[]{clienteAtual.getId(), clienteAtual.getMatricula(), clienteAtual.getCpf()});
+            for (Cliente clienteAtual : DAO.ClasseDados.listaCliente) {
+                tabela.addRow(new Object[]{clienteAtual.getId(), clienteAtual.getNome(), clienteAtual.getMatricula(), clienteAtual.getCpf()});
             }
             
-        }else if (e.getSource() == this.telabuscaCliente.getjBSair()){
+        }else if (e.getSource() == this.telaBuscaCliente.getjBSair()){
             
         }
     }

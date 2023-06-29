@@ -12,6 +12,8 @@ public class ControllerBuscaCarteirinha implements ActionListener{
     TelaBuscaCarteirinha telabuscaCarteirinha;
     
     public ControllerBuscaCarteirinha (TelaBuscaCarteirinha telabuscaCarteirinha){
+        
+        this.telabuscaCarteirinha = telabuscaCarteirinha;
         this.telabuscaCarteirinha.getjBFiltrar().addActionListener(this);
         this.telabuscaCarteirinha.getjBCarregar().addActionListener(this);
         this.telabuscaCarteirinha.getjBSair().addActionListener(this);
@@ -29,7 +31,7 @@ public class ControllerBuscaCarteirinha implements ActionListener{
             DefaultTableModel tabela = (DefaultTableModel) this.telabuscaCarteirinha.getjTDados().getModel();
             
             for (Carteirinha carteirinhaAtual : DAO.ClasseDados.listaCarteirinha) {
-                tabela.addRow(new Object[]{carteirinhaAtual.getId(), carteirinhaAtual.getCodigoBarra()});
+                tabela.addRow(new Object[]{carteirinhaAtual.getId(), carteirinhaAtual.getCodigoBarra(), carteirinhaAtual.getDataGeracao()});
             }
             
         }else if (e.getSource() == this.telabuscaCarteirinha.getjBSair()){
