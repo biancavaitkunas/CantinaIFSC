@@ -58,7 +58,7 @@ public class ControllerCadastroBairro implements ActionListener {
             TelaBuscaBairro telaBuscaBairro = new TelaBuscaBairro(null, true);
             ControllerBuscaBairro controllerBuscaBairro = new ControllerBuscaBairro(telaBuscaBairro);
             telaBuscaBairro.setVisible(true);
-
+            {
             if (codigo != 0) {
                 Bairro bairro = new Bairro();
                 bairro = DAO.ClasseDados.listaBairro.get(codigo -1);
@@ -68,7 +68,7 @@ public class ControllerCadastroBairro implements ActionListener {
                 this.telaCadastroBairro.getjTFID().setText(bairro.getId() + "");
                 this.telaCadastroBairro.getjTFDescricao().setText(bairro.getDescricao());
                 this.telaCadastroBairro.getjTFID().setEnabled(false);
-            }
+            }}
 
         } else if (e.getSource() == this.telaCadastroBairro.getjBSair()) {
             this.telaCadastroBairro.dispose();

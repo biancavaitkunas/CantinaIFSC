@@ -213,7 +213,6 @@ public class TelaCadastroProduto extends javax.swing.JDialog {
         jLProduto = new javax.swing.JLabel();
         jPCorpo = new javax.swing.JPanel();
         jLID = new javax.swing.JLabel();
-        jTFCodigoBarra = new javax.swing.JTextField();
         jLDescricao = new javax.swing.JLabel();
         jLCodigoBarra = new javax.swing.JLabel();
         jLStatus = new javax.swing.JLabel();
@@ -221,6 +220,7 @@ public class TelaCadastroProduto extends javax.swing.JDialog {
         jTFID = new javax.swing.JTextField();
         jRBAtivo = new javax.swing.JRadioButton();
         jRBInativo = new javax.swing.JRadioButton();
+        jTFCodigoBarra = new javax.swing.JTextField();
         jPRodape = new javax.swing.JPanel();
         jBNovo = new javax.swing.JButton();
         jBCancelar = new javax.swing.JButton();
@@ -278,13 +278,6 @@ public class TelaCadastroProduto extends javax.swing.JDialog {
         jLID.setFont(new java.awt.Font("PMingLiU-ExtB", 1, 14)); // NOI18N
         jLID.setText("ID");
 
-        jTFCodigoBarra.setForeground(new java.awt.Color(255, 255, 255));
-        jTFCodigoBarra.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTFCodigoBarraActionPerformed(evt);
-            }
-        });
-
         jLDescricao.setFont(new java.awt.Font("PMingLiU-ExtB", 1, 14)); // NOI18N
         jLDescricao.setText("Descrição");
 
@@ -322,6 +315,12 @@ public class TelaCadastroProduto extends javax.swing.JDialog {
             }
         });
 
+        jTFCodigoBarra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTFCodigoBarraActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPCorpoLayout = new javax.swing.GroupLayout(jPCorpo);
         jPCorpo.setLayout(jPCorpoLayout);
         jPCorpoLayout.setHorizontalGroup(
@@ -344,8 +343,8 @@ public class TelaCadastroProduto extends javax.swing.JDialog {
                         .addComponent(jLStatus)
                         .addGap(188, 188, 188))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPCorpoLayout.createSequentialGroup()
-                        .addComponent(jTFCodigoBarra, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(31, 31, 31)
+                        .addComponent(jTFCodigoBarra, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
                         .addComponent(jRBAtivo)
                         .addGap(18, 18, 18)
                         .addComponent(jRBInativo)
@@ -368,9 +367,9 @@ public class TelaCadastroProduto extends javax.swing.JDialog {
                     .addComponent(jLStatus))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTFCodigoBarra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jRBAtivo)
-                    .addComponent(jRBInativo))
+                    .addComponent(jRBInativo)
+                    .addComponent(jTFCodigoBarra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(43, Short.MAX_VALUE))
         );
 

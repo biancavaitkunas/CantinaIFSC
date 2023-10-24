@@ -23,6 +23,10 @@ public class ControllerBuscaProduto implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this.telaBuscaProduto.getjBCarregar()){
             
+            controller.ControllerCadastroProduto.codigo =  (int) this.telaBuscaProduto.
+                                                            getjTDados().
+                                                            getValueAt(this.telaBuscaProduto.getjTDados().getSelectedRow(), 0);
+            
         }else if (e.getSource() == this.telaBuscaProduto.getjBFiltrar()){
             //Criando/carregando uma instancia da classe singleton de dados
             DAO.ClasseDados.getInstance();
@@ -35,7 +39,7 @@ public class ControllerBuscaProduto implements ActionListener{
             }
             
         }else if (e.getSource() == this.telaBuscaProduto.getjBSair()){
-            
+            this.telaBuscaProduto.dispose();
         }
     }
     

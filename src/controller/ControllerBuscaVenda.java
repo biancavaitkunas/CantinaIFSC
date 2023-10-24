@@ -20,6 +20,9 @@ public class ControllerBuscaVenda implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this.telaBuscaVenda.getjBCarregar()){
+            controller.ControllerCadastroProduto.codigo =  (int) this.telaBuscaVenda.
+                                                            getjTDados().
+                                                            getValueAt(this.telaBuscaVenda.getjTDados().getSelectedRow(), 0);
             
         }else if (e.getSource() == this.telaBuscaVenda.getjBFiltrar()){
             //Criando/carregando uma instancia da classe singleton de dados

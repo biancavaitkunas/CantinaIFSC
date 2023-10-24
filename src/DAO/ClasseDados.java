@@ -82,9 +82,9 @@ public class ClasseDados {
         listaEndereco.add(endereco1);
         listaEndereco.add(endereco2);
         listaEndereco.add(endereco3);
-        Cliente cliente1 = new Cliente (1, "Cliente 1", "235698840", "123.456.789-10");
-        Cliente cliente2 = new Cliente (2, "Cliente 2", "235698840", "123.456.789-10");
-        Cliente cliente3 = new Cliente (3, "Cliente 3", "235698840", "123.456.789-10");
+        Cliente cliente1 = new Cliente (1, "Cliente 1", "235698840", "123.456.789-10", "20/05/2001", "1");
+        Cliente cliente2 = new Cliente (2, "Cliente 2", "235698840", "123.456.789-10", "10/07/2005", "1");
+        Cliente cliente3 = new Cliente (3, "Cliente 3", "235698840", "123.456.789-10", "05/12/2004", "1");
         listaCliente.add(cliente1);
         listaCliente.add(cliente2);
         listaCliente.add(cliente3);

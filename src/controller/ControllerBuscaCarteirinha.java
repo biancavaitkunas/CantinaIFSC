@@ -27,10 +27,8 @@ public class ControllerBuscaCarteirinha implements ActionListener{
                                                             getValueAt(this.telabuscaCarteirinha.getjTDados().getSelectedRow(), 0);
             
         }else if (e.getSource() == this.telabuscaCarteirinha.getjBFiltrar()){
-            //Criando/carregando uma instancia da classe singleton de dados
             DAO.ClasseDados.getInstance();
             
-            //Criar objeto de tipo TableModel
             DefaultTableModel tabela = (DefaultTableModel) this.telabuscaCarteirinha.getjTDados().getModel();
             
             for (Carteirinha carteirinhaAtual : DAO.ClasseDados.listaCarteirinha) {

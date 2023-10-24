@@ -127,6 +127,11 @@ public class TelaMenuPrincipal extends javax.swing.JFrame {
         jMcadastros.add(jSeparator3);
 
         jMISair.setText("Sair");
+        jMISair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMISairActionPerformed(evt);
+            }
+        });
         jMcadastros.add(jMISair);
 
         jMenuBar1.add(jMcadastros);
@@ -248,6 +253,10 @@ public class TelaMenuPrincipal extends javax.swing.JFrame {
         ControllerCadastroMovimentacaoEstoque controllerCadastroMovimentacaoEstoque = new ControllerCadastroMovimentacaoEstoque(telaCadastroMovimentacaoEstoque);
         telaCadastroMovimentacaoEstoque.setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMISairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMISairActionPerformed
+        dispose();
+    }//GEN-LAST:event_jMISairActionPerformed
 
    
     public static void main(String args[]) {

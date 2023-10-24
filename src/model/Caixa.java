@@ -5,7 +5,7 @@ public class Caixa {
     private int id;
     private String dataHoraAbertura;
     private String dataHoraFechamento;
-    private float valorAbertuda;
+    private float valorAbertura;
     private float valorFechamento;
     private String observacao;
     private char status;
@@ -19,7 +19,7 @@ public class Caixa {
         this.id = id;
         this.dataHoraAbertura = dataHoraAbertura;
         this.dataHoraFechamento = dataHoraFechamento;
-        this.valorAbertuda = valorAbertuda;
+        this.valorAbertura = valorAbertuda;
         this.valorFechamento = valorFechamento;
         this.observacao = observacao;
         this.status = status;
@@ -42,12 +42,12 @@ public class Caixa {
         this.dataHoraAbertura = dataHoraAbertura;
     }
 
-    public float getValorAbertuda() {
-        return valorAbertuda;
+    public float getValorAbertura() {
+        return valorAbertura;
     }
 
     public void setValorAbertuda(float valorAbertuda) {
-        this.valorAbertuda = valorAbertuda;
+        this.valorAbertura = valorAbertuda;
     }
 
     public float getValorFechamento() {
@@ -95,7 +95,7 @@ public class Caixa {
         return this.getId() + "/n , "
                 + this.getDataHoraAbertura() + "/n , "
                 + this.getDataHoraFechamento() + "/n , "
-                + this.getValorAbertuda() + "/n , "
+                + this.getValorAbertura() + "/n , "
                 + this.getValorFechamento() + "/n , "
                 + this.getObservacao() + "/n , "
                 + this.funcionario.getId() + "/n , "

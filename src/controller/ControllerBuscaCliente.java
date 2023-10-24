@@ -1,6 +1,5 @@
 package controller;
 
-import static DAO.ClasseDados.listaCliente;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.table.DefaultTableModel;
@@ -34,7 +33,8 @@ public class ControllerBuscaCliente implements ActionListener{
             DefaultTableModel tabela = (DefaultTableModel) this.telaBuscaCliente.getjTDados().getModel();
             
             for (Cliente clienteAtual : DAO.ClasseDados.listaCliente) {
-                tabela.addRow(new Object[]{clienteAtual.getId(), clienteAtual.getNome(), clienteAtual.getMatricula(), clienteAtual.getCpf()});
+                tabela.addRow(new Object[]{clienteAtual.getId(), clienteAtual.getNome(), clienteAtual.getRg(), clienteAtual.getCpf(),
+                    clienteAtual.getDataNascimento(), clienteAtual.getMatricula()});
             }
             
         }else if (e.getSource() == this.telaBuscaCliente.getjBSair()){

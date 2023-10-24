@@ -46,7 +46,7 @@ public class ControllerCadastroEndereco implements ActionListener {
 
             if (this.telaCadastroEndereco.getjTFID().getText().equalsIgnoreCase("")){
             DAO.ClasseDados.listaEndereco.add(endereco);
-            }else{
+            }else {
             //inserir codigo para alterar na lista
             DAO.ClasseDados.listaEndereco.remove(endereco);
             Endereco enderecoAlterado = new Endereco();

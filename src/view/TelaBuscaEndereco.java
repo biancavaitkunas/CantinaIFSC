@@ -112,7 +112,7 @@ public class TelaBuscaEndereco extends javax.swing.JDialog {
 
             },
             new String [] {
-                "ID", "CEP", "Logradouro", "Bairro", "Cidade"
+                "ID", "CEP", "Logradouro"
             }
         ));
         jScrollPane2.setViewportView(jTDados);
