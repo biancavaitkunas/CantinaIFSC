@@ -9,7 +9,7 @@ import java.sql.SQLException;
 public class CidadeDAO implements InterfaceDAO<Cidade>{
 
     @Override
-    public void Creat(Cidade objeto) {
+    public void create(Cidade objeto) {
         
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "INSERT INTO cidade (descricao, uf) VALUES (?, ?)";
@@ -31,26 +31,26 @@ public class CidadeDAO implements InterfaceDAO<Cidade>{
     }
 
     @Override
-    public List<Cidade> Retrieve() {
+    public List<Cidade> retrieve() {
         return null;
     }
 
     @Override
-    public Cidade Retrieve(int parRk) {
+    public Cidade retrieve(int parRk) {
         return null;
     }
 
     @Override
-    public Cidade Retrieve(String parString) {
+    public Cidade retrieve(String parString) {
         return null;
     }
 
     @Override
-    public void Update(Cidade objeto) {
+    public void update(Cidade objeto) {
     }
 
     @Override
-    public void Delete(Cidade objeto) {
+    public void delete(Cidade objeto) {
     }
 
     

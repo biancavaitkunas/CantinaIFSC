@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class BairroDAO implements InterfaceDAO<Bairro>{
 
     @Override
-    public void Creat(Bairro objeto) {
+    public void create(Bairro objeto) {
         
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "INSERT INTO bairro (descricao) VALUES (?)";
@@ -32,7 +32,7 @@ public class BairroDAO implements InterfaceDAO<Bairro>{
     }
 
     @Override
-    public List<Bairro> Retrieve() {
+    public List<Bairro> retrieve() {
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT bairro.id, bairro.descricao FROM bairro";
         PreparedStatement pstm = null;
@@ -61,21 +61,21 @@ public class BairroDAO implements InterfaceDAO<Bairro>{
     }
 
     @Override
-    public Bairro Retrieve(int parRk) {
+    public Bairro retrieve(int parRk) {
         return null;
     }
 
     @Override
-    public Bairro Retrieve(String parString) {
+    public Bairro retrieve(String parString) {
         return null;
     }
 
     @Override
-    public void Update(Bairro objeto) {
+    public void update(Bairro objeto) {
     }
 
     @Override
-    public void Delete(Bairro objeto) {
+    public void delete(Bairro objeto) {
     }
 
     

@@ -10,7 +10,7 @@ import java.sql.SQLException;
 public class CaixaDAO implements InterfaceDAO<Caixa>{
 
     @Override
-    public void Creat(Caixa objeto) {
+    public void create(Caixa objeto) {
         
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "INSERT INTO caixa (dataHoraAbertura, dataHoraFechamento, valorAbertura, valorFechamento, observacao, status, funcionario) VALUES (?, ?, ?, ?, ?, ?, ?)";
@@ -37,7 +37,7 @@ public class CaixaDAO implements InterfaceDAO<Caixa>{
     }
 
     @Override
-    public List<Caixa> Retrieve() {
+    public List<Caixa> retrieve() {
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT bairro.id, bairro.descricao FROM bairro";
         PreparedStatement pstm = null;
@@ -58,21 +58,21 @@ public class CaixaDAO implements InterfaceDAO<Caixa>{
     }
 
     @Override
-    public Caixa Retrieve(int parRk) {
+    public Caixa retrieve(int parRk) {
         return null;
     }
 
     @Override
-    public Caixa Retrieve(String parString) {
+    public Caixa retrieve(String parString) {
         return null;
     }
 
     @Override
-    public void Update(Caixa objeto) {
+    public void update(Caixa objeto) {
     }
 
     @Override
-    public void Delete(Caixa objeto) {
+    public void delete(Caixa objeto) {
     }
 
 }

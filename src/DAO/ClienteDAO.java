@@ -9,7 +9,7 @@ import java.sql.SQLException;
 public class ClienteDAO implements InterfaceDAO<Cliente>{
 
     @Override
-    public void Creat(Cliente objeto) {
+    public void create(Cliente objeto) {
         
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "INSERT INTO cliente (cpf, rg, matricula, dataNascimento) VALUES (?, ?, ?, ?)";
@@ -33,26 +33,26 @@ public class ClienteDAO implements InterfaceDAO<Cliente>{
     }
 
     @Override
-    public List<Cliente> Retrieve() {
+    public List<Cliente> retrieve() {
         return null;
     }
 
     @Override
-    public Cliente Retrieve(int parRk) {
+    public Cliente retrieve(int parRk) {
         return null;
     }
 
     @Override
-    public Cliente Retrieve(String parString) {
+    public Cliente retrieve(String parString) {
         return null;
     }
 
     @Override
-    public void Update(Cliente objeto) {
+    public void update(Cliente objeto) {
     }
 
     @Override
-    public void Delete(Cliente objeto) {
+    public void delete(Cliente objeto) {
     }
 
 }

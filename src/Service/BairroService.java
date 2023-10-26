@@ -7,38 +7,32 @@ public class BairroService {
     
     public static void adicionar(Bairro objeto){
         BairroDAO bairroDAO = new BairroDAO();
-        bairroDAO.Creat(objeto);
-        
+        bairroDAO.create(objeto);
     }
     
     public static List<Bairro> carregar (){
         BairroDAO bairroDAO = new BairroDAO();
-        return bairroDAO.Retrieve();
-        
+        return bairroDAO.retrieve();
     }
     
     public static Bairro carregar (String parseString){
         BairroDAO bairroDAO = new BairroDAO();
-        return bairroDAO.Retrieve(parseString);
-        
+        return bairroDAO.retrieve(parseString);
     }
     
     public static Bairro carregar (int parPK){
         BairroDAO bairroDAO = new BairroDAO();
-        return bairroDAO.Retrieve(parPK);
-        
+        return bairroDAO.retrieve(parPK);
     }
     
     public static void atualizar (Bairro objeto){
         BairroDAO bairroDAO = new BairroDAO();
-        bairroDAO.Update(objeto);
-        
+        bairroDAO.update(objeto);
     }
     
     public static void remover (Bairro objeto){
         BairroDAO bairroDAO = new BairroDAO();
-        bairroDAO.Delete(objeto);
-        
+        bairroDAO.delete(objeto);
     }
     
 }

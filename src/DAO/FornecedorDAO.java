@@ -9,7 +9,7 @@ import java.sql.SQLException;
 public class FornecedorDAO implements InterfaceDAO<Fornecedor>{
 
     @Override
-    public void Creat(Fornecedor objeto) {
+    public void create(Fornecedor objeto) {
         
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "INSERT INTO carteirinha (cnpj, inscricaoEstadual, razaoSocial) VALUES (?, ?, ?)";
@@ -32,26 +32,26 @@ public class FornecedorDAO implements InterfaceDAO<Fornecedor>{
     }
 
     @Override
-    public List<Fornecedor> Retrieve() {
+    public List<Fornecedor> retrieve() {
         return null;
     }
 
     @Override
-    public Fornecedor Retrieve(int parRk) {
+    public Fornecedor retrieve(int parRk) {
         return null;
     }
 
     @Override
-    public Fornecedor Retrieve(String parString) {
+    public Fornecedor retrieve(String parString) {
         return null;
     }
 
     @Override
-    public void Update(Fornecedor objeto) {
+    public void update(Fornecedor objeto) {
     }
 
     @Override
-    public void Delete(Fornecedor objeto) {
+    public void delete(Fornecedor objeto) {
     }
 
 }

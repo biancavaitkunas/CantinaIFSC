@@ -10,7 +10,7 @@ import java.sql.SQLException;
 public class CompraDAO implements InterfaceDAO<Compra>{
 
     @Override
-    public void Creat(Compra objeto) {
+    public void create(Compra objeto) {
         
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "INSERT INTO compra (numeroNF, dataHoraCompra, valorDesconto, flagTipoDesconto, status, observacao) VALUES (?, ?, ?, ?, ?, ?)";
@@ -34,7 +34,7 @@ public class CompraDAO implements InterfaceDAO<Compra>{
     }
 
     @Override
-    public List<Compra> Retrieve() {
+    public List<Compra> retrieve() {
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT compra.id, compra.numeroNF, compra.dataHoraCompra, compra.valorDesconto, compra.flagTipoDesconto, compra.status, compra.observacao FROM compra";
         PreparedStatement pstm = null;
@@ -55,21 +55,21 @@ public class CompraDAO implements InterfaceDAO<Compra>{
     }
 
     @Override
-    public Compra Retrieve(int parRk) {
+    public Compra retrieve(int parRk) {
         return null;
     }
 
     @Override
-    public Compra Retrieve(String parString) {
+    public Compra retrieve(String parString) {
         return null;
     }
 
     @Override
-    public void Update(Compra objeto) {
+    public void update(Compra objeto) {
     }
 
     @Override
-    public void Delete(Compra objeto) {
+    public void delete(Compra objeto) {
     }
 
 }

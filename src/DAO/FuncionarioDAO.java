@@ -12,7 +12,7 @@ import model.Bairro;
 public class FuncionarioDAO implements InterfaceDAO<Funcionario>{
 
     @Override
-    public void Creat(Funcionario objeto) {
+    public void create(Funcionario objeto) {
         
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "INSERT INTO funcionario (cpf, rg, usuario, senha) VALUES (?, ?, ?, ?)";
@@ -36,7 +36,7 @@ public class FuncionarioDAO implements InterfaceDAO<Funcionario>{
     }
 
     @Override
-    public List<Funcionario> Retrieve() {
+    public List<Funcionario> retrieve() {
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT funcionario.id, funcionario.descricao FROM funcionario";
         PreparedStatement pstm = null;
@@ -64,21 +64,21 @@ public class FuncionarioDAO implements InterfaceDAO<Funcionario>{
     }
 
     @Override
-    public Funcionario Retrieve(int parRk) {
+    public Funcionario retrieve(int parRk) {
         return null;
     }
 
     @Override
-    public Funcionario Retrieve(String parString) {
+    public Funcionario retrieve(String parString) {
         return null;
     }
 
     @Override
-    public void Update(Funcionario objeto) {
+    public void update(Funcionario objeto) {
     }
 
     @Override
-    public void Delete(Funcionario objeto) {
+    public void delete(Funcionario objeto) {
     }
 
 }

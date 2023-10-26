@@ -10,7 +10,7 @@ import java.sql.SQLException;
 public class ProdutoDAO implements InterfaceDAO<Produto>{
 
     @Override
-    public void Creat(Produto objeto) {
+    public void create(Produto objeto) {
         
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "INSERT INTO produto (descricao, codigoBarra, status) VALUES (?, ?, ?)";
@@ -33,7 +33,7 @@ public class ProdutoDAO implements InterfaceDAO<Produto>{
     }
 
     @Override
-    public List<Produto> Retrieve() {
+    public List<Produto> retrieve() {
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT produto.id, produto.descricao, produto.codigoBarra FROM produto";
         PreparedStatement pstm = null;
@@ -54,21 +54,21 @@ public class ProdutoDAO implements InterfaceDAO<Produto>{
     }
 
     @Override
-    public Produto Retrieve(int parRk) {
+    public Produto retrieve(int parRk) {
         return null;
     }
 
     @Override
-    public Produto Retrieve(String parString) {
+    public Produto retrieve(String parString) {
         return null;
     }
 
     @Override
-    public void Update(Produto objeto) {
+    public void update(Produto objeto) {
     }
 
     @Override
-    public void Delete(Produto objeto) {
+    public void delete(Produto objeto) {
     }
 
 }

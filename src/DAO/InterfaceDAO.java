@@ -4,11 +4,11 @@ import java.util.List;
 
 public interface InterfaceDAO <T>{
     
-    public void Creat(T objeto);
-    public abstract List<T> Retrieve();
-    public abstract T Retrieve (int parRk);
-    public abstract T Retrieve (String parString);
-    public abstract void Update (T objeto);
-    public abstract void Delete(T objeto);
+    public void create(T objeto);
+    public abstract List<T> retrieve();
+    public abstract T retrieve (int parRk);
+    public abstract T retrieve (String parString);
+    public abstract void update (T objeto);
+    public abstract void delete(T objeto);
     
 }
