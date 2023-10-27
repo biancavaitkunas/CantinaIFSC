@@ -46,8 +46,8 @@ public class Caixa {
         return valorAbertura;
     }
 
-    public void setValorAbertuda(float valorAbertuda) {
-        this.valorAbertura = valorAbertuda;
+    public void setValorAbertura(float valorAbertura) {
+        this.valorAbertura = valorAbertura;
     }
 
     public float getValorFechamento() {

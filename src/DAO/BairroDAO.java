@@ -7,6 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import model.Cidade;
 
 public class BairroDAO implements InterfaceDAO<Bairro>{
 
@@ -61,17 +62,60 @@ public class BairroDAO implements InterfaceDAO<Bairro>{
     }
 
     @Override
-    public Bairro retrieve(int parRk) {
-        return null;
+    public Bairro retrieve(int parPK) {
+        Connection conexao = ConnectionFactory.getConnection();
+        String sqlExecutar = "SELECT bairro.id, "
+                           + "bairro.descricao, "
+                           + "FROM bairro "
+                           + " WHERE bairro.id = ? ";
+        
+        PreparedStatement pstm = null;
+        ResultSet rst = null;
+        Bairro bairro = new Bairro();
+        
+        try {
+            pstm = conexao.prepareStatement(sqlExecutar);
+            pstm.setInt(1, parPK);
+            rst = pstm.executeQuery();
+            
+            while (rst.next()) {
+                bairro.setId(rst.getInt("id"));
+                bairro.setDescricao(rst.getString("descricao"));
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } finally {
+            ConnectionFactory.closeConnection(conexao, pstm, rst);
+            return bairro;
+        }
     }
 
     @Override
-    public Bairro retrieve(String parString) {
+    public List<Bairro> retrieve(String parString) {
         return null;
     }
 
     @Override
     public void update(Bairro objeto) {
+        
+        Connection conexao = ConnectionFactory.getConnection();
+        String sqlExecutar = " UPDATE bairro"
+                           + " SET "
+                           + " bairro.descricao = ?, "
+                           + " WHERE bairro.id = ?";
+        PreparedStatement pstm = null;
+
+        try {
+            pstm = conexao.prepareStatement(sqlExecutar);
+            pstm.setString(1, objeto.getDescricao());
+            pstm.setInt(6, objeto.getId());
+            pstm.execute();
+            
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } finally {
+            ConnectionFactory.closeConnection(conexao, pstm);
+        }
     }
 
     @Override
