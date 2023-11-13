@@ -1,6 +1,8 @@
 package DAO;
 
 import java.util.List;
+
+import model.Bairro;
 import model.Caixa;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,6 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import model.Cidade;
+import model.Endereco;
 import model.Funcionario;
 
 public class CaixaDAO implements InterfaceDAO<Caixa>{
@@ -54,24 +57,113 @@ public class CaixaDAO implements InterfaceDAO<Caixa>{
         
         PreparedStatement pstm = null;
         ResultSet rs = null;
+        List<Caixa> listaCaixa = new ArrayList<>();
         
         try{
             pstm = conexao.prepareStatement(sqlExecutar);
             pstm.executeQuery();
+            
             while(rs.next()){
+            	Caixa caixa = new Caixa();
+            	caixa.setId(rs.getInt("id"));
+            	caixa.setDataHoraAbertura(rs.getString("dataHoraAbertura"));
+            	caixa.setDataHoraFechamento(rs.getString("dataHoraFechamento"));
+            	caixa.setValorAbertura(rs.getFloat("valorAbertura"));
+            	caixa.setValorFechamento(rs.getFloat("valorFechamento"));
+            	caixa.setObservacao(rs.getString("descricao"));
+            	caixa.setStatus(rs.getString("status").charAt(0));
+            	
+            	Funcionario funcionario = new Funcionario();
+                funcionario.setId(rs.getInt("id"));
+                funcionario.setRg(rs.getString("rg"));
+                funcionario.setNome(rs.getString("nome"));
+                funcionario.setFone1(rs.getString("fone1"));
+                funcionario.setFone2(rs.getString("fone2"));
+                funcionario.setEmail(rs.getString("email"));
+                funcionario.setComplementoEndereco(rs.getString("complementoEndereco"));
+                funcionario.setCpf(rs.getString("cpf"));
+                funcionario.setStatus(rs.getString("status").charAt(0));
+                funcionario.setUsuario(rs.getString("usuario"));
+                funcionario.setSenha(rs.getString("senha"));
+                caixa.setFuncionario(funcionario);
+                
+                Endereco endereco = new Endereco();
+                endereco.setId(rs.getInt("id"));
+                endereco.setLogradouro(rs.getString("logradouro"));
+                endereco.setStatus(rs.getString("status").charAt(0));
+                endereco.setCep(rs.getString("cep"));
+                funcionario.setEndereco(endereco);
+            	
+            	
+            	listaCaixa.add(caixa);
                 
             }
         } catch(SQLException ex){
+            ex.printStackTrace();
             
         } finally{
-            
+            ConnectionFactory.closeConnection(conexao, pstm, rs);
+            return listaCaixa;
         }
-        return null;
+        
     }
 
     @Override
-    public Caixa retrieve(int parRk) {
-        return null;
+    public Caixa retrieve(int parPK) {
+    	Connection conexao = ConnectionFactory.getConnection();
+        String sqlExecutar = " SELECT c.id,"
+                           + "        c.dataHoraAbertura, "
+                           + "        c.dataHoraFechamento, "
+                           + "        c.valorAbertura, "
+                           + "        c.valorFechamento, "
+                           + "        c.observacao, "
+                           + "        c.funcionario, "
+                           + "        c.status, "
+                           + " FROM caixa c "
+                           + "     LEFT OUTER JOIN funcionario f ON f.id = c.funcionario "
+        				   + "     LEFT OUTER JOIN endereco e ON e.id = f.endereco "
+        				   + " WHERE c.id = ? ";
+        
+        PreparedStatement pstm = null;
+        ResultSet rs = null;
+        Caixa caixa = new Caixa();
+        
+        try {
+            pstm = conexao.prepareStatement(sqlExecutar);
+            pstm.setInt(1, parPK);
+            rs = pstm.executeQuery();
+            
+            while (rs.next()) {
+            	caixa.setId(rs.getInt("id"));
+            	caixa.setDataHoraAbertura(rs.getString("dataHoraAbertura"));
+            	caixa.setDataHoraFechamento(rs.getString("dataHoraFechamento"));
+            	caixa.setValorAbertura(rs.getFloat("valorAbertura"));
+            	caixa.setValorFechamento(rs.getFloat("valorFechamento"));
+            	caixa.setObservacao(rs.getString("observacao"));
+            	caixa.setStatus(rs.getString("status").charAt(0));
+            	
+            	Funcionario funcionario = new Funcionario();
+                funcionario.setId(rs.getInt("id"));
+                funcionario.setCpf(rs.getString("cpf"));
+                funcionario.setComplementoEndereco(rs.getString("complementoEndereco"));
+                funcionario.setEmail(rs.getString("email"));
+                funcionario.setFone1(rs.getString("fone1"));
+                funcionario.setEmail(rs.getString("email"));
+                funcionario.setFone2(rs.getString("fone2"));
+                funcionario.setNome(rs.getString("nome"));
+                funcionario.setRg(rs.getString("rg"));
+                funcionario.setSenha(rs.getString("senha"));
+                funcionario.setStatus(rs.getString("status").charAt(0));
+                caixa.setFuncionario(funcionario);
+            	
+            	
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } finally {
+            ConnectionFactory.closeConnection(conexao, pstm, rs);
+            return caixa;
+        }
     }
 
     @Override
@@ -173,6 +265,23 @@ public class CaixaDAO implements InterfaceDAO<Caixa>{
 
     @Override
     public void delete(Caixa objeto) {
+    	
+    	Connection conexao = ConnectionFactory.getConnection();
+        String sqlExecutar = " DELETE * "
+        				   + " FROM caixa c"
+        				   + " WHERE c.id = ?";
+        
+        PreparedStatement pstm = null;
+        
+        try {
+            pstm = conexao.prepareStatement(sqlExecutar);
+            pstm.setInt(1, objeto.getId());
+            pstm.execute();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }finally{
+            ConnectionFactory.closeConnection(conexao, pstm);
+        }
     }
 
 }

@@ -9,7 +9,6 @@ public class Compra {
     private char flagTipoDesconto;
     private char status;
     private String observacao;
-
     private Fornecedor fornecedor;
 
     public Compra() {

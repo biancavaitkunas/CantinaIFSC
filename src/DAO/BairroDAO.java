@@ -120,8 +120,24 @@ public class BairroDAO implements InterfaceDAO<Bairro>{
 
     @Override
     public void delete(Bairro objeto) {
+    	
+    	Connection conexao = ConnectionFactory.getConnection();
+        String sqlExecutar = " DELETE * "
+        				   + " FROM bairro b "
+        				   + " WHERE b.id = ?";
+        
+        PreparedStatement pstm = null;
+        
+        try {
+            pstm = conexao.prepareStatement(sqlExecutar);
+            pstm.setInt(1, objeto.getId());
+            pstm.execute();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }finally{
+            ConnectionFactory.closeConnection(conexao, pstm);
+        }
+        
     }
-
-    
     
 }
