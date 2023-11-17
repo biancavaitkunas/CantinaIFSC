@@ -24,16 +24,15 @@ public class EnderecoDAO implements InterfaceDAO<Endereco>{
             pstm = conexao.prepareStatement(sqlExecutar);
             pstm.setString(1, objeto.getCep());
             pstm.setString(2, objeto.getLogradouro());
-            pstm.setString(3, String.valueOf(objeto.getStatus()));
-            pstm.setString(4, String.valueOf(objeto.getBairro()));
-            pstm.setString(5, String.valueOf(objeto.getCidade()));
+            pstm.setString(3, objeto.getStatus()+"");
+            pstm.setInt(4, objeto.getBairro().getId());
+            pstm.setInt(5, objeto.getCidade().getId());
             pstm.execute();
         } catch (SQLException ex) {
             ex.printStackTrace();
         }finally{
             ConnectionFactory.closeConnection(conexao, pstm);
         }
-        
                 
     }
 
@@ -181,8 +180,6 @@ public class EnderecoDAO implements InterfaceDAO<Endereco>{
                 endereco.setId(rst.getInt("id"));
                 endereco.setLogradouro(rst.getString("logradouro"));
                 endereco.setStatus(rst.getString("status").charAt(0));
-                //Utilizei o String.CharAt(0) para transformar a 
-                //String de retorno em char
                 endereco.setCep(rst.getString("cep"));
 
                 Bairro bairro = new Bairro();
@@ -242,7 +239,34 @@ public class EnderecoDAO implements InterfaceDAO<Endereco>{
     
     @Override
     public List<Endereco> retrieve(String parString) {
-        return null;
+        Connection conexao = ConnectionFactory.getConnection();
+        String sqlExecutar = " SELECT endereco.id, "
+                + " endereco.logradouro,  "
+                + " endereco.bairro_id,  "
+                + " endereco.cidade_id  "
+                + " FROM endereco "
+                + " WHERE logradouro like ?";
+
+        PreparedStatement pstm = null;
+        ResultSet rst = null;
+        List<Endereco> listaEndereco = new ArrayList<>();
+
+        try {
+            pstm = conexao.prepareStatement(sqlExecutar);
+            pstm.setString(1, "%" + parString + "%");
+            rst = pstm.executeQuery();
+            while (rst.next()) {
+                Endereco bairro = new Endereco();
+                bairro.setId(rst.getInt("id"));
+                bairro.setLogradouro(rst.getString("logradouro"));
+                listaEndereco.add(bairro);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } finally {
+            ConnectionFactory.closeConnection(conexao, pstm, rst);
+            return listaEndereco;
+        }
     }
     
 }

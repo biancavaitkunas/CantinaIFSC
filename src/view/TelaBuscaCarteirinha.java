@@ -5,6 +5,8 @@
 package view;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFormattedTextField;
 import javax.swing.JPanel;
 import javax.swing.JTable;
 
@@ -46,6 +48,20 @@ public class TelaBuscaCarteirinha extends javax.swing.JDialog {
         this.jBSair = jBSair;
     }
 
+    public JComboBox<String> getjComboFiltro() {
+        return jComboFiltro;
+    }
+
+    public JFormattedTextField getjFFFiltro() {
+        return jFFFiltro;
+    }
+
+    public JPanel getjPFiltro() {
+        return jPFiltro;
+    }
+    
+    
+
     public JTable getjTDados() {
         return jTDados;
     }
@@ -79,6 +95,7 @@ public class TelaBuscaCarteirinha extends javax.swing.JDialog {
         jPFiltro = new javax.swing.JPanel();
         jFFFiltro = new javax.swing.JFormattedTextField();
         jBFiltrar = new javax.swing.JButton();
+        jComboFiltro = new javax.swing.JComboBox<>();
 
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
@@ -119,7 +136,7 @@ public class TelaBuscaCarteirinha extends javax.swing.JDialog {
                 .addComponent(jLTitulo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         jCorpo.setBackground(new java.awt.Color(255, 255, 255));
@@ -204,13 +221,17 @@ public class TelaBuscaCarteirinha extends javax.swing.JDialog {
 
         jBFiltrar.setText("Filtrar");
 
+        jComboFiltro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "Descricao" }));
+
         javax.swing.GroupLayout jPFiltroLayout = new javax.swing.GroupLayout(jPFiltro);
         jPFiltro.setLayout(jPFiltroLayout);
         jPFiltroLayout.setHorizontalGroup(
             jPFiltroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPFiltroLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jFFFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, 537, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jComboFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jFFFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jBFiltrar, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -218,10 +239,11 @@ public class TelaBuscaCarteirinha extends javax.swing.JDialog {
         jPFiltroLayout.setVerticalGroup(
             jPFiltroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPFiltroLayout.createSequentialGroup()
-                .addContainerGap(17, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPFiltroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jFFFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBFiltrar))
+                    .addComponent(jBFiltrar)
+                    .addComponent(jComboFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -311,6 +333,7 @@ public class TelaBuscaCarteirinha extends javax.swing.JDialog {
     private javax.swing.JButton jBCarregar;
     private javax.swing.JButton jBFiltrar;
     private javax.swing.JButton jBSair;
+    private javax.swing.JComboBox<String> jComboFiltro;
     private javax.swing.JPanel jCorpo;
     private javax.swing.JFormattedTextField jFFFiltro;
     private javax.swing.JLabel jLTitulo;

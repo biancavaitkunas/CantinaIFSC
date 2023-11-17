@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.Bairro;
 import view.TelaBuscaBairro;
@@ -21,15 +22,6 @@ public class ControllerBuscaBairro implements ActionListener {
         this.telaBuscaBairro.getjBCarregar().addActionListener(this);
         this.telaBuscaBairro.getjBSair().addActionListener(this);
         
-        DefaultTableModel tabelaDados = (DefaultTableModel) telabuscaBairro.getjTDados().getModel();
-      
-        List<Bairro> listaBairros = new ArrayList<Bairro>();
-        listaBairros = BairroService.carregar();
-        
-        for (Bairro bairroAtual : BairroService.carregar()) {
-            tabelaDados.addRow(new Object[] {bairroAtual.getId(), bairroAtual.getDescricao()});
-        }
-        
     }
 
     @Override
@@ -43,14 +35,25 @@ public class ControllerBuscaBairro implements ActionListener {
             
          this.telaBuscaBairro.dispose();
         }else if (e.getSource() == this.telaBuscaBairro.getjBFiltrar()){
-            //Criando/Carregando uma instancia da classe singleton de dados
-            List<Bairro> listaBairros = new ArrayList<Bairro>();
-            listaBairros = BairroService.carregar();
-            
-            DefaultTableModel tabela =  (DefaultTableModel) this.telaBuscaBairro.getjTDados().getModel();
-            for (Bairro bairroAtual : listaBairros) {
-                tabela.addRow(new Object[]{bairroAtual.getId(), 
-                                           bairroAtual.getDescricao()});
+            if (this.telaBuscaBairro.getjTFFiltrar().getText().trim().equalsIgnoreCase("")) {
+                JOptionPane.showMessageDialog(null, "Atenção!\nOpção de Filtro Vazia...");
+                this.telaBuscaBairro.getjTFFiltrar().requestFocus();
+            } else {
+                List<Bairro> listaBairros = new ArrayList<Bairro>();
+
+                if (this.telaBuscaBairro.getjComboFiltro().getSelectedIndex() == 0) {
+                    listaBairros.add(BairroService.carregar(Integer.parseInt(this.telaBuscaBairro.getjTFFiltrar().getText())));
+                } else if (this.telaBuscaBairro.getjComboFiltro().getSelectedIndex() == 1) {
+                    listaBairros = BairroService.carregar(this.telaBuscaBairro.getjTFFiltrar().getText().trim());
+                }
+
+                DefaultTableModel tabela = (DefaultTableModel) this.telaBuscaBairro.getjTDados().getModel();
+                tabela.setRowCount(0);
+
+                for (Bairro bairroAtual : listaBairros) {
+                    tabela.addRow(new Object[]{bairroAtual.getId(),
+                        bairroAtual.getDescricao()});
+                }
             }
             
         }else if(e.getSource() == this.telaBuscaBairro.getjBSair()){

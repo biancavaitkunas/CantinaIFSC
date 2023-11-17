@@ -15,7 +15,7 @@ public class BairroService {
         return bairroDAO.retrieve();
     }
     
-    public static Bairro carregar (String parseString){
+   public static List<Bairro> carregar (String parseString){
         BairroDAO bairroDAO = new BairroDAO();
         return bairroDAO.retrieve(parseString);
     }

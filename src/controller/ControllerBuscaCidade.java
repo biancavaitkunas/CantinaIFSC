@@ -1,7 +1,11 @@
 package controller;
 
+import Service.CidadeService;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.Cidade;
 import view.TelaBuscaCidade;
@@ -29,11 +33,26 @@ public class ControllerBuscaCidade implements ActionListener{
             
          this.telaBuscaCidade.dispose();
         }else if (e.getSource() == this.telaBuscaCidade.getjBFiltrar()){
-            DAO.ClasseDados.getInstance();
-            
-            DefaultTableModel tabela =  (DefaultTableModel) this.telaBuscaCidade.getjTDados().getModel();
-            for (Cidade cidadeAtual : DAO.ClasseDados.listaCidade) {
-                tabela.addRow(new Object[]{cidadeAtual.getId(), cidadeAtual.getDescricao(), cidadeAtual.getUf()});
+            if (this.telaBuscaCidade.getjTFFiltrar().getText().trim().equalsIgnoreCase("")) {
+                JOptionPane.showMessageDialog(null, "Atenção!\nOpção de Filtro Vazia...");
+                this.telaBuscaCidade.getjTFFiltrar().requestFocus();
+            } else {
+                List<Cidade> listaCidades = new ArrayList<Cidade>();
+
+                if (this.telaBuscaCidade.getjComboFiltro().getSelectedIndex() == 0) {
+                    listaCidades.add(CidadeService.carregar(Integer.parseInt(this.telaBuscaCidade.getjTFFiltrar().getText())));
+                } else if (this.telaBuscaCidade.getjComboFiltro().getSelectedIndex() == 1) {
+                   // listaBairros = BairroService.carregar(this.telaBuscaBairro.getjTFFiltrar().getText().trim());
+                }
+
+                //Criar um objeto do tipo TableModel
+                DefaultTableModel tabela = (DefaultTableModel) this.telaBuscaCidade.getjTDados().getModel();
+                tabela.setRowCount(0);
+
+                for (Cidade bairroAtual : listaCidades) {
+                    tabela.addRow(new Object[]{bairroAtual.getId(),
+                        bairroAtual.getDescricao()});
+                }
             }
             
         }else if(e.getSource() == this.telaBuscaCidade.getjBSair()){

@@ -1,8 +1,13 @@
 package controller;
 
+import static controller.ControllerCadastroBairro.codigo;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 import model.Carteirinha;
+import model.Cliente;
+import utilities.Utilities;
 import view.TelaBuscaCarteirinha;
 import view.TelaCadastroCarteirinha;
 
@@ -19,36 +24,51 @@ public class ControllerCadastroCarteirinha implements ActionListener {
         this.telaCadastroCarteirinha.getjBCancelar().addActionListener(this);
         this.telaCadastroCarteirinha.getjBGravar().addActionListener(this);
         
+        List<Cliente> listaCliente = new ArrayList<Cliente>();
+        
+        listaCliente = Service.ClienteService.carregar();
+
+        this.telaCadastroCarteirinha.getjCBCliente().removeAll();
+
+        for (Cliente bairroAtual : listaCliente) {
+            this.telaCadastroCarteirinha.getjComboCliente().addItem(bairroAtual.getNome());
+        }
+
         utilities.Utilities.ativaDesativa(true, this.telaCadastroCarteirinha.getjPRodape());
-        utilities.Utilities.limpaComponentes(false, this.telaCadastroCarteirinha.getjPCorpo());
+        Utilities.limpaComponentes(false, this.telaCadastroCarteirinha.getjPCorpo());
         
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        
         if (e.getSource() == this.telaCadastroCarteirinha.getjBNovo()){
             utilities.Utilities.ativaDesativa(false, this.telaCadastroCarteirinha.getjPRodape());
-            utilities.Utilities.limpaComponentes(true, this.telaCadastroCarteirinha.getjPCorpo());
-            this.telaCadastroCarteirinha.getjTFID().setEditable(false);
+            Utilities.limpaComponentes(true, this.telaCadastroCarteirinha.getjPCorpo());
+            this.telaCadastroCarteirinha.getjTFID().setEnabled(false);
             
         }else if (e.getSource() == this.telaCadastroCarteirinha.getjBCancelar()){
             utilities.Utilities.ativaDesativa(true, this.telaCadastroCarteirinha.getjPRodape());
-            utilities.Utilities.limpaComponentes(false, this.telaCadastroCarteirinha.getjPCorpo());
+            Utilities.limpaComponentes(false, this.telaCadastroCarteirinha.getjPCorpo());
             
         } else if (e.getSource() == this.telaCadastroCarteirinha.getjBGravar()){
             
             Carteirinha carteirinha = new Carteirinha();
-            carteirinha.setId(DAO.ClasseDados.listaCarteirinha.size() + 1);
             carteirinha.setCodigoBarra(this.telaCadastroCarteirinha.getjTFCodigoBarras().getText());
+            carteirinha.setDataGeracao(this.telaCadastroCarteirinha.getjFTFDataGeracao().getText());
+            carteirinha.setDataCancelamento(this.telaCadastroCarteirinha.getjFTFDataCancelamento().getText());
+
+            carteirinha.setCliente(Service.ClienteService.carregar("nome", this.telaCadastroCarteirinha.getjCBCliente().getSelectedItem() + "").get(0)); 
             
             if (this.telaCadastroCarteirinha.getjLID().getText().equalsIgnoreCase("")){
-                DAO.ClasseDados.listaCarteirinha.add(carteirinha);
+                Service.CarteirinhaService.adicionar(carteirinha);
             } else {
-                
+                carteirinha.setId(Integer.parseInt(this.telaCadastroCarteirinha.getjTFID().getText()));
+                Service.CarteirinhaService.atualizar(carteirinha);
             }
             
             utilities.Utilities.ativaDesativa(true, this.telaCadastroCarteirinha.getjPRodape());
-            utilities.Utilities.limpaComponentes(false, this.telaCadastroCarteirinha.getjPCorpo());
+            Utilities.limpaComponentes(false, this.telaCadastroCarteirinha.getjPCorpo());
             
         } else if (e.getSource() == this.telaCadastroCarteirinha.getjBBuscar()){
             codigo = 0;
@@ -58,9 +78,9 @@ public class ControllerCadastroCarteirinha implements ActionListener {
             
             if(codigo != 0){
                 Carteirinha carteirinha = new Carteirinha();
-                carteirinha = DAO.ClasseDados.listaCarteirinha.get(codigo-1);
-                utilities.Utilities.ativaDesativa(true, this.telaCadastroCarteirinha.getjPRodape());
-                utilities.Utilities.limpaComponentes(false, this.telaCadastroCarteirinha.getjPCorpo());
+                carteirinha = Service.CarteirinhaService.carregar(codigo);
+                utilities.Utilities.ativaDesativa(false, this.telaCadastroCarteirinha.getjPRodape());
+                Utilities.limpaComponentes(true, this.telaCadastroCarteirinha.getjPCorpo());
                 
                 this.telaCadastroCarteirinha.getjTFID().setText(carteirinha.getId() + "");
                 this.telaCadastroCarteirinha.getjTFCodigoBarras().setText(carteirinha.getCodigoBarra());

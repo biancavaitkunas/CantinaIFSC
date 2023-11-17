@@ -1,8 +1,13 @@
 package controller;
 
+import Service.ClienteService;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import model.Bairro;
 import model.Cliente;
 import view.TelaBuscaCliente;
 
@@ -25,16 +30,32 @@ public class ControllerBuscaCliente implements ActionListener{
                                                             getjTDados().
                                                             getValueAt(this.telaBuscaCliente.getjTDados().getSelectedRow(), 0);
             
+        this.telaBuscaCliente.dispose();
         }else if (e.getSource() == this.telaBuscaCliente.getjBFiltrar()){
-            //Criando/carregando uma instancia da classe singleton de dados
-            DAO.ClasseDados.getInstance();
-            
-            //Criar objeto de tipo TableModel
-            DefaultTableModel tabela = (DefaultTableModel) this.telaBuscaCliente.getjTDados().getModel();
-            
-            for (Cliente clienteAtual : DAO.ClasseDados.listaCliente) {
-                tabela.addRow(new Object[]{clienteAtual.getId(), clienteAtual.getNome(), clienteAtual.getRg(), clienteAtual.getCpf(),
-                    clienteAtual.getDataNascimento(), clienteAtual.getMatricula()});
+            if (this.telaBuscaCliente.getjTFFiltrar().getText().trim().equalsIgnoreCase("")) {
+                JOptionPane.showMessageDialog(null, "Atenção!\nOpção de Filtro Vazia...");
+                this.telaBuscaCliente.getjTFFiltrar().requestFocus();
+            } else {
+                List<Cliente> listaClientes = new ArrayList<Cliente>();
+
+                if (this.telaBuscaCliente.getjComboFiltro().getSelectedIndex() == 0) {
+                    listaClientes.add(ClienteService.carregar(Integer.parseInt(this.telaBuscaCliente.getjTFFiltrar().getText())));
+                } else if (this.telaBuscaCliente.getjComboFiltro().getSelectedIndex() == 1) {
+                    listaClientes = ClienteService.carregar(this.telaBuscaCliente.getjTFFiltrar().getText().trim());
+                }
+
+                //Criar um objeto do tipo TableModel
+                DefaultTableModel tabela = (DefaultTableModel) this.telaBuscaCliente.getjTDados().getModel();
+                tabela.setRowCount(0);
+
+                for (Cliente clienteAtual : listaClientes) {
+                    tabela.addRow(new Object[]{clienteAtual.getId(),
+                        clienteAtual.getNome(),
+                    clienteAtual.getRg(),
+                    clienteAtual.getCpf(),
+                    clienteAtual.getDataNascimento(),
+                    clienteAtual.getMatricula()});
+                }
             }
             
         }else if (e.getSource() == this.telaBuscaCliente.getjBSair()){

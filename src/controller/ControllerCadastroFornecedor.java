@@ -1,8 +1,13 @@
 package controller;
 
+import static controller.ControllerCadastroCarteirinha.codigo;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
+import model.Endereco;
 import model.Fornecedor;
+import utilities.Utilities;
 import view.TelaBuscaFornecedor;
 import view.TelaCadastroFornecedor;
 
@@ -19,8 +24,18 @@ public class ControllerCadastroFornecedor implements ActionListener {
         this.telaCadastroFornecedor.getjBCancelar().addActionListener(this);
         this.telaCadastroFornecedor.getjBGravar().addActionListener(this);
         
+        List<Endereco> listaEnderecos = new ArrayList<Endereco>();
+        
+        listaEnderecos = Service.EnderecoService.carregar();
+
+        this.telaCadastroFornecedor.getjCBCep().removeAll();
+
+        for (Endereco cidadeAtual : listaEnderecos) {
+            this.telaCadastroFornecedor.getjCBCep().addItem(cidadeAtual.getLogradouro());
+        }
+        
         utilities.Utilities.ativaDesativa(true, this.telaCadastroFornecedor.getjPRodape());
-        utilities.Utilities.limpaComponentes(false, this.telaCadastroFornecedor.getjPCorpo());
+        Utilities.limpaComponentes(false, this.telaCadastroFornecedor.getjPCorpo());
         
     }
 
@@ -28,12 +43,12 @@ public class ControllerCadastroFornecedor implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this.telaCadastroFornecedor.getjBNovo()){
             utilities.Utilities.ativaDesativa(false, this.telaCadastroFornecedor.getjPRodape());
-            utilities.Utilities.limpaComponentes(true, this.telaCadastroFornecedor.getjPCorpo());
+            Utilities.limpaComponentes(true, this.telaCadastroFornecedor.getjPCorpo());
             this.telaCadastroFornecedor.getjTFID().setEnabled(false);
             
         }else if (e.getSource() == this.telaCadastroFornecedor.getjBCancelar()){
             utilities.Utilities.ativaDesativa(true, this.telaCadastroFornecedor.getjPRodape());
-            utilities.Utilities.limpaComponentes(false, this.telaCadastroFornecedor.getjPCorpo());
+            Utilities.limpaComponentes(false, this.telaCadastroFornecedor.getjPCorpo());
             
         } else if (e.getSource() == this.telaCadastroFornecedor.getjBGravar()){
             
@@ -43,15 +58,23 @@ public class ControllerCadastroFornecedor implements ActionListener {
             fornecedor.setCnpj(this.telaCadastroFornecedor.getjTFCNPJ().getText());
             fornecedor.setRazaoSocial(this.telaCadastroFornecedor.getjTFRazaoSocial().getText());
             fornecedor.setInscricaoEstadual(this.telaCadastroFornecedor.getjTFInscricaoEstadual().getText());
+            fornecedor.setEmail(this.telaCadastroFornecedor.getjTFEmail().getText());
+            fornecedor.setFone1(this.telaCadastroFornecedor.getjTFTelefone1().getText());
+            fornecedor.setFone2(this.telaCadastroFornecedor.getjTFTelefone2().getText());
+            fornecedor.setComplementoEndereco(this.telaCadastroFornecedor.getjTFComplemento().getText());
+            fornecedor.setStatus(this.telaCadastroFornecedor.getjRBAtivo().getText().charAt(0));
+            
+            fornecedor.setEndereco(Service.EnderecoService.carregar("logradouro", this.telaCadastroFornecedor.getjCBCep().getSelectedItem() + "").get(0));
             
             if (this.telaCadastroFornecedor.getjTFID().getText().equalsIgnoreCase("")){
-                DAO.ClasseDados.listaFornecedor.add(fornecedor);
-            } else {
-                
+                Service.FornecedorService.adicionar(fornecedor);
+            }else{
+                fornecedor.setId(Integer.parseInt(this.telaCadastroFornecedor.getjTFID().getText()));
+              Service.FornecedorService.atualizar(fornecedor);
             }
             
             utilities.Utilities.ativaDesativa(true, this.telaCadastroFornecedor.getjPRodape());
-            utilities.Utilities.limpaComponentes(false, this.telaCadastroFornecedor.getjPCorpo());
+            Utilities.limpaComponentes(false, this.telaCadastroFornecedor.getjPCorpo());
             
         } else if (e.getSource() == this.telaCadastroFornecedor.getjBBuscar()){
             codigo = 0;
@@ -61,15 +84,19 @@ public class ControllerCadastroFornecedor implements ActionListener {
             
             if(codigo != 0){
                 Fornecedor fornecedor = new Fornecedor();
-                fornecedor = DAO.ClasseDados.listaFornecedor.get(codigo-1);
+                fornecedor = Service.FornecedorService.carregar(codigo);
                 utilities.Utilities.ativaDesativa(false, this.telaCadastroFornecedor.getjPRodape());
-                utilities.Utilities.limpaComponentes(true, this.telaCadastroFornecedor.getjPCorpo());
+                Utilities.limpaComponentes(true, this.telaCadastroFornecedor.getjPCorpo());
                 
                 this.telaCadastroFornecedor.getjTFID().setText(fornecedor.getId() + "");
                 this.telaCadastroFornecedor.getjTFNome().setText(fornecedor.getNome());
                 this.telaCadastroFornecedor.getjTFCNPJ().setText(fornecedor.getCnpj());
                 this.telaCadastroFornecedor.getjTFRazaoSocial().setText(fornecedor.getRazaoSocial());
                 this.telaCadastroFornecedor.getjTFInscricaoEstadual().setText(fornecedor.getInscricaoEstadual());
+                this.telaCadastroFornecedor.getjTFEmail().setText(fornecedor.getEmail());
+                this.telaCadastroFornecedor.getjTFTelefone1().setText(fornecedor.getFone1());
+                this.telaCadastroFornecedor.getjTFTelefone2().setText(fornecedor.getFone2());
+                this.telaCadastroFornecedor.getjTFComplemento().setText(fornecedor.getComplementoEndereco());
                 this.telaCadastroFornecedor.getjTFID().setEnabled(false);
             }
             

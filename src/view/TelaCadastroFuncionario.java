@@ -3,6 +3,7 @@ package view;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -33,6 +34,15 @@ public class TelaCadastroFuncionario extends javax.swing.JDialog {
         return jBGravar;
     }
 
+    public JTextField getjTFComplementoEndereco() {
+        return jTFComplementoEndereco;
+    }
+
+    public JTextField getjTFRg() {
+        return jTFRg;
+    }
+    
+
     public JButton getjBNovo() {
         return jBNovo;
     }
@@ -49,34 +59,16 @@ public class TelaCadastroFuncionario extends javax.swing.JDialog {
         return jPRodape;
     }
 
-    public JTextField getjTFBairro() {
-        return jTFBairro;
-    }
-
     public JLabel getjLID() {
         return jLID;
     }
     
-    
-
-    public JTextField getjTFCEP() {
-        return jTFCEP;
-    }
-
-    public JTextField getjTFCidade() {
-        return jTFCidade;
-    }
-
     public JTextField getjTFEmail() {
         return jTFEmail;
     }
 
     public JTextField getjTFID() {
         return jTFID;
-    }
-
-    public JTextField getjTFLogradouro() {
-        return jTFLogradouro;
     }
 
     public JTextField getjTFSenha() {
@@ -88,7 +80,7 @@ public class TelaCadastroFuncionario extends javax.swing.JDialog {
     }
 
     public JTextField getjTFTelefone2() {
-        return jTFTelefone2;
+        return jTFUsuario;
     }
 
     public JTextField getjTFUsuario() {
@@ -96,7 +88,7 @@ public class TelaCadastroFuncionario extends javax.swing.JDialog {
     }
 
     public JTextField getjTextField14() {
-        return jTextField14;
+        return jTFComplementoEndereco;
     }
 
     public JTextField getjTextField5() {
@@ -104,7 +96,7 @@ public class TelaCadastroFuncionario extends javax.swing.JDialog {
     }
 
     public JTextField getjTextField6() {
-        return jTextField6;
+        return jTFRg;
     }
 
     public JTextField getjTextField7() {
@@ -139,28 +131,12 @@ public class TelaCadastroFuncionario extends javax.swing.JDialog {
         this.jPRodape = jPRodape;
     }
 
-    public void setjTFBairro(JTextField jTFBairro) {
-        this.jTFBairro = jTFBairro;
-    }
-
-    public void setjTFCEP(JTextField jTFCEP) {
-        this.jTFCEP = jTFCEP;
-    }
-
-    public void setjTFCidade(JTextField jTFCidade) {
-        this.jTFCidade = jTFCidade;
-    }
-
     public void setjTFEmail(JTextField jTFEmail) {
         this.jTFEmail = jTFEmail;
     }
 
     public void setjTFID(JTextField jTFID) {
         this.jTFID = jTFID;
-    }
-
-    public void setjTFLogradouro(JTextField jTFLogradouro) {
-        this.jTFLogradouro = jTFLogradouro;
     }
 
     public void setjTFSenha(JTextField jTFSenha) {
@@ -172,7 +148,7 @@ public class TelaCadastroFuncionario extends javax.swing.JDialog {
     }
 
     public void setjTFTelefone2(JTextField jTFTelefone2) {
-        this.jTFTelefone2 = jTFTelefone2;
+        this.jTFUsuario = jTFTelefone2;
     }
 
     public void setjTFUsuario(JTextField jTFUsuario) {
@@ -214,27 +190,6 @@ public class TelaCadastroFuncionario extends javax.swing.JDialog {
     public JLabel getjLabel12() {
         return jLabel12;
     }
-
-    public JLabel getjLabel13() {
-        return jLabel13;
-    }
-
-    public JLabel getjLabel14() {
-        return jLabel14;
-    }
-
-    public JLabel getjLabel15() {
-        return jLabel15;
-    }
-
-    public JLabel getjLabel16() {
-        return jLabel16;
-    }
-
-    public JLabel getjLabel17() {
-        return jLabel17;
-    }
-
     public JLabel getjLabel2() {
         return jLabel2;
     }
@@ -282,6 +237,16 @@ public class TelaCadastroFuncionario extends javax.swing.JDialog {
     public JRadioButton getjRadioButton2() {
         return jRadioButton2;
     }
+
+    public JComboBox<String> getjCBCep() {
+        return jCBCep;
+    }
+    
+    
+
+    public JComboBox<String> getjComboEndereco() {
+        return jCBCep;
+    }
     
     
 
@@ -293,19 +258,15 @@ public class TelaCadastroFuncionario extends javax.swing.JDialog {
         this.jBSair = jBSair;
         this.jPCorpo = jPCorpo;
         this.jPRodape = jPRodape;
-        this.jTFBairro = jTFBairro;
-        this.jTFCEP = jTFCEP;
-        this.jTFCidade = jTFCidade;
         this.jTFEmail = jTFEmail;
         this.jTFID = jTFID;
-        this.jTFLogradouro = jTFLogradouro;
         this.jTFSenha = jTFSenha;
         this.jTFTelefone1 = jTFTelefone1;
-        this.jTFTelefone2 = jTFTelefone2;
+        this.jTFUsuario = jTFTelefone2;
         this.jTFUsuario = jTFUsuario;
-        this.jTextField14 = jTextField14;
+        this.jTFComplementoEndereco = jTextField14;
         this.jTFNome = jTextField5;
-        this.jTextField6 = jTextField6;
+        this.jTFRg = jTextField6;
         this.jTFCpf = jTextField7;
     }
     
@@ -331,10 +292,7 @@ public class TelaCadastroFuncionario extends javax.swing.JDialog {
         jLabel3 = new javax.swing.JLabel();
         jTFSenha = new javax.swing.JTextField();
         jLRG = new javax.swing.JLabel();
-        jTFTelefone2 = new javax.swing.JTextField();
-        jTFTelefone1 = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jTFUsuario = new javax.swing.JTextField();
         jLNome = new javax.swing.JLabel();
         jLID = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -342,29 +300,20 @@ public class TelaCadastroFuncionario extends javax.swing.JDialog {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jTFNome = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
+        jTFRg = new javax.swing.JTextField();
         jTFCpf = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jTFEmail = new javax.swing.JTextField();
         jTFID = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        jTFBairro = new javax.swing.JTextField();
-        jTFCEP = new javax.swing.JTextField();
-        jTFCidade = new javax.swing.JTextField();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jTFLogradouro = new javax.swing.JTextField();
-        jTextField14 = new javax.swing.JTextField();
+        jTFComplementoEndereco = new javax.swing.JTextField();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        jCBCep = new javax.swing.JComboBox<>();
+        jTFTelefone1 = new javax.swing.JTextField();
+        jTFUsuario = new javax.swing.JTextField();
+        jTFTelefone3 = new javax.swing.JTextField();
         jPRodape = new javax.swing.JPanel();
         jBNovo = new javax.swing.JButton();
         jBCancelar = new javax.swing.JButton();
@@ -427,19 +376,8 @@ public class TelaCadastroFuncionario extends javax.swing.JDialog {
         jLRG.setFont(new java.awt.Font("PMingLiU-ExtB", 1, 14)); // NOI18N
         jLRG.setText("RG");
 
-        jTFTelefone2.setForeground(new java.awt.Color(255, 255, 255));
-
-        jTFTelefone1.setForeground(new java.awt.Color(255, 255, 255));
-
         jLabel6.setFont(new java.awt.Font("PMingLiU-ExtB", 1, 14)); // NOI18N
         jLabel6.setText("Usuário");
-
-        jTFUsuario.setForeground(new java.awt.Color(255, 255, 255));
-        jTFUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTFUsuarioActionPerformed(evt);
-            }
-        });
 
         jLNome.setFont(new java.awt.Font("PMingLiU-ExtB", 1, 14)); // NOI18N
         jLNome.setText("Nome");
@@ -465,9 +403,9 @@ public class TelaCadastroFuncionario extends javax.swing.JDialog {
             }
         });
 
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        jTFRg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                jTFRgActionPerformed(evt);
             }
         });
 
@@ -495,35 +433,8 @@ public class TelaCadastroFuncionario extends javax.swing.JDialog {
         jLabel13.setFont(new java.awt.Font("PMingLiU-ExtB", 1, 14)); // NOI18N
         jLabel13.setText("CEP");
 
-        jLabel14.setFont(new java.awt.Font("PMingLiU-ExtB", 1, 14)); // NOI18N
-        jLabel14.setText("Logradouro");
-
         jLabel16.setFont(new java.awt.Font("PMingLiU-ExtB", 1, 14)); // NOI18N
         jLabel16.setText("Complemento");
-
-        jTFBairro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTFBairroActionPerformed(evt);
-            }
-        });
-
-        jTFCEP.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTFCEPActionPerformed(evt);
-            }
-        });
-
-        jLabel15.setFont(new java.awt.Font("PMingLiU-ExtB", 1, 14)); // NOI18N
-        jLabel15.setText("Cidade");
-
-        jLabel17.setFont(new java.awt.Font("PMingLiU-ExtB", 1, 14)); // NOI18N
-        jLabel17.setText("Bairro");
-
-        jTFLogradouro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTFLogradouroActionPerformed(evt);
-            }
-        });
 
         buttonGroup1.add(jRadioButton1);
         jRadioButton1.setText("Ativo");
@@ -541,30 +452,21 @@ public class TelaCadastroFuncionario extends javax.swing.JDialog {
             }
         });
 
-        jButton1.setText("jButton1");
-
-        jButton2.setText("+");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jTFTelefone1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jTFTelefone1ActionPerformed(evt);
             }
         });
 
-        jButton3.setText("+");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        jTFUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                jTFUsuarioActionPerformed(evt);
             }
         });
 
-        jButton4.setText("jButton1");
-
-        jButton5.setText("jButton1");
-
-        jButton6.setText("+");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        jTFTelefone3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                jTFTelefone3ActionPerformed(evt);
             }
         });
 
@@ -573,165 +475,110 @@ public class TelaCadastroFuncionario extends javax.swing.JDialog {
         jPCorpoLayout.setHorizontalGroup(
             jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPCorpoLayout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPCorpoLayout.createSequentialGroup()
-                        .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPCorpoLayout.createSequentialGroup()
-                                .addComponent(jLabel17)
-                                .addGap(259, 259, 259)
-                                .addComponent(jLabel16))
-                            .addGroup(jPCorpoLayout.createSequentialGroup()
-                                .addComponent(jTFID, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(32, 32, 32)
-                                .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel6)
-                                    .addGroup(jPCorpoLayout.createSequentialGroup()
-                                        .addComponent(jTFUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(29, 29, 29)
-                                        .addComponent(jTFSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
-                        .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel12)
-                            .addComponent(jRadioButton1))
-                        .addComponent(jRadioButton2)
-                        .addGap(100, 100, 100))
+                    .addGroup(jPCorpoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jTFComplementoEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 486, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jRadioButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jRadioButton2))
                     .addGroup(jPCorpoLayout.createSequentialGroup()
                         .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPCorpoLayout.createSequentialGroup()
-                                .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTFTelefone1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel9)
-                                    .addComponent(jLID, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addContainerGap()
+                                .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(jPCorpoLayout.createSequentialGroup()
-                                        .addComponent(jLabel10)
-                                        .addGap(93, 93, 93)
-                                        .addComponent(jLabel11))
+                                        .addComponent(jTFSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(12, 12, 12)
+                                        .addComponent(jTFEmail))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPCorpoLayout.createSequentialGroup()
+                                        .addComponent(jLabel16)
+                                        .addGap(407, 407, 407))
                                     .addGroup(jPCorpoLayout.createSequentialGroup()
-                                        .addGap(169, 169, 169)
-                                        .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLRG, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(20, 20, 20)
-                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jLID, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(131, 131, 131)
+                                        .addComponent(jLNome))
                                     .addGroup(jPCorpoLayout.createSequentialGroup()
-                                        .addGap(142, 142, 142)
-                                        .addComponent(jLabel5)
-                                        .addGap(120, 120, 120)
-                                        .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTFCEP, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGroup(jPCorpoLayout.createSequentialGroup()
-                                        .addComponent(jTFTelefone2, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jTFEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addComponent(jLNome)
-                            .addComponent(jLabel14)
-                            .addGroup(jPCorpoLayout.createSequentialGroup()
-                                .addComponent(jTFNome, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(185, 185, 185)
-                                .addComponent(jTFCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPCorpoLayout.createSequentialGroup()
-                                .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPCorpoLayout.createSequentialGroup()
-                                        .addComponent(jTFLogradouro, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jTFID, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton2)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addComponent(jTFNome, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPCorpoLayout.createSequentialGroup()
-                                        .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jLabel5)
+                                        .addGap(124, 124, 124)
+                                        .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(jPCorpoLayout.createSequentialGroup()
-                                                .addComponent(jTFBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jButton6)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(jLabel9)
+                                                .addGap(107, 107, 107)
+                                                .addComponent(jLabel10))
+                                            .addComponent(jLabel11)
                                             .addGroup(jPCorpoLayout.createSequentialGroup()
-                                                .addGap(0, 0, Short.MAX_VALUE)
-                                                .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jLabel15)
-                                                    .addComponent(jTFCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton3)
-                                .addGap(85, 85, 85)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                                .addComponent(jTFTelefone1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(jTFTelefone3, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                            .addGroup(jPCorpoLayout.createSequentialGroup()
+                                .addGap(7, 7, 7)
+                                .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTFRg, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLRG, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(352, 352, 352)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTFUsuario)
+                            .addComponent(jCBCep, 0, 181, Short.MAX_VALUE)
+                            .addComponent(jTFCpf))))
+                .addContainerGap(9, Short.MAX_VALUE))
         );
         jPCorpoLayout.setVerticalGroup(
             jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPCorpoLayout.createSequentialGroup()
-                .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPCorpoLayout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(jLNome))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPCorpoLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLRG, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING))))
+                .addGap(32, 32, 32)
+                .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLID)
+                    .addComponent(jLNome)
+                    .addComponent(jLabel3))
                 .addGap(6, 6, 6)
-                .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTFNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTFCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTFID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTFCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTFNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLRG)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel10)
+                    .addComponent(jLabel6))
+                .addGap(4, 4, 4)
+                .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTFRg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTFTelefone1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTFUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTFTelefone3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPCorpoLayout.createSequentialGroup()
-                        .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel11)
-                            .addComponent(jLabel9))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTFTelefone1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTFTelefone2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTFEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel13)
-                            .addComponent(jLID)
-                            .addComponent(jLabel6))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTFID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTFUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTFSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTFCEP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel14)
-                            .addComponent(jLabel15))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTFLogradouro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTFCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1)
-                            .addComponent(jButton2)
-                            .addComponent(jButton3)
-                            .addComponent(jButton4))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel16)
-                            .addComponent(jLabel12)
-                            .addComponent(jLabel17))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jRadioButton1)
-                            .addComponent(jRadioButton2)
-                            .addComponent(jTFBairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton5)
-                            .addComponent(jButton6)))
-                    .addComponent(jLabel10))
-                .addContainerGap(31, Short.MAX_VALUE))
+                    .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel11)
+                        .addComponent(jLabel5))
+                    .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTFEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCBCep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTFSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel12)
+                    .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTFComplementoEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jRadioButton1)
+                    .addComponent(jRadioButton2))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         jPRodape.setBackground(new java.awt.Color(204, 255, 204));
@@ -843,10 +690,6 @@ public class TelaCadastroFuncionario extends javax.swing.JDialog {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTFUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFUsuarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTFUsuarioActionPerformed
-
     private void jBNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBNovoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jBNovoActionPerformed
@@ -863,9 +706,9 @@ public class TelaCadastroFuncionario extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTFNomeActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void jTFRgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFRgActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_jTFRgActionPerformed
 
     private void jTFCpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFCpfActionPerformed
         // TODO add your handling code here:
@@ -879,18 +722,6 @@ public class TelaCadastroFuncionario extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTFIDActionPerformed
 
-    private void jTFCEPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFCEPActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTFCEPActionPerformed
-
-    private void jTFBairroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFBairroActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTFBairroActionPerformed
-
-    private void jTFLogradouroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFLogradouroActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTFLogradouroActionPerformed
-
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton1ActionPerformed
@@ -899,17 +730,17 @@ public class TelaCadastroFuncionario extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jTFTelefone1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFTelefone1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jTFTelefone1ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void jTFUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFUsuarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_jTFUsuarioActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void jTFTelefone3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFTelefone3ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_jTFTelefone3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -960,12 +791,7 @@ public class TelaCadastroFuncionario extends javax.swing.JDialog {
     private javax.swing.JButton jBGravar;
     private javax.swing.JButton jBNovo;
     private javax.swing.JButton jBSair;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
+    private javax.swing.JComboBox<String> jCBCep;
     private javax.swing.JLabel jLID;
     private javax.swing.JLabel jLNome;
     private javax.swing.JLabel jLRG;
@@ -974,10 +800,7 @@ public class TelaCadastroFuncionario extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
@@ -991,19 +814,15 @@ public class TelaCadastroFuncionario extends javax.swing.JDialog {
     private javax.swing.JPanel jPTitulo;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JTextField jTFBairro;
-    private javax.swing.JTextField jTFCEP;
-    private javax.swing.JTextField jTFCidade;
+    private javax.swing.JTextField jTFComplementoEndereco;
     private javax.swing.JTextField jTFCpf;
     private javax.swing.JTextField jTFEmail;
     private javax.swing.JTextField jTFID;
-    private javax.swing.JTextField jTFLogradouro;
     private javax.swing.JTextField jTFNome;
+    private javax.swing.JTextField jTFRg;
     private javax.swing.JTextField jTFSenha;
     private javax.swing.JTextField jTFTelefone1;
-    private javax.swing.JTextField jTFTelefone2;
+    private javax.swing.JTextField jTFTelefone3;
     private javax.swing.JTextField jTFUsuario;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField6;
     // End of variables declaration//GEN-END:variables
 }

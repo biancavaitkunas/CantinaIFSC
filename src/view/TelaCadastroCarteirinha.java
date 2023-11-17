@@ -6,6 +6,7 @@ package view;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
@@ -47,6 +48,14 @@ public class TelaCadastroCarteirinha extends javax.swing.JDialog {
         return jBSair;
     }
 
+    public JComboBox<String> getjCBCliente() {
+        return jCBCliente;
+    }
+    
+    public JComboBox<String> getjComboCliente() {
+        return jCBCliente;
+    }
+    
     public ButtonGroup getButtonGroup1() {
         return buttonGroup1;
     }
@@ -71,10 +80,6 @@ public class TelaCadastroCarteirinha extends javax.swing.JDialog {
         return jLMatricula;
     }
 
-    public JLabel getjLNome() {
-        return jLNome;
-    }
-
     public JLabel getjLabel1() {
         return jLabel1;
     }
@@ -97,14 +102,6 @@ public class TelaCadastroCarteirinha extends javax.swing.JDialog {
 
     public JPanel getjPTitulo() {
         return jPTitulo;
-    }
-
-    public JTextField getjTFMatricula() {
-        return jTFMatricula;
-    }
-
-    public JTextField getjTFNome() {
-        return jTFNome;
     }
     
     
@@ -206,11 +203,9 @@ public class TelaCadastroCarteirinha extends javax.swing.JDialog {
         jFTFDataGeracao = new javax.swing.JFormattedTextField();
         jLDataCancelamento = new javax.swing.JLabel();
         jFTFDataCancelamento = new javax.swing.JFormattedTextField();
-        jLNome = new javax.swing.JLabel();
         jLMatricula = new javax.swing.JLabel();
-        jTFNome = new javax.swing.JTextField();
-        jTFMatricula = new javax.swing.JTextField();
         jTFCodigoBarras = new javax.swing.JTextField();
+        jCBCliente = new javax.swing.JComboBox<>();
         jPRodape = new javax.swing.JPanel();
         jBNovo = new javax.swing.JButton();
         jBCancelar = new javax.swing.JButton();
@@ -281,11 +276,7 @@ public class TelaCadastroCarteirinha extends javax.swing.JDialog {
         jLDataGeracao.setFont(new java.awt.Font("PMingLiU-ExtB", 1, 14)); // NOI18N
         jLDataGeracao.setText("Data da Geração");
 
-        try {
-            jFTFDataGeracao.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
+        jFTFDataGeracao.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("yyyy-MM-dd"))));
         jFTFDataGeracao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jFTFDataGeracaoActionPerformed(evt);
@@ -295,28 +286,15 @@ public class TelaCadastroCarteirinha extends javax.swing.JDialog {
         jLDataCancelamento.setFont(new java.awt.Font("PMingLiU-ExtB", 1, 14)); // NOI18N
         jLDataCancelamento.setText("Data Cancelamento");
 
-        try {
-            jFTFDataCancelamento.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
+        jFTFDataCancelamento.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("yyyy-MM-dd"))));
         jFTFDataCancelamento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jFTFDataCancelamentoActionPerformed(evt);
             }
         });
 
-        jLNome.setFont(new java.awt.Font("PMingLiU-ExtB", 1, 14)); // NOI18N
-        jLNome.setText("Nome");
-
         jLMatricula.setFont(new java.awt.Font("PMingLiU-ExtB", 1, 14)); // NOI18N
-        jLMatricula.setText("Matrícula");
-
-        jTFNome.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTFNomeActionPerformed(evt);
-            }
-        });
+        jLMatricula.setText("Cliente");
 
         jTFCodigoBarras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -328,68 +306,50 @@ public class TelaCadastroCarteirinha extends javax.swing.JDialog {
         jPCorpo.setLayout(jPCorpoLayout);
         jPCorpoLayout.setHorizontalGroup(
             jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPCorpoLayout.createSequentialGroup()
-                .addContainerGap(73, Short.MAX_VALUE)
-                .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+            .addGroup(jPCorpoLayout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jTFCodigoBarras, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLID, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTFID, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE))
+                    .addComponent(jLCodigoBarras))
+                .addGap(39, 39, 39)
+                .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLMatricula)
+                    .addComponent(jCBCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPCorpoLayout.createSequentialGroup()
                         .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTFID, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLID, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(42, 42, 42)
+                            .addComponent(jLDataGeracao)
+                            .addComponent(jFTFDataGeracao, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(30, 30, 30)
                         .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLCodigoBarras)
-                            .addComponent(jTFCodigoBarras, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(92, 92, 92))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPCorpoLayout.createSequentialGroup()
-                        .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLNome)
-                            .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jTFNome, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(jPCorpoLayout.createSequentialGroup()
-                                    .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jPCorpoLayout.createSequentialGroup()
-                                            .addComponent(jFTFDataGeracao, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPCorpoLayout.createSequentialGroup()
-                                            .addComponent(jLDataGeracao)
-                                            .addGap(78, 78, 78)))
-                                    .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLDataCancelamento)
-                                        .addComponent(jFTFDataCancelamento, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTFMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLMatricula))
-                        .addGap(77, 77, 77))))
+                            .addComponent(jFTFDataCancelamento, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLDataCancelamento))))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
         jPCorpoLayout.setVerticalGroup(
             jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPCorpoLayout.createSequentialGroup()
-                .addGap(32, 32, 32)
+                .addGap(26, 26, 26)
                 .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLID)
-                    .addComponent(jLCodigoBarras))
-                .addGap(6, 6, 6)
+                    .addComponent(jLMatricula))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTFID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTFCodigoBarras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(42, 42, 42)
+                    .addComponent(jCBCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
                 .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLNome)
-                    .addComponent(jLMatricula))
+                    .addComponent(jLCodigoBarras)
+                    .addComponent(jLDataCancelamento)
+                    .addComponent(jLDataGeracao))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTFNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTFMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
-                .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLDataGeracao)
-                    .addComponent(jLDataCancelamento))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTFCodigoBarras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jFTFDataGeracao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jFTFDataCancelamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         jPRodape.setBackground(new java.awt.Color(204, 255, 204));
@@ -517,10 +477,6 @@ public class TelaCadastroCarteirinha extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTFIDActionPerformed
 
-    private void jTFNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFNomeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTFNomeActionPerformed
-
     private void jTFCodigoBarrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFCodigoBarrasActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTFCodigoBarrasActionPerformed
@@ -582,6 +538,7 @@ public class TelaCadastroCarteirinha extends javax.swing.JDialog {
     private javax.swing.JButton jBGravar;
     private javax.swing.JButton jBNovo;
     private javax.swing.JButton jBSair;
+    private javax.swing.JComboBox<String> jCBCliente;
     private javax.swing.JFormattedTextField jFTFDataCancelamento;
     private javax.swing.JFormattedTextField jFTFDataGeracao;
     private javax.swing.JLabel jLCodigoBarras;
@@ -589,7 +546,6 @@ public class TelaCadastroCarteirinha extends javax.swing.JDialog {
     private javax.swing.JLabel jLDataGeracao;
     private javax.swing.JLabel jLID;
     private javax.swing.JLabel jLMatricula;
-    private javax.swing.JLabel jLNome;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
@@ -600,7 +556,5 @@ public class TelaCadastroCarteirinha extends javax.swing.JDialog {
     private javax.swing.JPanel jPTitulo;
     private javax.swing.JTextField jTFCodigoBarras;
     private javax.swing.JTextField jTFID;
-    private javax.swing.JTextField jTFMatricula;
-    private javax.swing.JTextField jTFNome;
     // End of variables declaration//GEN-END:variables
 }

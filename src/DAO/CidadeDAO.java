@@ -30,7 +30,6 @@ public class CidadeDAO implements InterfaceDAO<Cidade>{
         }finally{
             ConnectionFactory.closeConnection(conexao, pstm);
         }
-        
                 
     }
 
@@ -38,9 +37,9 @@ public class CidadeDAO implements InterfaceDAO<Cidade>{
     public List<Cidade> retrieve() {
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT cidade.id, "
-                           + "cidade.descricao, "
-                           + "cidade.uf, "
-                           + "FROM cidade ";
+                                      + "cidade.descricao, "
+                                      + "cidade.uf "
+                                      + "FROM cidade ";
         
         PreparedStatement pstm = null;
         ResultSet rst = null;
@@ -70,7 +69,7 @@ public class CidadeDAO implements InterfaceDAO<Cidade>{
         Connection conexao = ConnectionFactory.getConnection();
         String sqlExecutar = "SELECT cidade.id, "
                            + "cidade.descricao, "
-                           + "cidade.uf, "
+                           + "cidade.uf "
                            + "FROM cidade "
                            + " WHERE cidade.id = ? ";
         
@@ -87,7 +86,7 @@ public class CidadeDAO implements InterfaceDAO<Cidade>{
                
                 cidade.setId(rst.getInt("id"));
                 cidade.setDescricao(rst.getString("cidade.descricao"));
-                cidade.setUf(rst.getString("uf"));
+                cidade.setUf(rst.getString("cidade.uf"));
             }
         } catch (SQLException ex) {
             ex.printStackTrace();

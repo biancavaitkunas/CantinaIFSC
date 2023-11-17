@@ -39,12 +39,12 @@ public class TelaCadastroCidade extends javax.swing.JDialog {
         this.jTFDescricao = jTFDescricao;
     }
 
-    public JTextField getjTFID() {
-        return jTFID;
+    public JTextField getjTFId() {
+        return jTFId;
     }
 
-    public void setjTFID(JTextField jTFId) {
-        this.jTFID = jTFID;
+    public void setjTFId(JTextField jTFId) {
+        this.jTFId = jTFId;
     }
 
     public JPanel getjPRodape() {
@@ -58,6 +58,12 @@ public class TelaCadastroCidade extends javax.swing.JDialog {
     public JButton getjBNovo() {
         return jBNovo;
     }
+
+    public JComboBox<String> getjCBUF() {
+        return jCBUF;
+    }
+    
+    
 
     public TelaCadastroCidade(JButton jBBuscar, JButton jBCancelar, JButton jBGravar, JButton jBNovo, JButton jBSair, JLabel jLDescricao, JLabel jLID, JLabel jLUF, JLabel jLabel1, JLabel jLabel2, JPanel jPCorpo, JPanel jPRodape, JPanel jPTitulo, JTextField jTFDescricao, JTextField jTFID, JTextField jTFUF) {
         this.jBBuscar = jBBuscar;
@@ -74,7 +80,7 @@ public class TelaCadastroCidade extends javax.swing.JDialog {
         this.jPRodape = jPRodape;
         this.jPTitulo = jPTitulo;
         this.jTFDescricao = jTFDescricao;
-        this.jTFID = jTFID;
+        this.jTFId = jTFID;
  
     }
 
@@ -115,7 +121,7 @@ public class TelaCadastroCidade extends javax.swing.JDialog {
         jLabel2 = new javax.swing.JLabel();
         jPCorpo = new javax.swing.JPanel();
         jLID = new javax.swing.JLabel();
-        jTFID = new javax.swing.JTextField();
+        jTFId = new javax.swing.JTextField();
         jLDescricao = new javax.swing.JLabel();
         jLUF = new javax.swing.JLabel();
         jTFDescricao = new javax.swing.JTextField();
@@ -170,10 +176,10 @@ public class TelaCadastroCidade extends javax.swing.JDialog {
         jLID.setFont(new java.awt.Font("PMingLiU-ExtB", 1, 14)); // NOI18N
         jLID.setText("ID");
 
-        jTFID.setForeground(new java.awt.Color(255, 255, 255));
-        jTFID.addActionListener(new java.awt.event.ActionListener() {
+        jTFId.setForeground(new java.awt.Color(255, 255, 255));
+        jTFId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTFIDActionPerformed(evt);
+                jTFIdActionPerformed(evt);
             }
         });
 
@@ -189,8 +195,12 @@ public class TelaCadastroCidade extends javax.swing.JDialog {
             }
         });
 
-        jCBUF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Acre (AC)", "Alagoas (AL)", "Amapá (AP)", "Amazonas (AM)", "Bahia (BA)", "Ceará (CE)", "Distrito Federal (DF)", "Espírito Santo (ES)", "Goiás (GO)", "Maranhão (MA)", "Mato Grosso (MT)", "Mato Grosso do Sul (MS)", "Minas Gerais (MG)", "Pará (PA)", "Paraíba (PB)", "Paraná (PR)", "Pernambuco (PE)", "Piauí (PI)", "Rio de Janeiro (RJ)", "Rio Grande do Norte (RN)", "Rio Grande do Sul (RS)", "Rondônia (RO)", "Roraima (RR)", "Santa Catarina (SC)", "São Paulo (SP)", "Sergipe (SE)", "Tocantins (TO)" }));
-        jCBUF.setSelectedIndex(-1);
+        jCBUF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" }));
+        jCBUF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCBUFActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPCorpoLayout = new javax.swing.GroupLayout(jPCorpo);
         jPCorpo.setLayout(jPCorpoLayout);
@@ -202,7 +212,7 @@ public class TelaCadastroCidade extends javax.swing.JDialog {
                     .addComponent(jCBUF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTFDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLUF, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTFID, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTFId, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLID, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLDescricao))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -213,7 +223,7 @@ public class TelaCadastroCidade extends javax.swing.JDialog {
                 .addGap(37, 37, 37)
                 .addComponent(jLID)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTFID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTFId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
                 .addComponent(jLDescricao)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -346,13 +356,17 @@ public class TelaCadastroCidade extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_jBSairActionPerformed
 
-    private void jTFIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFIDActionPerformed
+    private void jTFIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFIdActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTFIDActionPerformed
+    }//GEN-LAST:event_jTFIdActionPerformed
 
     private void jTFDescricaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFDescricaoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTFDescricaoActionPerformed
+
+    private void jCBUFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCBUFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCBUFActionPerformed
 
     /**
      * @param args the command line arguments
@@ -412,6 +426,6 @@ public class TelaCadastroCidade extends javax.swing.JDialog {
     private javax.swing.JPanel jPRodape;
     private javax.swing.JPanel jPTitulo;
     private javax.swing.JTextField jTFDescricao;
-    private javax.swing.JTextField jTFID;
+    private javax.swing.JTextField jTFId;
     // End of variables declaration//GEN-END:variables
 }

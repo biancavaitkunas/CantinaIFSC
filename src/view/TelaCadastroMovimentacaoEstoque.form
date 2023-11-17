@@ -187,18 +187,12 @@
                           </Group>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                                          <Component id="jTFNotaFiscal" min="-2" pref="201" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="jLNotaFiscal" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="157" max="-2" attributes="0"/>
-                                      </Group>
+                                      <Component id="jTFNotaFiscal" min="-2" pref="201" max="-2" attributes="0"/>
+                                      <Component id="jLNotaFiscal" min="-2" max="-2" attributes="0"/>
                                   </Group>
+                                  <EmptySpace max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLData" min="-2" max="-2" attributes="0"/>
                                       <Component id="jFTFData" min="-2" pref="131" max="-2" attributes="0"/>
@@ -223,8 +217,8 @@
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTFFornecedor" alignment="0" min="-2" pref="250" max="-2" attributes="0"/>
                               <Component id="jTextField1" alignment="0" min="-2" pref="549" max="-2" attributes="0"/>
+                              <Component id="jTFFornecedor" alignment="0" min="-2" pref="149" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="0" pref="40" max="32767" attributes="0"/>
                       </Group>

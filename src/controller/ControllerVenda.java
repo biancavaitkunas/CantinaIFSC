@@ -6,6 +6,7 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import utilities.Utilities;
 import view.TelaBuscaVenda;
 import view.TelaVenda;
 
@@ -25,7 +26,7 @@ public class ControllerVenda implements ActionListener {
         this.telaCadastroVenda.getjBGravar().addActionListener(this);
         
         utilities.Utilities.ativaDesativa(true, this.telaCadastroVenda.getjPRodape());
-        utilities.Utilities.limpaComponentes(false, this.telaCadastroVenda.getjPCorpo());
+        Utilities.limpaComponentes(false, this.telaCadastroVenda.getjPCorpo());
         
     }
 
@@ -33,15 +34,15 @@ public class ControllerVenda implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this.telaCadastroVenda.getjBNovo()){
             utilities.Utilities.ativaDesativa(false, this.telaCadastroVenda.getjPRodape());
-            utilities.Utilities.limpaComponentes(true, this.telaCadastroVenda.getjPCorpo());
+            Utilities.limpaComponentes(true, this.telaCadastroVenda.getjPCorpo());
             
         }else if (e.getSource() == this.telaCadastroVenda.getjBCancelar()){
             utilities.Utilities.ativaDesativa(true, this.telaCadastroVenda.getjPRodape());
-            utilities.Utilities.limpaComponentes(false, this.telaCadastroVenda.getjPCorpo());
+            Utilities.limpaComponentes(false, this.telaCadastroVenda.getjPCorpo());
             
         } else if (e.getSource() == this.telaCadastroVenda.getjBGravar()){
             utilities.Utilities.ativaDesativa(true, this.telaCadastroVenda.getjPRodape());
-            utilities.Utilities.limpaComponentes(false, this.telaCadastroVenda.getjPCorpo());
+            Utilities.limpaComponentes(false, this.telaCadastroVenda.getjPCorpo());
             
         } else if (e.getSource() == this.telaCadastroVenda.getjBBuscar()){
             TelaBuscaVenda telaBuscaVenda = new TelaBuscaVenda (null, true);

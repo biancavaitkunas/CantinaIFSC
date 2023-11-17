@@ -1,7 +1,10 @@
 package view;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JPanel;
 import javax.swing.JTable;
+import javax.swing.JTextField;
 
 
 public class TelaBuscaFornecedor extends javax.swing.JDialog {
@@ -26,6 +29,20 @@ public class TelaBuscaFornecedor extends javax.swing.JDialog {
     public JTable getjTDados() {
         return jTDados;
     }
+
+    public JComboBox<String> getjComboFiltro() {
+        return jComboFiltro;
+    }
+
+    public JPanel getjPFiltro() {
+        return jPFiltro;
+    }
+
+    public JTextField getjTFFiltrar() {
+        return jTFFiltrar;
+    }
+    
+    
 
     public void setjBFiltrar(JButton jBFiltrar) {
         this.jBFiltrar = jBFiltrar;
@@ -70,8 +87,9 @@ public class TelaBuscaFornecedor extends javax.swing.JDialog {
         jBCarregar = new javax.swing.JButton();
         jBSair = new javax.swing.JButton();
         jPFiltro = new javax.swing.JPanel();
-        jFFFiltro = new javax.swing.JFormattedTextField();
         jBFiltrar = new javax.swing.JButton();
+        jTFFiltrar = new javax.swing.JTextField();
+        jComboFiltro = new javax.swing.JComboBox<>();
 
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
@@ -98,12 +116,12 @@ public class TelaBuscaFornecedor extends javax.swing.JDialog {
         jPTitulo.setLayout(jPTituloLayout);
         jPTituloLayout.setHorizontalGroup(
             jPTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPTituloLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPTituloLayout.createSequentialGroup()
+                .addGap(297, 297, 297)
                 .addGroup(jPTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel2)
                     .addComponent(jLTitulo))
-                .addGap(288, 288, 288))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPTituloLayout.setVerticalGroup(
             jPTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -204,13 +222,17 @@ public class TelaBuscaFornecedor extends javax.swing.JDialog {
 
         jBFiltrar.setText("Filtrar");
 
+        jComboFiltro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "Nome" }));
+
         javax.swing.GroupLayout jPFiltroLayout = new javax.swing.GroupLayout(jPFiltro);
         jPFiltro.setLayout(jPFiltroLayout);
         jPFiltroLayout.setHorizontalGroup(
             jPFiltroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPFiltroLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jFFFiltro)
+                .addComponent(jComboFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTFFiltrar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jBFiltrar, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -220,8 +242,9 @@ public class TelaBuscaFornecedor extends javax.swing.JDialog {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPFiltroLayout.createSequentialGroup()
                 .addContainerGap(17, Short.MAX_VALUE)
                 .addGroup(jPFiltroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jFFFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBFiltrar))
+                    .addComponent(jBFiltrar)
+                    .addComponent(jComboFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTFFiltrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -311,8 +334,8 @@ public class TelaBuscaFornecedor extends javax.swing.JDialog {
     private javax.swing.JButton jBCarregar;
     private javax.swing.JButton jBFiltrar;
     private javax.swing.JButton jBSair;
+    private javax.swing.JComboBox<String> jComboFiltro;
     private javax.swing.JPanel jCorpo;
-    private javax.swing.JFormattedTextField jFFFiltro;
     private javax.swing.JLabel jLTitulo;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
@@ -323,5 +346,6 @@ public class TelaBuscaFornecedor extends javax.swing.JDialog {
     private javax.swing.JPanel jPTitulo;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTDados;
+    private javax.swing.JTextField jTFFiltrar;
     // End of variables declaration//GEN-END:variables
 }

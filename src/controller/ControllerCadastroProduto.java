@@ -1,8 +1,10 @@
 package controller;
 
+import static controller.ControllerCadastroCliente.codigo;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import model.Produto;
+import utilities.Utilities;
 import view.TelaBuscaProduto;
 import view.TelaCadastroProduto;
 
@@ -20,7 +22,7 @@ public class ControllerCadastroProduto implements ActionListener {
         this.telaCadastroProduto.getjBGravar().addActionListener(this);
         
         utilities.Utilities.ativaDesativa(true, this.telaCadastroProduto.getjPRodape());
-        utilities.Utilities.limpaComponentes(false, this.telaCadastroProduto.getjPCorpo());
+        Utilities.limpaComponentes(false, this.telaCadastroProduto.getjPCorpo());
         
     }
 
@@ -28,28 +30,29 @@ public class ControllerCadastroProduto implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this.telaCadastroProduto.getjBNovo()){
             utilities.Utilities.ativaDesativa(false, this.telaCadastroProduto.getjPRodape());
-            utilities.Utilities.limpaComponentes(true, this.telaCadastroProduto.getjPCorpo());
+            Utilities.limpaComponentes(true, this.telaCadastroProduto.getjPCorpo());
             this.telaCadastroProduto.getjTFID().setEnabled(false);
             
         }else if (e.getSource() == this.telaCadastroProduto.getjBCancelar()){
             utilities.Utilities.ativaDesativa(true, this.telaCadastroProduto.getjPRodape());
-            utilities.Utilities.limpaComponentes(false, this.telaCadastroProduto.getjPCorpo());
+            Utilities.limpaComponentes(false, this.telaCadastroProduto.getjPCorpo());
             
         } else if (e.getSource() == this.telaCadastroProduto.getjBGravar()){
             
             Produto produto = new Produto();
-            produto.setId(DAO.ClasseDados.listaCarteirinha.size() + 1);
             produto.setDescricao(this.telaCadastroProduto.getjTFDescricao().getText());
             produto.setCodigoBarra(this.telaCadastroProduto.getjTFCodigoBarra().getText());
             
             if (this.telaCadastroProduto.getjTFID().getText().equalsIgnoreCase("")){
-                DAO.ClasseDados.listaProduto.add(produto);
+                   Service.ProdutoService.adicionar(produto);
             } else {
+               produto.setId(Integer.parseInt(this.telaCadastroProduto.getjTFID().getText()));
+               Service.ProdutoService.atualizar(produto);
                 
             }
             
             utilities.Utilities.ativaDesativa(true, this.telaCadastroProduto.getjPRodape());
-            utilities.Utilities.limpaComponentes(false, this.telaCadastroProduto.getjPCorpo());
+            Utilities.limpaComponentes(false, this.telaCadastroProduto.getjPCorpo());
             
         } else if (e.getSource() == this.telaCadastroProduto.getjBBuscar()){
             codigo = 0;
@@ -59,9 +62,9 @@ public class ControllerCadastroProduto implements ActionListener {
             
             if(codigo != 0){
                 Produto produto = new Produto();
-                produto = DAO.ClasseDados.listaProduto.get(codigo-1);
-                utilities.Utilities.ativaDesativa(true, this.telaCadastroProduto.getjPRodape());
-                utilities.Utilities.limpaComponentes(false, this.telaCadastroProduto.getjPCorpo());
+                produto = Service.ProdutoService.carregar(codigo);
+                utilities.Utilities.ativaDesativa(false, this.telaCadastroProduto.getjPRodape());
+                Utilities.limpaComponentes(true, this.telaCadastroProduto.getjPCorpo());
                 
                 this.telaCadastroProduto.getjTFID().setText(produto.getId() + "");
                 this.telaCadastroProduto.getjTFDescricao().setText(produto.getDescricao());

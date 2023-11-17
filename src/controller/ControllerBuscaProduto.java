@@ -1,7 +1,11 @@
 package controller;
 
+import Service.ProdutoService;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.Produto;
 import view.TelaBuscaProduto;
@@ -26,16 +30,28 @@ public class ControllerBuscaProduto implements ActionListener{
             controller.ControllerCadastroProduto.codigo =  (int) this.telaBuscaProduto.
                                                             getjTDados().
                                                             getValueAt(this.telaBuscaProduto.getjTDados().getSelectedRow(), 0);
-            
+            this.telaBuscaProduto.dispose();
         }else if (e.getSource() == this.telaBuscaProduto.getjBFiltrar()){
-            //Criando/carregando uma instancia da classe singleton de dados
-            DAO.ClasseDados.getInstance();
-            
-            //Criar objeto de tipo TableModel
-            DefaultTableModel tabela = (DefaultTableModel) this.telaBuscaProduto.getjTDados().getModel();
-            
-            for (Produto produtoAtual : DAO.ClasseDados.listaProduto) {
-                tabela.addRow(new Object[]{produtoAtual.getId(), produtoAtual.getDescricao(), produtoAtual.getCodigoBarra()});
+            if (this.telaBuscaProduto.getjTFFiltrar().getText().trim().equalsIgnoreCase("")) {
+                JOptionPane.showMessageDialog(null, "Atenção!\nOpção de Filtro Vazia...");
+                this.telaBuscaProduto.getjTFFiltrar().requestFocus();
+            } else {
+                List<Produto> listaProdutos = new ArrayList<Produto>();
+
+                if (this.telaBuscaProduto.getjComboFiltro().getSelectedIndex() == 0) {
+                    listaProdutos.add(ProdutoService.carregar(Integer.parseInt(this.telaBuscaProduto.getjTFFiltrar().getText())));
+                } else if (this.telaBuscaProduto.getjComboFiltro().getSelectedIndex() == 1) {
+                    listaProdutos = ProdutoService.carregar(this.telaBuscaProduto.getjTFFiltrar().getText().trim());
+                }
+
+                DefaultTableModel tabela = (DefaultTableModel) this.telaBuscaProduto.getjTDados().getModel();
+                tabela.setRowCount(0);
+
+                for (Produto produtoAtual : listaProdutos) {
+                    tabela.addRow(new Object[]{produtoAtual.getId(),
+                        produtoAtual.getDescricao(),
+                    produtoAtual.getCodigoBarra()});
+                }
             }
             
         }else if (e.getSource() == this.telaBuscaProduto.getjBSair()){

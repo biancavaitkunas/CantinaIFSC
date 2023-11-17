@@ -3,6 +3,7 @@ package controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import model.Cidade;
+import utilities.Utilities;
 import view.TelaBuscaCidade;
 import view.TelaCadastroCidade;
 
@@ -21,7 +22,7 @@ public class ControllerCadastroCidade implements ActionListener {
         this.telaCadastroCidade.getjBGravar().addActionListener(this);
         
         utilities.Utilities.ativaDesativa(true, this.telaCadastroCidade.getjPRodape());
-        utilities.Utilities.limpaComponentes(false, this.telaCadastroCidade.getjPCorpo());
+        Utilities.limpaComponentes(false, this.telaCadastroCidade.getjPCorpo());
         
     }
 
@@ -30,24 +31,25 @@ public class ControllerCadastroCidade implements ActionListener {
 
         if (e.getSource() == this.telaCadastroCidade.getjBNovo()) {
             utilities.Utilities.ativaDesativa(false, this.telaCadastroCidade.getjPRodape());
-            utilities.Utilities.limpaComponentes(true, this.telaCadastroCidade.getjPCorpo());
+            Utilities.limpaComponentes(true, this.telaCadastroCidade.getjPCorpo());
             
-            this.telaCadastroCidade.getjTFID().setEnabled(false);
+            this.telaCadastroCidade.getjTFId().setEnabled(false);
 
         } else if (e.getSource() == this.telaCadastroCidade.getjBCancelar()) {
             utilities.Utilities.ativaDesativa(true, this.telaCadastroCidade.getjPRodape());
-            utilities.Utilities.limpaComponentes(false, this.telaCadastroCidade.getjPCorpo());
+            Utilities.limpaComponentes(false, this.telaCadastroCidade.getjPCorpo());
 
         } else if (e.getSource() == this.telaCadastroCidade.getjBGravar()) {
 
             Cidade cidade = new Cidade();
-            cidade.setId(DAO.ClasseDados.listaCidade.size() +1);
             cidade.setDescricao(this.telaCadastroCidade.getjTFDescricao().getText());
+            cidade.setUf((String) this.telaCadastroCidade.getjCBUF().getSelectedItem());
             
-            if(this.telaCadastroCidade.getjTFID().getText().equalsIgnoreCase("")){
-               DAO.ClasseDados.listaCidade.add(cidade);
+            if(this.telaCadastroCidade.getjTFId().getText().equalsIgnoreCase("")){
+               Service.CidadeService.adicionar(cidade);
             }else{
-              //inserir o código para alterar na lista  
+              cidade.setId(Integer.parseInt(this.telaCadastroCidade.getjTFId().getText()));
+              Service.CidadeService.atualizar(cidade);
             }
 
             utilities.Utilities.ativaDesativa(true, this.telaCadastroCidade.getjPRodape());
@@ -64,11 +66,11 @@ public class ControllerCadastroCidade implements ActionListener {
                 Cidade cidade = new Cidade();
                 cidade = DAO.ClasseDados.listaCidade.get(codigo -1);
                 utilities.Utilities.ativaDesativa(false, this.telaCadastroCidade.getjPRodape());
-                utilities.Utilities.limpaComponentes(true, this.telaCadastroCidade.getjPCorpo());
+                Utilities.limpaComponentes(true, this.telaCadastroCidade.getjPCorpo());
                 
-                this.telaCadastroCidade.getjTFID().setText(cidade.getId() + "");
+                this.telaCadastroCidade.getjTFId().setText(cidade.getId() + "");
                 this.telaCadastroCidade.getjTFDescricao().setText(cidade.getDescricao());
-                this.telaCadastroCidade.getjTFID().setEnabled(false);
+                this.telaCadastroCidade.getjTFId().setEnabled(false);
             }
 
         } else if (e.getSource() == this.telaCadastroCidade.getjBSair()) {

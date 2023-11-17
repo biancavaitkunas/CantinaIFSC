@@ -2,6 +2,7 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import utilities.Utilities;
 import view.TelaCadastroMovimentacaoEstoque;
 
 public class ControllerCadastroMovimentacaoEstoque implements ActionListener {
@@ -16,7 +17,7 @@ public class ControllerCadastroMovimentacaoEstoque implements ActionListener {
         this.telaCadastroMovimentacaoEstoque.getjBGravar().addActionListener(this);
         
         utilities.Utilities.ativaDesativa(true, this.telaCadastroMovimentacaoEstoque.getjPRodape());
-        utilities.Utilities.limpaComponentes(false, this.telaCadastroMovimentacaoEstoque.getjPCorpo());
+        Utilities.limpaComponentes(false, this.telaCadastroMovimentacaoEstoque.getjPCorpo());
         
     }
 
@@ -24,15 +25,15 @@ public class ControllerCadastroMovimentacaoEstoque implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this.telaCadastroMovimentacaoEstoque.getjBNovo()){
             utilities.Utilities.ativaDesativa(false, this.telaCadastroMovimentacaoEstoque.getjPRodape());
-            utilities.Utilities.limpaComponentes(true, this.telaCadastroMovimentacaoEstoque.getjPCorpo());
+            Utilities.limpaComponentes(true, this.telaCadastroMovimentacaoEstoque.getjPCorpo());
             
         }else if (e.getSource() == this.telaCadastroMovimentacaoEstoque.getjBCancelar()){
             utilities.Utilities.ativaDesativa(true, this.telaCadastroMovimentacaoEstoque.getjPRodape());
-            utilities.Utilities.limpaComponentes(false, this.telaCadastroMovimentacaoEstoque.getjPCorpo());
+            Utilities.limpaComponentes(false, this.telaCadastroMovimentacaoEstoque.getjPCorpo());
             
         } else if (e.getSource() == this.telaCadastroMovimentacaoEstoque.getjBGravar()){
             utilities.Utilities.ativaDesativa(true, this.telaCadastroMovimentacaoEstoque.getjPRodape());
-            utilities.Utilities.limpaComponentes(false, this.telaCadastroMovimentacaoEstoque.getjPCorpo());
+            Utilities.limpaComponentes(false, this.telaCadastroMovimentacaoEstoque.getjPCorpo());
             
         } else if (e.getSource() == this.telaCadastroMovimentacaoEstoque.getjBBuscar()){
             TelaCadastroMovimentacaoEstoque telaCadastroMovimentacaoEstoque = new TelaCadastroMovimentacaoEstoque (null, true);
