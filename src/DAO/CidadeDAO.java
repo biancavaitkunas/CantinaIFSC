@@ -98,7 +98,33 @@ public class CidadeDAO implements InterfaceDAO<Cidade>{
 
     @Override
     public List<Cidade> retrieve(String parString) {
-        return null;
+        Connection conexao = ConnectionFactory.getConnection();
+        String sqlExecutar = "SELECT cidade.id, "
+                           + "cidade.descricao, "
+                           + "cidade.uf "
+                           + "FROM cidade "
+                           + " WHERE cidade.descricao like ? ";
+        
+        PreparedStatement pstm = null;
+        ResultSet rst = null;
+        List<Cidade> listaCidades = new ArrayList<>();
+        
+        try {
+            pstm = conexao.prepareStatement(sqlExecutar);
+            pstm.setString(1, "%" + parString + "%");
+            rst = pstm.executeQuery();
+            while (rst.next()) {
+                Cidade cidade = new Cidade();
+                cidade.setId(rst.getInt("id"));
+                cidade.setDescricao(rst.getString("descricao"));
+                listaCidades.add(cidade);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } finally {
+            ConnectionFactory.closeConnection(conexao, pstm, rst);
+            return listaCidades;
+        }
     }
     
     public List<Cidade> retrieve(String nomeParametro, String parString) {

@@ -25,8 +25,6 @@ public class TelaCadastroEndereco extends javax.swing.JDialog {
         return jComboCidade;
     }
     
-    
-
     public JButton getjBCancelar() {
         return jBCancelar;
     }
@@ -75,14 +73,17 @@ public class TelaCadastroEndereco extends javax.swing.JDialog {
         this.jTFLogradouro = jTFLogradouro;
     }
 
-    public void setjTFCEP(JFormattedTextField jFTFCEP) {
-        this.jTFCEP = jFTFCEP;
+    public JFormattedTextField getjFTFCep() {
+        return jFTFCep;
+    }
+
+    public void setjFTFCep(JFormattedTextField jFTFCep) {
+        this.jFTFCep = jFTFCep;
     }
 
     public void setjTFBairro(JTextField jTFBairro) {
         this.jTFLogradouro = jTFBairro;
     }
-
 
     public ButtonGroup getButtonGroup1() {
         return buttonGroup1;
@@ -137,9 +138,6 @@ public class TelaCadastroEndereco extends javax.swing.JDialog {
     }
     
     
-    
-    
-
     public TelaCadastroEndereco(ButtonGroup buttonGroup1, JButton jBBuscar, JButton jBCancelar, JButton jBGravar, JButton jBNovo, JButton jBSair, JComboBox<String> jCBUF, JFormattedTextField jFTFCEP, JLabel jLBairro, JLabel jLCEP, JLabel jLCidade, JLabel jLEndereco, JLabel jLID, JLabel jLLogradouro, JLabel jLStatus, JLabel jLTitulo, JLabel jLUF, JPanel jPCorpo, JPanel jPRodape, JPanel jPTitulo, JRadioButton jRBAtivo, JRadioButton jRBInativo, JTextField jTFBairro, JTextField jTFCidade, JTextField jTFID, JTextField jTFLogradouro) {
         this.buttonGroup1 = buttonGroup1;
         this.jBBuscar = jBBuscar;
@@ -147,7 +145,6 @@ public class TelaCadastroEndereco extends javax.swing.JDialog {
         this.jBGravar = jBGravar;
         this.jBNovo = jBNovo;
         this.jBSair = jBSair;
-        this.jTFCEP = jFTFCEP;
         this.jLBairro = jLBairro;
         this.jLCEP = jLCEP;
         this.jLCidade = jLCidade;
@@ -164,10 +161,6 @@ public class TelaCadastroEndereco extends javax.swing.JDialog {
         this.jTFLogradouro = jTFBairro;
         this.jTFID = jTFID;
         this.jTFLogradouro = jTFLogradouro;
-    }
-
-    public JTextField getjTFCEP() {
-        return jTFCEP;
     }
     
     
@@ -191,9 +184,9 @@ public class TelaCadastroEndereco extends javax.swing.JDialog {
         jTFLogradouro = new javax.swing.JTextField();
         jRBAtivo = new javax.swing.JRadioButton();
         jRBInativo = new javax.swing.JRadioButton();
-        jTFCEP = new javax.swing.JTextField();
         jComboCidade = new javax.swing.JComboBox<>();
         jComboBairro = new javax.swing.JComboBox<>();
+        jFTFCep = new javax.swing.JFormattedTextField();
         jPRodape = new javax.swing.JPanel();
         jBNovo = new javax.swing.JButton();
         jBCancelar = new javax.swing.JButton();
@@ -283,17 +276,17 @@ public class TelaCadastroEndereco extends javax.swing.JDialog {
             }
         });
 
-        jTFCEP.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTFCEPActionPerformed(evt);
-            }
-        });
-
         jComboBairro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBairroActionPerformed(evt);
             }
         });
+
+        try {
+            jFTFCep.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
 
         javax.swing.GroupLayout jPCorpoLayout = new javax.swing.GroupLayout(jPCorpo);
         jPCorpo.setLayout(jPCorpoLayout);
@@ -302,37 +295,32 @@ public class TelaCadastroEndereco extends javax.swing.JDialog {
             .addGroup(jPCorpoLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jComboCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLCidade)
+                    .addComponent(jLCEP, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLID, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jFTFCep, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jTFID, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)))
+                .addGap(18, 18, 18)
+                .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPCorpoLayout.createSequentialGroup()
+                        .addComponent(jTFLogradouro, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPCorpoLayout.createSequentialGroup()
+                        .addComponent(jComboBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                        .addComponent(jRBAtivo, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jRBInativo)
+                        .addGap(62, 62, 62))
                     .addGroup(jPCorpoLayout.createSequentialGroup()
                         .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLID, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPCorpoLayout.createSequentialGroup()
-                                .addComponent(jTFCEP, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTFLogradouro, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jTFID, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPCorpoLayout.createSequentialGroup()
-                        .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLCidade)
-                            .addComponent(jLCEP, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPCorpoLayout.createSequentialGroup()
-                                .addGap(21, 21, 21)
-                                .addComponent(jLLogradouro, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPCorpoLayout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                        .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLStatus)
-                            .addGroup(jPCorpoLayout.createSequentialGroup()
-                                .addComponent(jRBAtivo, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jRBInativo)))
-                        .addGap(18, 18, 18))))
+                            .addComponent(jLBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLLogradouro, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLStatus)
+                        .addGap(154, 154, 154))))
         );
         jPCorpoLayout.setVerticalGroup(
             jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -341,28 +329,26 @@ public class TelaCadastroEndereco extends javax.swing.JDialog {
                 .addComponent(jLID)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTFID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPCorpoLayout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jLCEP)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTFLogradouro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTFCEP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLCidade)
-                            .addComponent(jLBairro)
-                            .addComponent(jLStatus))
-                        .addGap(10, 10, 10)
-                        .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jComboCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jRBAtivo)
-                            .addComponent(jRBInativo)
-                            .addComponent(jComboBairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(29, 29, 29)
+                .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLCEP)
                     .addComponent(jLLogradouro))
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTFLogradouro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jFTFCep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(33, 33, 33)
+                .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLCidade)
+                    .addComponent(jLBairro)
+                    .addComponent(jLStatus))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jRBAtivo)
+                    .addComponent(jRBInativo))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         jPRodape.setBackground(new java.awt.Color(204, 255, 204));
@@ -461,21 +447,22 @@ public class TelaCadastroEndereco extends javax.swing.JDialog {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPRodape, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPCorpo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPCorpo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPRodape, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(2, 2, 2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPCorpo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPRodape, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -500,10 +487,6 @@ public class TelaCadastroEndereco extends javax.swing.JDialog {
 
     private void jBGravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBGravarActionPerformed
     }//GEN-LAST:event_jBGravarActionPerformed
-
-    private void jTFCEPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFCEPActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTFCEPActionPerformed
 
     private void jTFLogradouroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFLogradouroActionPerformed
 
@@ -570,6 +553,7 @@ public class TelaCadastroEndereco extends javax.swing.JDialog {
     private javax.swing.JButton jBSair;
     private javax.swing.JComboBox<String> jComboBairro;
     private javax.swing.JComboBox<String> jComboCidade;
+    private javax.swing.JFormattedTextField jFTFCep;
     private javax.swing.JLabel jLBairro;
     private javax.swing.JLabel jLCEP;
     private javax.swing.JLabel jLCidade;
@@ -583,7 +567,6 @@ public class TelaCadastroEndereco extends javax.swing.JDialog {
     private javax.swing.JPanel jPTitulo;
     private javax.swing.JRadioButton jRBAtivo;
     private javax.swing.JRadioButton jRBInativo;
-    private javax.swing.JTextField jTFCEP;
     private javax.swing.JTextField jTFID;
     private javax.swing.JTextField jTFLogradouro;
     // End of variables declaration//GEN-END:variables

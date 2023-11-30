@@ -3,20 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/bianc/OneDrive/Área%20de%20Trabalho/Faculdade/Ajustar/CantinaIFSC/src/view/TelaBuscaFornecedor.java</file>
-            <file>file:/C:/Users/bianc/OneDrive/Área%20de%20Trabalho/Faculdade/Ajustar/CantinaIFSC/src/DAO/BairroDAO.java</file>
-            <file>file:/C:/Users/bianc/OneDrive/Área%20de%20Trabalho/Faculdade/Ajustar/CantinaIFSC/src/DAO/CarteirinhaDAO.java</file>
-            <file>file:/C:/Users/bianc/OneDrive/Área%20de%20Trabalho/Faculdade/Ajustar/CantinaIFSC/src/DAO/FornecedorDAO.java</file>
-            <file>file:/C:/Users/bianc/OneDrive/Área%20de%20Trabalho/Faculdade/Ajustar/CantinaIFSC/src/controller/ControllerBuscaFuncionario.java</file>
+            <file>file:/C:/Users/bianc/OneDrive/Área%20de%20Trabalho/Faculdade/Ajustar/CantinaIFSC/src/view/TelaCadastroCliente.java</file>
             <file>file:/C:/Users/bianc/OneDrive/Área%20de%20Trabalho/Faculdade/Ajustar/CantinaIFSC/src/controller/ControllerCadastroCliente.java</file>
-            <file>file:/C:/Users/bianc/OneDrive/Área%20de%20Trabalho/Faculdade/Ajustar/CantinaIFSC/src/view/TelaCadastroFuncionario.java</file>
-            <file>file:/C:/Users/bianc/OneDrive/Área%20de%20Trabalho/Faculdade/Ajustar/CantinaIFSC/src/controller/ControllerCadastroFuncionario.java</file>
-            <file>file:/C:/Users/bianc/OneDrive/Área%20de%20Trabalho/Faculdade/Ajustar/CantinaIFSC/src/controller/ControllerCadastroCarteirinha.java</file>
-            <file>file:/C:/Users/bianc/OneDrive/Área%20de%20Trabalho/Faculdade/Ajustar/CantinaIFSC/src/DAO/ClienteDAO.java</file>
-            <file>file:/C:/Users/bianc/OneDrive/Área%20de%20Trabalho/Faculdade/Ajustar/CantinaIFSC/src/controller/ControllerBuscaBairro.java</file>
-            <file>file:/C:/Users/bianc/OneDrive/Área%20de%20Trabalho/Faculdade/Ajustar/CantinaIFSC/src/DAO/FuncionarioDAO.java</file>
-            <file>file:/C:/Users/bianc/OneDrive/Área%20de%20Trabalho/Faculdade/Ajustar/CantinaIFSC/src/controller/ControllerBuscaFornecedor.java</file>
-            <file>file:/C:/Users/bianc/OneDrive/Área%20de%20Trabalho/Faculdade/Ajustar/CantinaIFSC/src/controller/ControllerCadastroFornecedor.java</file>
+            <file>file:/C:/Users/bianc/OneDrive/Área%20de%20Trabalho/Faculdade/Ajustar/CantinaIFSC/src/controller/ControllerBuscaCliente.java</file>
+            <file>file:/C:/Users/bianc/OneDrive/Área%20de%20Trabalho/Faculdade/Ajustar/CantinaIFSC/src/view/TelaCadastroEndereco.java</file>
+            <file>file:/C:/Users/bianc/OneDrive/Área%20de%20Trabalho/Faculdade/Ajustar/CantinaIFSC/src/DAO/FornecedorDAO.java</file>
+            <file>file:/C:/Users/bianc/OneDrive/Área%20de%20Trabalho/Faculdade/Ajustar/CantinaIFSC/src/controller/ControllerCadastroEndereco.java</file>
+            <file>file:/C:/Users/bianc/OneDrive/Área%20de%20Trabalho/Faculdade/Ajustar/CantinaIFSC/src/Service/FornecedorService.java</file>
         </group>
     </open-files>
 </project-private>

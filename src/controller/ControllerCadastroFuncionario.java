@@ -55,7 +55,7 @@ public class ControllerCadastroFuncionario implements ActionListener {
             Funcionario funcionario = new Funcionario();
             funcionario.setId(DAO.ClasseDados.listaBairro.size() + 1);
             funcionario.setNome(this.telaCadastroFuncionario.getjTFNome().getText());
-            funcionario.setCpf(this.telaCadastroFuncionario.getjTFCpf().getText());
+            funcionario.setCpf(this.telaCadastroFuncionario.getjFTFCPF().getText());
             funcionario.setEmail(this.telaCadastroFuncionario.getjTFEmail().getText());
             funcionario.setFone1(this.telaCadastroFuncionario.getjTFTelefone1().getText());
             funcionario.setFone2(this.telaCadastroFuncionario.getjTFTelefone2().getText());
@@ -90,7 +90,7 @@ public class ControllerCadastroFuncionario implements ActionListener {
                 
                 this.telaCadastroFuncionario.getjTFID().setText(funcionario.getId() + " ");
                 this.telaCadastroFuncionario.getjTFNome().setText(funcionario.getNome());
-                this.telaCadastroFuncionario.getjTFCpf().setText(funcionario.getCpf());
+                this.telaCadastroFuncionario.getjFTFCPF().setText(funcionario.getCpf());
                 this.telaCadastroFuncionario.getjTFEmail().setText(funcionario.getEmail());
                 this.telaCadastroFuncionario.getjTFTelefone1().setText(funcionario.getFone1());
                 this.telaCadastroFuncionario.getjTFTelefone2().setText(funcionario.getFone2());

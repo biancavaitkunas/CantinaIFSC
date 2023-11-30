@@ -63,12 +63,9 @@ public class EnderecoDAO implements InterfaceDAO<Endereco>{
             rst = pstm.executeQuery();
             while (rst.next()) {
                 Endereco endereco = new Endereco();
-
                 endereco.setId(rst.getInt("id"));
                 endereco.setLogradouro(rst.getString("logradouro"));
                 endereco.setStatus(rst.getString("status").charAt(0));
-                //Utilizei o String.CharAt(0) para transformar a 
-                //String de retorno em char
                 endereco.setCep(rst.getString("cep"));
 
                 Bairro bairro = new Bairro();
@@ -235,6 +232,24 @@ public class EnderecoDAO implements InterfaceDAO<Endereco>{
 
     @Override
     public void delete(Endereco objeto) {
+    	
+    	Connection conexao = ConnectionFactory.getConnection();
+        String sqlExecutar = " DELETE * "
+        				   + " FROM endereco e"
+        				   + " WHERE  e.id = ?";
+        
+        PreparedStatement pstm = null;
+        
+        try {
+            pstm = conexao.prepareStatement(sqlExecutar);
+            pstm.setInt(1, objeto.getId());
+            pstm.execute();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }finally{
+            ConnectionFactory.closeConnection(conexao, pstm);
+        }
+        
     }
     
     @Override

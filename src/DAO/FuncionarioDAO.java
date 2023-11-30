@@ -1,4 +1,4 @@
-package DAO;
+                            ´~package DAO;
 
 import java.util.List;
 import model.Funcionario;
@@ -118,6 +118,17 @@ public class FuncionarioDAO implements InterfaceDAO<Funcionario>{
                                                                                 + "		 funcionario.endereco_id"
 		           		   + " FROM funcionario "      
                            //+ " 		LEFT OUTER JOIN endereco ON endereco.id = funcionario.endereco_id "
+		           		   + "       funcionario.fone"
+		           		   + "		 funcionario.email"
+		           		   + "		 funcionario.endereco"
+		           		   + "		 funcionario.complementoEndereco"
+		           		   + "		 funcionario.cpf"
+		           		   + "		 funcionario.rg"
+		           		   + "		 funcionario.status"
+		           		   + "		 funcionario.usuario"
+		           		   + "		 funcionario.senha"
+		           		   + "FROM funcionario"      
+                           + " 		LEFT OUTER JOIN endereco ON endereco.id = funcionario.bairro_id "
                            + " WHERE funcionario.id = ? ";
         
         PreparedStatement pstm = null;
@@ -144,6 +155,9 @@ public class FuncionarioDAO implements InterfaceDAO<Funcionario>{
                 funcionario.setSenha(rs.getString("senha"));
                 
                /* Endereco endereco = new Endereco();
+=======
+                Endereco endereco = new Endereco();
+>>>>>>> 9f10a7055a2f683a71fc92d2b22c1b88d3f8aadf
                 endereco.setId(rs.getInt("id"));
                 endereco.setLogradouro(rs.getString("logradouro"));
                 endereco.setStatus(rs.getString("status").charAt(0));

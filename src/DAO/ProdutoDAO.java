@@ -3,6 +3,7 @@ package DAO;
 import java.util.ArrayList;
 import java.util.List;
 
+import model.Bairro;
 import model.Produto;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -49,7 +50,7 @@ public class ProdutoDAO implements InterfaceDAO<Produto>{
             pstm = conexao.prepareStatement(sqlExecutar);
             pstm.executeQuery();
             while(rs.next()){
-                Produto produto = new Produto();
+            	Produto produto = new Produto();
                 produto.setId(rs.getInt("id"));
                 produto.setDescricao(rs.getString("descricao"));
                 produto.setCodigoBarra(rs.getString("codigoBarra"));
@@ -150,6 +151,8 @@ public class ProdutoDAO implements InterfaceDAO<Produto>{
 	    		   		   + "produto.codigoBarra = ? "
 	    		   		   //+ "produto.status = ?  "
 	    		   		   //+ "FROM produto "
+	    		   		   + "produto.status = ?, "
+	    		   		   + "FROM produto "
 	    		   		   + " WHERE produto.id = ?";
         
         PreparedStatement pstm = null;
@@ -158,8 +161,9 @@ public class ProdutoDAO implements InterfaceDAO<Produto>{
             pstm = conexao.prepareStatement(sqlExecutar);
             pstm.setString(1, objeto.getDescricao());
             pstm.setString(2, objeto.getCodigoBarra());
-           // pstm.setString(3, objeto.getStatus()+"");
             pstm.setInt(3, objeto.getId());
+            pstm.setString(3, objeto.getStatus()+"");
+            pstm.setInt(4, objeto.getId());
             pstm.execute();
             
         } catch (SQLException ex) {

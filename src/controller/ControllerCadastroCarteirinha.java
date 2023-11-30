@@ -28,10 +28,10 @@ public class ControllerCadastroCarteirinha implements ActionListener {
         
         listaCliente = Service.ClienteService.carregar();
 
-        this.telaCadastroCarteirinha.getjCBCliente().removeAll();
+        this.telaCadastroCarteirinha.getjTFNomeCliente().removeAll();
 
         for (Cliente bairroAtual : listaCliente) {
-            this.telaCadastroCarteirinha.getjComboCliente().addItem(bairroAtual.getNome());
+            //this.telaCadastroCarteirinha.getjTFNomeCliente().addItem(bairroAtual.getNome());
         }
 
         utilities.Utilities.ativaDesativa(true, this.telaCadastroCarteirinha.getjPRodape());
@@ -58,7 +58,7 @@ public class ControllerCadastroCarteirinha implements ActionListener {
             carteirinha.setDataGeracao(this.telaCadastroCarteirinha.getjFTFDataGeracao().getText());
             carteirinha.setDataCancelamento(this.telaCadastroCarteirinha.getjFTFDataCancelamento().getText());
 
-            carteirinha.setCliente(Service.ClienteService.carregar("nome", this.telaCadastroCarteirinha.getjCBCliente().getSelectedItem() + "").get(0)); 
+            //carteirinha.setCliente(Service.ClienteService.carregar("nome", this.telaCadastroCarteirinha.getjTFNomeCliente().getSelectedItem() + "").get(0)); 
             
             if (this.telaCadastroCarteirinha.getjLID().getText().equalsIgnoreCase("")){
                 Service.CarteirinhaService.adicionar(carteirinha);
@@ -89,6 +89,8 @@ public class ControllerCadastroCarteirinha implements ActionListener {
             
         } else if (e.getSource() == this.telaCadastroCarteirinha.getjBSair()){
             this.telaCadastroCarteirinha.dispose();
+        } else if (e.getSource() == this.telaCadastroCarteirinha.getjBSair()) {
+            
         }
     }
     

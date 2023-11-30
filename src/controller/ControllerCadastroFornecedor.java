@@ -28,10 +28,10 @@ public class ControllerCadastroFornecedor implements ActionListener {
         
         listaEnderecos = Service.EnderecoService.carregar();
 
-        this.telaCadastroFornecedor.getjCBCep().removeAll();
+        this.telaCadastroFornecedor.getjFTFCep().removeAll();
 
         for (Endereco cidadeAtual : listaEnderecos) {
-            this.telaCadastroFornecedor.getjCBCep().addItem(cidadeAtual.getLogradouro());
+            //this.telaCadastroFornecedor.getjFTFCep().addItem(cidadeAtual.getLogradouro());
         }
         
         utilities.Utilities.ativaDesativa(true, this.telaCadastroFornecedor.getjPRodape());
@@ -55,7 +55,7 @@ public class ControllerCadastroFornecedor implements ActionListener {
             Fornecedor fornecedor = new Fornecedor();
             fornecedor.setId(DAO.ClasseDados.listaBairro.size() + 1);
             fornecedor.setNome(this.telaCadastroFornecedor.getjTFNome().getText());
-            fornecedor.setCnpj(this.telaCadastroFornecedor.getjTFCNPJ().getText());
+            fornecedor.setCnpj(this.telaCadastroFornecedor.getjFTFCep().getText());
             fornecedor.setRazaoSocial(this.telaCadastroFornecedor.getjTFRazaoSocial().getText());
             fornecedor.setInscricaoEstadual(this.telaCadastroFornecedor.getjTFInscricaoEstadual().getText());
             fornecedor.setEmail(this.telaCadastroFornecedor.getjTFEmail().getText());
@@ -64,7 +64,7 @@ public class ControllerCadastroFornecedor implements ActionListener {
             fornecedor.setComplementoEndereco(this.telaCadastroFornecedor.getjTFComplemento().getText());
             fornecedor.setStatus(this.telaCadastroFornecedor.getjRBAtivo().getText().charAt(0));
             
-            fornecedor.setEndereco(Service.EnderecoService.carregar("logradouro", this.telaCadastroFornecedor.getjCBCep().getSelectedItem() + "").get(0));
+            //fornecedor.setEndereco(Service.EnderecoService.carregar("logradouro", this.telaCadastroFornecedor.getjFTFCep().getSelectedItem() + "").get(0));
             
             if (this.telaCadastroFornecedor.getjTFID().getText().equalsIgnoreCase("")){
                 Service.FornecedorService.adicionar(fornecedor);
@@ -90,7 +90,7 @@ public class ControllerCadastroFornecedor implements ActionListener {
                 
                 this.telaCadastroFornecedor.getjTFID().setText(fornecedor.getId() + "");
                 this.telaCadastroFornecedor.getjTFNome().setText(fornecedor.getNome());
-                this.telaCadastroFornecedor.getjTFCNPJ().setText(fornecedor.getCnpj());
+                this.telaCadastroFornecedor.getjFTFCep().setText(fornecedor.getCnpj());
                 this.telaCadastroFornecedor.getjTFRazaoSocial().setText(fornecedor.getRazaoSocial());
                 this.telaCadastroFornecedor.getjTFInscricaoEstadual().setText(fornecedor.getInscricaoEstadual());
                 this.telaCadastroFornecedor.getjTFEmail().setText(fornecedor.getEmail());

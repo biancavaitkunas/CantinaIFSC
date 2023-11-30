@@ -4,6 +4,7 @@ package view;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -99,9 +100,23 @@ public class TelaCadastroFuncionario extends javax.swing.JDialog {
         return jTFRg;
     }
 
-    public JTextField getjTextField7() {
-        return jTFCpf;
+    public JFormattedTextField getjFTFCPF() {
+        return jFTFCPF;
     }
+
+    public void setjFTFCPF(JFormattedTextField jFTFCPF) {
+        this.jFTFCPF = jFTFCPF;
+    }
+
+    public JTextField getjTFTelefone3() {
+        return jTFTelefone3;
+    }
+
+    public void setjTFTelefone3(JTextField jTFTelefone3) {
+        this.jTFTelefone3 = jTFTelefone3;
+    }
+
+    
 
     public void setjBBuscar(JButton jBBuscar) {
         this.jBBuscar = jBBuscar;
@@ -153,10 +168,6 @@ public class TelaCadastroFuncionario extends javax.swing.JDialog {
 
     public void setjTFUsuario(JTextField jTFUsuario) {
         this.jTFUsuario = jTFUsuario;
-    }
-
-    public JTextField getjTFCpf() {
-        return jTFCpf;
     }
 
     public JTextField getjTFNome() {
@@ -267,7 +278,6 @@ public class TelaCadastroFuncionario extends javax.swing.JDialog {
         this.jTFComplementoEndereco = jTextField14;
         this.jTFNome = jTextField5;
         this.jTFRg = jTextField6;
-        this.jTFCpf = jTextField7;
     }
     
     
@@ -301,7 +311,6 @@ public class TelaCadastroFuncionario extends javax.swing.JDialog {
         jLabel12 = new javax.swing.JLabel();
         jTFNome = new javax.swing.JTextField();
         jTFRg = new javax.swing.JTextField();
-        jTFCpf = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jTFEmail = new javax.swing.JTextField();
         jTFID = new javax.swing.JTextField();
@@ -314,6 +323,7 @@ public class TelaCadastroFuncionario extends javax.swing.JDialog {
         jTFTelefone1 = new javax.swing.JTextField();
         jTFUsuario = new javax.swing.JTextField();
         jTFTelefone3 = new javax.swing.JTextField();
+        jFTFCPF = new javax.swing.JFormattedTextField();
         jPRodape = new javax.swing.JPanel();
         jBNovo = new javax.swing.JButton();
         jBCancelar = new javax.swing.JButton();
@@ -409,12 +419,6 @@ public class TelaCadastroFuncionario extends javax.swing.JDialog {
             }
         });
 
-        jTFCpf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTFCpfActionPerformed(evt);
-            }
-        });
-
         jLabel5.setFont(new java.awt.Font("PMingLiU-ExtB", 1, 14)); // NOI18N
         jLabel5.setText("Senha");
 
@@ -469,6 +473,12 @@ public class TelaCadastroFuncionario extends javax.swing.JDialog {
                 jTFTelefone3ActionPerformed(evt);
             }
         });
+
+        try {
+            jFTFCPF.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
 
         javax.swing.GroupLayout jPCorpoLayout = new javax.swing.GroupLayout(jPCorpo);
         jPCorpo.setLayout(jPCorpoLayout);
@@ -530,7 +540,7 @@ public class TelaCadastroFuncionario extends javax.swing.JDialog {
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTFUsuario)
                             .addComponent(jCBCep, 0, 181, Short.MAX_VALUE)
-                            .addComponent(jTFCpf))))
+                            .addComponent(jFTFCPF))))
                 .addContainerGap(9, Short.MAX_VALUE))
         );
         jPCorpoLayout.setVerticalGroup(
@@ -544,8 +554,8 @@ public class TelaCadastroFuncionario extends javax.swing.JDialog {
                 .addGap(6, 6, 6)
                 .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTFID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTFCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTFNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTFNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jFTFCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLRG)
@@ -710,10 +720,6 @@ public class TelaCadastroFuncionario extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTFRgActionPerformed
 
-    private void jTFCpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFCpfActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTFCpfActionPerformed
-
     private void jTFEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFEmailActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTFEmailActionPerformed
@@ -792,6 +798,7 @@ public class TelaCadastroFuncionario extends javax.swing.JDialog {
     private javax.swing.JButton jBNovo;
     private javax.swing.JButton jBSair;
     private javax.swing.JComboBox<String> jCBCep;
+    private javax.swing.JFormattedTextField jFTFCPF;
     private javax.swing.JLabel jLID;
     private javax.swing.JLabel jLNome;
     private javax.swing.JLabel jLRG;
@@ -815,7 +822,6 @@ public class TelaCadastroFuncionario extends javax.swing.JDialog {
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JTextField jTFComplementoEndereco;
-    private javax.swing.JTextField jTFCpf;
     private javax.swing.JTextField jTFEmail;
     private javax.swing.JTextField jTFID;
     private javax.swing.JTextField jTFNome;

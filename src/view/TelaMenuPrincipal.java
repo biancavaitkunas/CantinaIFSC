@@ -208,7 +208,7 @@ public class TelaMenuPrincipal extends javax.swing.JFrame {
 
     private void jMIEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIEnderecoActionPerformed
         TelaCadastroEndereco telaCadastoEndereco = new TelaCadastroEndereco(null, true);
-        ControllerCadastroEndereco controllerCadastroEndereco = new ControllerCadastroEndereco(telaCadastoEndereco);
+        //ControllerCadastroEndereco controllerCadastroEndereco = new ControllerCadastroEndereco(telaCadastoEndereco);
         telaCadastoEndereco.setVisible(true);
     }//GEN-LAST:event_jMIEnderecoActionPerformed
 

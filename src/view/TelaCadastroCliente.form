@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JDialogFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JDialogFormInfo">
   <NonVisualComponents>
     <Container class="javax.swing.JMenuBar" name="jMenuBar1">
 
@@ -65,10 +65,10 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jPTitulo" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPCorpo" min="-2" max="-2" attributes="0"/>
+              <Component id="jPCorpo" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPRodape" min="-2" pref="52" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jPRodape" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -90,17 +90,17 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="255" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
                           <Component id="jLTitulo" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="400" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="298" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
                           <Component id="jLCliente" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="439" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -154,86 +154,131 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
-                  <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="jTFDataNascimento" pref="146" max="32767" attributes="0"/>
-                                  <Component id="jLID" alignment="0" min="-2" pref="24" max="-2" attributes="0"/>
-                                  <Component id="jLDataNascimento" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTFID" alignment="0" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="jTFLogradouro" min="-2" pref="375" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="jTFTelefone2" min="-2" pref="148" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="jLCEP" alignment="0" min="-2" pref="35" max="-2" attributes="0"/>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <Component id="jFTFCep" min="-2" pref="126" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="jBBuscaEndereco" min="-2" pref="31" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="jBCadastraEndereco" min="-2" pref="36" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Component id="jLCEP3" min="-2" pref="77" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="310" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLCEP4" min="-2" pref="35" max="-2" attributes="0"/>
+                                      <Component id="jTFUf" min="-2" pref="95" max="-2" attributes="0"/>
+                                      <Component id="jLComplemento1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jTFComplemento" alignment="0" min="-2" pref="297" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <Component id="jTFMatricula" alignment="1" min="-2" pref="146" max="-2" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLEmail" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jTFEmail" min="-2" pref="311" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="202" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
+                          <EmptySpace pref="198" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLNome" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTFNome" min="-2" pref="306" max="-2" attributes="0"/>
-                                      <Component id="jLEmail" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLRG" min="-2" pref="37" max="-2" attributes="0"/>
-                                      <Component id="jLCPF" min="-2" pref="37" max="-2" attributes="0"/>
-                                      <Component id="jTFCPF" min="-2" pref="201" max="-2" attributes="0"/>
+                                      <Component id="jLMatricula" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLID" min="-2" pref="24" max="-2" attributes="0"/>
+                                      <Component id="jTFMatricula" min="-2" pref="146" max="-2" attributes="0"/>
+                                      <Component id="jTFID" alignment="0" min="-2" pref="146" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="342" max="-2" attributes="0"/>
-                                  <Component id="jCBCep" min="-2" pref="199" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="jLTelefone2" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="164" max="-2" attributes="0"/>
-                                      <Component id="jTFEmail" min="-2" pref="306" max="-2" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="jTFBairro" min="-2" pref="177" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="333" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jTFRg" max="32767" attributes="0"/>
+                                              <Group type="102" attributes="0">
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="jLRG" min="-2" pref="37" max="-2" attributes="0"/>
+                                                      <Component id="jLCEP1" min="-2" pref="35" max="-2" attributes="0"/>
+                                                      <Component id="jTFCPF" alignment="0" min="-2" pref="179" max="-2" attributes="0"/>
+                                                      <Component id="jLCPF" alignment="0" min="-2" pref="37" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                      </Group>
                                   </Group>
-                                  <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                      <Component id="jLTelefone2" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTFTelefone2" min="-2" pref="145" max="-2" attributes="0"/>
-                                      <Component id="jLStatus" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLStatus" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jTFCidade" min="-2" pref="164" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jRBAtivo" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jRBInativo" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jLMatricula" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="109" max="-2" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jTFNome" min="-2" pref="311" max="-2" attributes="0"/>
+                                      <Component id="jLNome" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLTelefone1" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTFTelefone1" min="-2" pref="145" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Component id="jTFTelefone1" min="-2" pref="164" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jLDataNascimento" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jTFDataNascimento" min="-2" pref="164" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Component id="jLCEP2" alignment="0" min="-2" pref="61" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jTFRg" max="32767" attributes="0"/>
-                              <Group type="102" attributes="0">
-                                  <Component id="jLCEP" min="-2" pref="35" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
                       </Group>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
               </Group>
-              <Group type="102" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLComplemento1" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="jTFComplemento" min="-2" pref="305" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jRBAtivo" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jRBInativo" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="243" max="-2" attributes="0"/>
+                  <Component id="jBBusca" min="-2" pref="18" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -242,66 +287,67 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="103" alignment="1" groupAlignment="3" attributes="0">
-                          <Component id="jLID" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLNome" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="jLCPF" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLID" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLNome" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLCPF" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLDataNascimento" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jTFID" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTFCPF" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jTFNome" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTFCPF" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTFDataNascimento" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLDataNascimento" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLEmail" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLRG" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLMatricula" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLTelefone1" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jTFEmail" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTFDataNascimento" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jTFRg" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTFMatricula" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTFTelefone1" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLCEP" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLMatricula" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLTelefone1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLTelefone2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
+                  <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLCEP" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLTelefone2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLCEP2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLCEP4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLCEP1" alignment="3" min="-2" pref="18" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jTFMatricula" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTFTelefone1" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jTFTelefone2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jCBCep" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jFTFCep" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jBBuscaEndereco" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jBCadastraEndereco" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTFUf" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTFCidade" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTFBairro" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLComplemento1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLCEP3" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLStatus" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jTFComplemento" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jRBAtivo" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jRBInativo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTFComplemento" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTFLogradouro" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jRBAtivo" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="36" max="32767" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="jBBusca" min="-2" pref="21" max="-2" attributes="0"/>
+                  <EmptySpace pref="24" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -396,11 +442,6 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTFRgActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTFCPF">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTFCPFActionPerformed"/>
-          </Events>
-        </Component>
         <Component class="javax.swing.JLabel" name="jLMatricula">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -427,7 +468,7 @@
             <Property name="text" type="java.lang.String" value="CEP"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTFComplemento">
+        <Component class="javax.swing.JTextField" name="jTFLogradouro">
         </Component>
         <Component class="javax.swing.JRadioButton" name="jRBAtivo">
           <Properties>
@@ -480,15 +521,103 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTFMatriculaActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jCBCep">
+        <Component class="javax.swing.JFormattedTextField" name="jTFCPF">
           <Properties>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="0"/>
+            <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
+              <Format format="###.###.###-##" subtype="-1" type="5"/>
             </Property>
           </Properties>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-          </AuxValues>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTFCPFActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JFormattedTextField" name="jFTFCep">
+          <Properties>
+            <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
+              <Format format="#####-##" subtype="-1" type="5"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="jBBuscaEndereco">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="..."/>
+            <Property name="actionCommand" type="java.lang.String" value="0"/>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[35, 22]"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBBuscaEnderecoActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jBCadastraEndereco">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="+"/>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[35, 22]"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBCadastraEnderecoActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLCEP1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="PMingLiU-ExtB" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Bairro"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLCEP2">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="PMingLiU-ExtB" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Cidade"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLCEP3">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="PMingLiU-ExtB" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Logradouro"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTFUf">
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTFComplemento">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLCEP4">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="PMingLiU-ExtB" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="UF"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTFCidade">
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTFBairro">
+        </Component>
+        <Component class="javax.swing.JButton" name="jBBusca">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+            </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/imagens/mais (1).png"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Novo"/>
+            <Property name="actionCommand" type="java.lang.String" value="0"/>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[112, 30]"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBBuscaActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -496,6 +625,9 @@
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="cc" green="ff" red="cc" type="rgb"/>
+        </Property>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[590, 60]"/>
         </Property>
       </Properties>
 
@@ -512,7 +644,7 @@
             <Property name="text" type="java.lang.String" value="Novo"/>
             <Property name="actionCommand" type="java.lang.String" value="0"/>
             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[112, 23]"/>
+              <Dimension value="[112, 30]"/>
             </Property>
           </Properties>
           <Events>
@@ -531,7 +663,7 @@
             <Property name="actionCommand" type="java.lang.String" value="1"/>
             <Property name="enabled" type="boolean" value="false"/>
             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[112, 23]"/>
+              <Dimension value="[112, 30]"/>
             </Property>
           </Properties>
           <Events>
@@ -550,7 +682,7 @@
             <Property name="actionCommand" type="java.lang.String" value="1"/>
             <Property name="enabled" type="boolean" value="false"/>
             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[112, 23]"/>
+              <Dimension value="[112, 30]"/>
             </Property>
           </Properties>
         </Component>
@@ -565,7 +697,7 @@
             <Property name="text" type="java.lang.String" value="Buscar"/>
             <Property name="actionCommand" type="java.lang.String" value="0"/>
             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[112, 23]"/>
+              <Dimension value="[112, 30]"/>
             </Property>
           </Properties>
           <Events>
@@ -583,7 +715,7 @@
             <Property name="text" type="java.lang.String" value="Sair"/>
             <Property name="actionCommand" type="java.lang.String" value="0"/>
             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[112, 23]"/>
+              <Dimension value="[112, 30]"/>
             </Property>
           </Properties>
           <Events>

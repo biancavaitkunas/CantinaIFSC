@@ -32,8 +32,8 @@ public class ControllerBuscaBairro implements ActionListener {
          controller.ControllerCadastroBairro.codigo =  (int) this.telaBuscaBairro.
                                                             getjTDados().
                                                             getValueAt(this.telaBuscaBairro.getjTDados().getSelectedRow(), 0);
-            
          this.telaBuscaBairro.dispose();
+         
         }else if (e.getSource() == this.telaBuscaBairro.getjBFiltrar()){
             if (this.telaBuscaBairro.getjTFFiltrar().getText().trim().equalsIgnoreCase("")) {
                 JOptionPane.showMessageDialog(null, "Atenção!\nOpção de Filtro Vazia...");

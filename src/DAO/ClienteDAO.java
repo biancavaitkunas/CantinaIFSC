@@ -115,6 +115,8 @@ public class ClienteDAO implements InterfaceDAO<Cliente>{
         PreparedStatement pstm = null;
         ResultSet rst = null;
         Cliente cliente = new Cliente();
+        //criei o objeto fornecedor fora do bloco protegido
+        //para que seu escopo permita carregá-lo como retorno do método
         
         try {
             pstm = conexao.prepareStatement(sqlExecutar);
@@ -131,6 +133,7 @@ public class ClienteDAO implements InterfaceDAO<Cliente>{
             	cliente.setComplementoEndereco(rst.getString("complementoEndereco"));
             	cliente.setEmail(rst.getString("email"));
 //            	cliente.setFone1(rst.getString("fone1"));
+            	cliente.setFone1(rst.getString("fone1"));
             	cliente.setFone2(rst.getString("fone2"));
             	cliente.setNome(rst.getString("nome"));
             	cliente.setStatus(rst.getString("status").charAt(0));
@@ -253,6 +256,8 @@ public class ClienteDAO implements InterfaceDAO<Cliente>{
 	    		   		   + "cliente.endereco_id = ? "
 	    		   		   //+ "FROM cliente "
 	    		   		   //+ " LEFT OUTER JOIN endereco ON endereco.id = cliente.endereco "
+	    		   		   + "FROM cliente "
+	    		   		   + " LEFT OUTER JOIN endereco ON endereco.id = cliente.endereco "
 	    		   		   + " WHERE cliente.id = ?";
         
         PreparedStatement pstm = null;

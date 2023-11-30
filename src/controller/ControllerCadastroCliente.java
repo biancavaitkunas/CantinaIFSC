@@ -1,6 +1,7 @@
 package controller;
 
 import static controller.ControllerCadastroBairro.codigo;
+import static controller.ControllerCadastroEndereco.codigo;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -11,6 +12,7 @@ import utilities.Utilities;
 import view.TelaCadastroCliente;
 
 import view.TelaBuscaCliente;
+import view.TelaBuscaEndereco;
 public class ControllerCadastroCliente implements ActionListener{
     
     TelaCadastroCliente  telaCadastroCliente;
@@ -18,22 +20,22 @@ public class ControllerCadastroCliente implements ActionListener{
     
     public ControllerCadastroCliente (TelaCadastroCliente  telaCadastroCliente){
         
-        this.telaCadastroCliente = telaCadastroCliente;
         this.telaCadastroCliente = telaCadastroCliente;/*global = regional*/
         this.telaCadastroCliente.getjBNovo().addActionListener(this);
         this.telaCadastroCliente.getjBSair().addActionListener(this);
         this.telaCadastroCliente.getjBBuscar().addActionListener(this);
         this.telaCadastroCliente.getjBCancelar().addActionListener(this);
         this.telaCadastroCliente.getjBGravar().addActionListener(this);
+        this.telaCadastroCliente.getjBBuscaEndereco().addActionListener(this);
         
         List<Endereco> listaEnderecos = new ArrayList<Endereco>();
         
         listaEnderecos = Service.EnderecoService.carregar();
 
-        this.telaCadastroCliente.getjCBCep().removeAll();
+        //this.telaCadastroCliente.getjCBCep().removeAll();
 
         for (Endereco cidadeAtual : listaEnderecos) {
-            this.telaCadastroCliente.getjCBCep().addItem(cidadeAtual.getLogradouro());
+            //this.telaCadastroCliente.getjCBCep().addItem(cidadeAtual.getLogradouro());
         }
         
         utilities.Utilities.ativaDesativa(true, this.telaCadastroCliente.getjPRodape());
@@ -65,7 +67,7 @@ public class ControllerCadastroCliente implements ActionListener{
             cliente.setRg(this.telaCadastroCliente.getjTFRg().getText());
             cliente.setComplementoEndereco(this.telaCadastroCliente.getjTFComplemento().getText());
             
-            cliente.setEndereco(Service.EnderecoService.carregar("logradouro", this.telaCadastroCliente.getjCBCep().getSelectedItem() + "").get(0));
+            //cliente.setEndereco(Service.EnderecoService.carregar("logradouro", this.telaCadastroCliente.getjCBCep().getSelectedItem() + "").get(0));
 
             if (this.telaCadastroCliente.getjTFID().getText().equalsIgnoreCase("")){
                 Service.ClienteService.adicionar(cliente);
@@ -77,6 +79,7 @@ public class ControllerCadastroCliente implements ActionListener{
             Utilities.limpaComponentes(false, this.telaCadastroCliente.getjPCorpo());
             
         } else if (e.getSource() == this.telaCadastroCliente.getjBBuscar()){
+            System.out.println("buscar");
             codigo = 0;
             TelaBuscaCliente telaBuscaCliente = new TelaBuscaCliente (null, true);
             ControllerBuscaCliente controllerBuscaCliente = new ControllerBuscaCliente(telaBuscaCliente);
@@ -103,6 +106,22 @@ public class ControllerCadastroCliente implements ActionListener{
 
         } else if (e.getSource() == this.telaCadastroCliente.getjBSair()){
             this.telaCadastroCliente.dispose();
+            
+        } else if (e.getSource() == this.telaCadastroCliente.getjBBuscaEndereco()) {
+            codigo = 0;
+            TelaBuscaEndereco telaBuscaEndereco = new TelaBuscaEndereco (null, true);
+            ControllerBuscaEndereco controllerBuscaEndereco = new ControllerBuscaEndereco(telaBuscaEndereco);
+            telaBuscaEndereco.setVisible(true);
+            
+            Endereco  endereco = new Endereco();
+            endereco = Service.EnderecoService.carregar(codigo);
+            Utilities.ativaDesativa(false, this.telaCadastroCliente.getjPRodape());
+            Utilities.limpaComponentes(true, this.telaCadastroCliente.getjPCorpo());
+            
+            this.telaCadastroCliente.getjTFID().setText(endereco.getId() + "");
+            this.telaCadastroCliente.getjFTFCep().setText(endereco.getCep());
+            this.telaCadastroCliente.getjTFLogradouro().setText(endereco.getLogradouro());
+            this.telaCadastroCliente.getjTFID().setEnabled(false);
         }
     }
     
