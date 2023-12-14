@@ -15,6 +15,8 @@ import view.TelaBuscaFuncionario;
 public class ControllerBuscaFuncionario implements ActionListener{
     
     TelaBuscaFuncionario telaBuscaFuncionario;
+    public static String nomeFuncionario;
+    public static int func;
     
     public ControllerBuscaFuncionario (TelaBuscaFuncionario telaBuscaFuncionario){
         
@@ -29,32 +31,33 @@ public class ControllerBuscaFuncionario implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this.telaBuscaFuncionario.getjBCarregar()){
             
-            controller.ControllerCadastroFornecedor.codigo =  (int) this.telaBuscaFuncionario.
-                                                            getjTDados().
-                                                            getValueAt(this.telaBuscaFuncionario.getjTDados().getSelectedRow(), 0);
+            controller.ControllerCadastroFornecedor.codigo =  (int) this.telaBuscaFuncionario.getjTDados().getValueAt(this.telaBuscaFuncionario.getjTDados().getSelectedRow(), 0);
+            nomeFuncionario = (String) this.telaBuscaFuncionario.getjTDados().getValueAt(this.telaBuscaFuncionario.getjTDados().getSelectedRow(), 1);
+            func = (int)this.telaBuscaFuncionario.getjTDados().getValueAt(this.telaBuscaFuncionario.getjTDados().getSelectedRow(), 0);
+            this.telaBuscaFuncionario.dispose();
             
-        this.telaBuscaFuncionario.dispose();
         }else if (e.getSource() == this.telaBuscaFuncionario.getjBFiltrar()){
             if (this.telaBuscaFuncionario.getjTFFiltrar().getText().trim().equalsIgnoreCase("")) {
                 JOptionPane.showMessageDialog(null, "Atenção!\nOpção de Filtro Vazia...");
                 this.telaBuscaFuncionario.getjTFFiltrar().requestFocus();
             } else {
-                List<Funcionario> listaFornecedores = new ArrayList<Funcionario>();
+                List<Funcionario> listaFuncionarios = new ArrayList<Funcionario>();
 
                 if (this.telaBuscaFuncionario.getjComboFiltro().getSelectedIndex() == 0) {
-                    listaFornecedores.add(FuncionarioService.carregar(Integer.parseInt(this.telaBuscaFuncionario.getjTFFiltrar().getText())));
+                    listaFuncionarios.add(FuncionarioService.carregar(Integer.parseInt(this.telaBuscaFuncionario.getjTFFiltrar().getText())));
                 } else if (this.telaBuscaFuncionario.getjComboFiltro().getSelectedIndex() == 1) {
-                    listaFornecedores = FuncionarioService.carregar(this.telaBuscaFuncionario.getjTFFiltrar().getText().trim());
+                    listaFuncionarios = FuncionarioService.carregar(this.telaBuscaFuncionario.getjTFFiltrar().getText().trim());
                 }
 
                 //Criar um objeto do tipo TableModel
                 DefaultTableModel tabela = (DefaultTableModel) this.telaBuscaFuncionario.getjTDados().getModel();
                 tabela.setRowCount(0);
 
-                for (Funcionario clienteAtual : listaFornecedores) {
-                    tabela.addRow(new Object[]{clienteAtual.getId(),
-                        clienteAtual.getNome(),
-                    clienteAtual.getCpf(), clienteAtual.getEmail()});
+                for (Funcionario funcionarioAtual : listaFuncionarios) {
+                    tabela.addRow(new Object[]{funcionarioAtual.getId(),
+                        funcionarioAtual.getNome(),
+                        funcionarioAtual.getCpf(), 
+                        funcionarioAtual.getEmail()});
                 }
             }
 

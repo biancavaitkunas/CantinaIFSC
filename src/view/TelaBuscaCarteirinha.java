@@ -146,7 +146,7 @@ public class TelaBuscaCarteirinha extends javax.swing.JDialog {
 
             },
             new String [] {
-                "ID", "Código de Barra", "Data Geração"
+                "ID", "Cliente", "Código de Barra", "Data Geração"
             }
         ));
         jScrollPane2.setViewportView(jTDados);

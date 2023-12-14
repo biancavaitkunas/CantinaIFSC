@@ -1,4 +1,4 @@
-                            ´~package DAO;
+package DAO;
 
 import java.util.List;
 import model.Funcionario;
@@ -115,21 +115,10 @@ public class FuncionarioDAO implements InterfaceDAO<Funcionario>{
 		           		   + "		 funcionario.status,"
 		           		   + "		 funcionario.usuario,"
 		           		   + "		 funcionario.senha,"
-                                                                                + "		 funcionario.endereco_id"
-		           		   + " FROM funcionario "      
-                           //+ " 		LEFT OUTER JOIN endereco ON endereco.id = funcionario.endereco_id "
-		           		   + "       funcionario.fone"
-		           		   + "		 funcionario.email"
-		           		   + "		 funcionario.endereco"
-		           		   + "		 funcionario.complementoEndereco"
-		           		   + "		 funcionario.cpf"
-		           		   + "		 funcionario.rg"
-		           		   + "		 funcionario.status"
-		           		   + "		 funcionario.usuario"
-		           		   + "		 funcionario.senha"
-		           		   + "FROM funcionario"      
-                           + " 		LEFT OUTER JOIN endereco ON endereco.id = funcionario.bairro_id "
-                           + " WHERE funcionario.id = ? ";
+                                           + "		 funcionario.endereco_id"
+		           		   + " FROM funcionario"      
+                                           + " LEFT OUTER JOIN endereco ON endereco.id = funcionario.endereco_id "
+                                           + " WHERE funcionario.id = ? ";
         
         PreparedStatement pstm = null;
         ResultSet rs = null;

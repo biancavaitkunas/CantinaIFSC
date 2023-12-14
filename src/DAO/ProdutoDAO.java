@@ -16,7 +16,7 @@ public class ProdutoDAO implements InterfaceDAO<Produto>{
     public void create(Produto objeto) {
         
         Connection conexao = ConnectionFactory.getConnection();
-        String sqlExecutar = "INSERT INTO produto (descricao, codigoBarra, status) VALUES (?, ?, ?)";
+        String sqlExecutar = "INSERT INTO produto (descricao, codigoBarra, status, valorUnitario) VALUES (?, ?, ?, ?)";
         
         PreparedStatement pstm = null;
         
@@ -25,6 +25,7 @@ public class ProdutoDAO implements InterfaceDAO<Produto>{
             pstm.setString(1, objeto.getDescricao());
             pstm.setString(2, objeto.getCodigoBarra());
             pstm.setString(3, String.valueOf(objeto.getStatus()));
+            pstm.setFloat(4, objeto.getValorUnitario());
             pstm.execute();
         } catch (SQLException ex) {
             ex.printStackTrace();
@@ -71,7 +72,8 @@ public class ProdutoDAO implements InterfaceDAO<Produto>{
         String sqlExecutar = " SELECT produto.id, "
                 		   + "        produto.descricao, "
                 		   + "        produto.codigoBarra, "
-                		   + "        produto.status "
+                		   + "        produto.status, "
+                                   + "        produto.valorUnitario "
                 		   + " FROM produto "
                                          + "  WHERE produto.id = ? ";
         
@@ -90,6 +92,7 @@ public class ProdutoDAO implements InterfaceDAO<Produto>{
             	produto.setDescricao(rst.getString("descricao"));
             	produto.setCodigoBarra(rst.getString("codigoBarra"));
             	produto.setStatus(rst.getString("status").charAt(0));
+                produto.setValorUnitario(rst.getFloat("valorUnitario"));
                 
             }
         } catch (SQLException ex) {

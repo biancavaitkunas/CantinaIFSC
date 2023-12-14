@@ -1,6 +1,7 @@
 package controller;
 
 import Service.ProdutoService;
+import static controller.ControllerBuscaCliente.nomeCliente;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -14,6 +15,9 @@ import view.TelaBuscaProduto;
 public class ControllerBuscaProduto implements ActionListener{
     
     TelaBuscaProduto telaBuscaProduto;
+    public static String nomeProduto;
+    public static int codProduto;
+    public static float valorUnitarioProduto;
     
     public ControllerBuscaProduto (TelaBuscaProduto telaBuscaProduto){
         
@@ -30,6 +34,11 @@ public class ControllerBuscaProduto implements ActionListener{
             controller.ControllerCadastroProduto.codigo =  (int) this.telaBuscaProduto.
                                                             getjTDados().
                                                             getValueAt(this.telaBuscaProduto.getjTDados().getSelectedRow(), 0);
+            
+            nomeProduto = (String) this.telaBuscaProduto.getjTDados().getValueAt(this.telaBuscaProduto.getjTDados().getSelectedRow(), 1);
+            codProduto = (int) this.telaBuscaProduto.getjTDados().getValueAt(this.telaBuscaProduto.getjTDados().getSelectedRow(), 0);
+            valorUnitarioProduto = (float) this.telaBuscaProduto.getjTDados().getValueAt(this.telaBuscaProduto.getjTDados().getSelectedRow(), 3);
+
             this.telaBuscaProduto.dispose();
         }else if (e.getSource() == this.telaBuscaProduto.getjBFiltrar()){
             if (this.telaBuscaProduto.getjTFFiltrar().getText().trim().equalsIgnoreCase("")) {
@@ -50,7 +59,8 @@ public class ControllerBuscaProduto implements ActionListener{
                 for (Produto produtoAtual : listaProdutos) {
                     tabela.addRow(new Object[]{produtoAtual.getId(),
                         produtoAtual.getDescricao(),
-                    produtoAtual.getCodigoBarra()});
+                        produtoAtual.getCodigoBarra(),
+                    produtoAtual.getValorUnitario()});
                 }
             }
             

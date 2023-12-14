@@ -42,13 +42,13 @@ public class ControllerCadastroProduto implements ActionListener {
             Produto produto = new Produto();
             produto.setDescricao(this.telaCadastroProduto.getjTFDescricao().getText());
             produto.setCodigoBarra(this.telaCadastroProduto.getjTFCodigoBarra().getText());
+            produto.setValorUnitario(Float.valueOf(this.telaCadastroProduto.getjTFValorUnitario().getText()));
             
             if (this.telaCadastroProduto.getjTFID().getText().equalsIgnoreCase("")){
                    Service.ProdutoService.adicionar(produto);
             } else {
                produto.setId(Integer.parseInt(this.telaCadastroProduto.getjTFID().getText()));
                Service.ProdutoService.atualizar(produto);
-                
             }
             
             utilities.Utilities.ativaDesativa(true, this.telaCadastroProduto.getjPRodape());

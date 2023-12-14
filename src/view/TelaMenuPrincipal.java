@@ -237,7 +237,7 @@ public class TelaMenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMICarteirinhaActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        TelaVenda telaVenda = new TelaVenda(null, true);
+        TelaCadastroVenda telaVenda = new TelaCadastroVenda(null, true);
         ControllerVenda controllerCadastroVenda = new ControllerVenda(telaVenda);
         telaVenda.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed

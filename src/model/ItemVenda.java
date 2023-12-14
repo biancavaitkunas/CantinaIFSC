@@ -3,8 +3,8 @@ package model;
 public class ItemVenda {
 
     private int id;
-    private int qntProduto;
-    private float valorDesconto;
+    private int qtdProduto;
+    private float valorUnitario;
     private char status;
 
     private Venda venda;
@@ -15,8 +15,8 @@ public class ItemVenda {
 
     public ItemVenda(int id, int qntProduto, float valorDesconto, char status, Venda venda, Produto produto) {
         this.id = id;
-        this.qntProduto = qntProduto;
-        this.valorDesconto = valorDesconto;
+        this.qtdProduto = qntProduto;
+        this.valorUnitario = valorDesconto;
         this.status = status;
         this.venda = venda;
         this.produto = produto;
@@ -30,20 +30,20 @@ public class ItemVenda {
         this.id = id;
     }
 
-    public int getQntProduto() {
-        return qntProduto;
+    public int getQtdProduto() {
+        return qtdProduto;
     }
 
-    public void setQntProduto(int qntProduto) {
-        this.qntProduto = qntProduto;
+    public void setQtdProduto(int qntProduto) {
+        this.qtdProduto = qntProduto;
     }
 
-    public float getValorDesconto() {
-        return valorDesconto;
+    public float getValorUnitario() {
+        return valorUnitario;
     }
 
-    public void setValorDesconto(float valorDesconto) {
-        this.valorDesconto = valorDesconto;
+    public void setValorUnitario(float valorDesconto) {
+        this.valorUnitario = valorDesconto;
     }
 
     public char getStatus() {
@@ -69,15 +69,6 @@ public class ItemVenda {
     public void setProduto(Produto produto) {
         this.produto = produto;
     }
-    
-    @Override
-    public String toString() {
-        return this.getId() + "/n , "
-                + this.getQntProduto() + "/n , "
-                + this.getValorDesconto() + "/n , "
-                + this.venda.getId() + "/n , "
-                + this.produto.getId() + "/n , "
-                + this.getStatus();
-    }
+   
 
 }

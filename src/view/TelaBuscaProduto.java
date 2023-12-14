@@ -128,7 +128,7 @@ public class TelaBuscaProduto extends javax.swing.JDialog {
 
             },
             new String [] {
-                "ID", "Descrição", "Código de Barras"
+                "ID", "Descrição", "Código de Barras", "Valor Unitário"
             }
         ));
         jScrollPane2.setViewportView(jTDados);

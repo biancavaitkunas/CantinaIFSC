@@ -6,15 +6,17 @@ public class Produto {
     private String descricao;
     private String codigoBarra;
     private char status;
+    private float valorUnitario;
 
     public Produto() {
     }
 
-    public Produto(int id, String descricao, String codigoBarra, char status) {
+    public Produto(int id, String descricao, String codigoBarra, char status, float valorUnitario) {
         this.id = id;
         this.descricao = descricao;
         this.codigoBarra = codigoBarra;
         this.status = status;
+        this.valorUnitario = valorUnitario;
     }
     
     public Produto(int id, String descricao, String codigoBarra) {
@@ -54,6 +56,16 @@ public class Produto {
     public void setStatus(char status) {
         this.status = status;
     }
+
+    public float getValorUnitario() {
+        return valorUnitario;
+    }
+
+    public void setValorUnitario(float valorUnitario) {
+        this.valorUnitario = valorUnitario;
+    }
+    
+    
 
     @Override
     public String toString() {

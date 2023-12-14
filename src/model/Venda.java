@@ -1,9 +1,12 @@
 package model;
 
+import java.util.Date;
+
+
 public class Venda {
 
     private int id;
-    private String dataHoraVenda;
+    private Date dataHoraVenda;
     private float valorDesconto;
     private String flagTipoDesconto;
     private String observacao;
@@ -15,7 +18,7 @@ public class Venda {
     public Venda() {
     }
 
-    public Venda(int id, String dataHoraVenda, float valorDesconto, String flagTipoDesconto, String observacao, char status, Carteirinha carteirinha, Funcionario funcionario) {
+    public Venda(int id, Date dataHoraVenda, float valorDesconto, String flagTipoDesconto, String observacao, char status, Carteirinha carteirinha, Funcionario funcionario) {
         this.id = id;
         this.dataHoraVenda = dataHoraVenda;
         this.valorDesconto = valorDesconto;
@@ -34,11 +37,11 @@ public class Venda {
         this.id = id;
     }
 
-    public String getDataHoraVenda() {
+    public Date getDataHoraVenda() {
         return dataHoraVenda;
     }
 
-    public void setDataHoraVenda(String dataHoraVenda) {
+    public void setDataHoraVenda(Date dataHoraVenda) {
         this.dataHoraVenda = dataHoraVenda;
     }
 

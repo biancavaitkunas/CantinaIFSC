@@ -27,10 +27,10 @@ public class ControllerCadastroFuncionario implements ActionListener {
         
         listaEnderecos = Service.EnderecoService.carregar();
 
-        this.telaCadastroFuncionario.getjCBCep().removeAll();
+        //this.telaCadastroFuncionario.getjCBCep().removeAll();
 
         for (Endereco cidadeAtual : listaEnderecos) {
-            this.telaCadastroFuncionario.getjCBCep().addItem(cidadeAtual.getLogradouro());
+            //this.telaCadastroFuncionario.getjCBCep().addItem(cidadeAtual.getLogradouro());
         }
         
         utilities.Utilities.ativaDesativa(true, this.telaCadastroFuncionario.getjPRodape());
@@ -63,7 +63,7 @@ public class ControllerCadastroFuncionario implements ActionListener {
             funcionario.setUsuario(this.telaCadastroFuncionario.getjTFUsuario().getText());
             funcionario.setSenha(this.telaCadastroFuncionario.getjTFSenha().getText());
             funcionario.setComplementoEndereco(this.telaCadastroFuncionario.getjTFComplementoEndereco().getText());
-            funcionario.setEndereco(Service.EnderecoService.carregar("logradouro", this.telaCadastroFuncionario.getjCBCep().getSelectedItem() + "").get(0));
+            //funcionario.setEndereco(Service.EnderecoService.carregar("logradouro", this.telaCadastroFuncionario.getjCBCep().getSelectedItem() + "").get(0));
             
             if(this.telaCadastroFuncionario.getjTFID().getText().equalsIgnoreCase("")){
                Service.FuncionarioService.adicionar(funcionario);
@@ -84,7 +84,6 @@ public class ControllerCadastroFuncionario implements ActionListener {
             if (codigo != 0) {
                 Funcionario funcionario = new Funcionario();
                 funcionario = Service.FuncionarioService.carregar(codigo);
-                //funcionario = DAO.ClasseDados.listaFuncionario.get(codigo -1);
                 utilities.Utilities.ativaDesativa(false, this.telaCadastroFuncionario.getjPRodape());
                 Utilities.limpaComponentes(true, this.telaCadastroFuncionario.getjPCorpo());
                 
